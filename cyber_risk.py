@@ -28,10 +28,10 @@ def monte_carlo_simulation(cyber_risks, iterations): # What happen here in this 
     yearly_losses.append(loss_amount)
   return yearly_losses
 
-yearly_losses = monte_carlo_simulation(cyber_risks, iterations = 1000) # 1000 simulations
-print(yearly_losses)
+yearly_losses = monte_carlo_simulation(cyber_risks, iterations = 100000) # 1000 simulations
+#print(yearly_losses)
 
 
-plt.hist(yearly_losses, bins=[0, 25000, 50000, 100000, 150000, 200000, 250000]) # Histogram plot
+plt.hist(yearly_losses, bins=[0, 20000, 40000, 60000, 80000, 100000, 120000, 140000, 160000, 180000, 200000, 220000, 240000, 260000]) # Histogram plot
 plt.show()
 
