@@ -2,13 +2,17 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-	
-cyber_risks = pd.read_csv('cyber_risks.csv', delimiter=',')
-cyber_risks.head()
 
-def attack_occurs(attack_probability): # Defined in the CSV
+sectors = ["Financeiro", "Comércio", "Saúde", "Outro"]
+attacks = ["Malware", "Phishing", "DDoS"]
+divHist = [0, 60000, 120000, 180000, 240000]
+
+iteracoes = 1000
+
+def attack_occurs(attack_probability): # Definido no .csv
 	return np.random.rand() < attack_probability
 
+'''
 def attack_loss_amount(lower, upper): # How the values of this function are defined? Normal Distribution.
 	mean = (np.log(lower) + np.log(upper))/2.0 
 	std_dv = (np.log(upper) - np.log(lower))/3.29
@@ -21,17 +25,45 @@ def simulate_risk_portfolio(cyber_risks): # Can we define for different assets a
       total_loss_amount += attack_loss_amount(risk.Lower, risk.Upper)
   return total_loss_amount
 
-def monte_carlo_simulation(cyber_risks, iterations): # What happen here in this function exactly? Use the probability of an event occurs and the mean of the loss amount.
-  yearly_losses = []
-  for i in range(iterations):
-    loss_amount = simulate_risk_portfolio(cyber_risks)
-    yearly_losses.append(loss_amount)
-  return yearly_losses
+'''
 
-yearly_losses = monte_carlo_simulation(cyber_risks, iterations = 100000) # 1000 simulations
-#print(yearly_losses)
+def simulate_prob(infer):
+    return
 
+def monte_carlo_simulation(sectors, attacks, infer, iteracoes):
+    probs = []
 
-plt.hist(yearly_losses, bins=[0, 20000, 40000, 60000, 80000, 100000, 120000, 140000, 160000, 180000, 200000, 220000, 240000, 260000]) # Histogram plot
+    # IMPLEMENTAR
+    for i in range(iteracoes):
+      chance = simulate_prob(infer)
+      probs.append(chance)
+
+    return probs
+
+'''
+Qual setor é a sua empresa (apenas o número):
+0 - Financeiro
+1 - Comércio
+2 - Saúde
+3 - Outro
+'''
+industry = int(input())
+'''
+Escolha o tipo do ataque (apenas o número):
+0 - Malware
+1 - Phishing
+2 - DDoS
+'''
+type_attack = int(input())
+
+print("Setor:")
+print(sectors[industry])
+print("Tipo do ataque:")
+print(attacks[type_attack])
+
+infer = pd.read_csv('infer.csv', delimiter=',')
+infer.head()
+
+probabilies = monte_carlo_simulation(sectors[industry], attacks[type_attack], infer, iteracoes)
+plt.hist(probabilies, divHist) # Histogram plot
 plt.show()
-
