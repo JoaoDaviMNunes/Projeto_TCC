@@ -3,11 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
+
+# definições
 sectors = ["Financeiro", "Comércio", "Saúde", "Outro"]
 attacks = ["Malware", "Phishing", "DDoS"]
 divHist = [0, 60000, 120000, 180000, 240000]
+iteracoes = 10000
 
-iteracoes = 1000
+# funções auxiliares
 
 def attack_occurs(attack_probability): # Definido no .csv
 	return np.random.rand() < attack_probability
@@ -40,30 +43,13 @@ def monte_carlo_simulation(sectors, attacks, infer, iteracoes):
 
     return probs
 
-'''
-Qual setor é a sua empresa (apenas o número):
-0 - Financeiro
-1 - Comércio
-2 - Saúde
-3 - Outro
-'''
-industry = int(input())
-'''
-Escolha o tipo do ataque (apenas o número):
-0 - Malware
-1 - Phishing
-2 - DDoS
-'''
-type_attack = int(input())
+# função main
 
-print("Setor:")
-print(sectors[industry])
-print("Tipo do ataque:")
-print(attacks[type_attack])
-
-infer = pd.read_csv('infer.csv', delimiter=',')
+infer = pd.read_csv('dbprob_20240116.csv', delimiter=',')
 infer.head()
 
 probabilies = monte_carlo_simulation(sectors[industry], attacks[type_attack], infer, iteracoes)
+
+# plot (grafico)
 plt.hist(probabilies, divHist) # Histogram plot
 plt.show()
