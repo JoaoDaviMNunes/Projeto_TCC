@@ -1,5 +1,6 @@
 from random import seed
 from random import randint
+import random
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,41 +10,63 @@ import csv
 # inicializações
 companyWeights = []
 campos = ["Reputação", "Periodicidade", "Cobertura", "Escopo", "Abrangência", "Metodologia", "Peso Final", "Score"]
+start = 0
+end = 2
 
-with open('testePesosReports.csv', 'w', newline='') as f :
+with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', 'w', newline='') as p :
 	
-	writer = csv.writer(f)
-	writer.writerow(campos)
+	scores = csv.writer(s)
+	scores.writerow(campos)
+	pesos = csv.writer(p)
+
+	weights = []
+	somaWeights = 0
 	
-	for _ in range(10000):
-		reputacao = randint(0,2)
-		periodicidade = randint(0,2)
-		cobertura = randint(0,2)
-		escopo = randint(0,2)
-		abrangencia = randint(0,2)
-		metodologia = randint(0,2)
+	for _ in range(6):
+		weight = random.random()
+		weights.append(weight)
+		somaWeights += weight
+	
+	pesos.writerow(weights)
+	
+	'''
+	for i in weights:
+		print("%.2f" % i)
+	'''
+	
+	print(somaWeights)
+	
+	for _ in range(100):
+		reputacao = randint(start,end)
+		periodicidade = randint(start,end)
+		cobertura = randint(start,end)
+		escopo = randint(start,end)
+		abrangencia = randint(start,end)
+		metodologia = randint(start,end)
 		company = [reputacao, periodicidade, cobertura, escopo, abrangencia, metodologia]
-		pesoFinal = (reputacao + periodicidade + cobertura + escopo + abrangencia + metodologia)/2
+		
+		pesoFinal = ((reputacao*weights[0])  + (periodicidade*weights[1]) + (cobertura*weights[2]) + (escopo*weights[3]) + (abrangencia*weights[4]) + (metodologia*weights[5]))/(somaWeights)*3
 		
 		'''
 		print(companyWeights)
 		print(pesoFinal)
 		'''
-			
+		
+		
 
 		
 		if pesoFinal >= 5 :
-			score = "Ótimo"
+			rating = "Ótimo"
 		elif pesoFinal >= 3 :
-			score = "Bom"
+			rating = "Bom"
 		elif pesoFinal < 1 :
 			pesoFinal = 1.0
-			score = "Ruim"
+			rating = "Ruim"
 		else :
-			score = "Ruim"
+			rating = "Ruim"
 			
 		company.append(pesoFinal)
-		company.append(score)
+		company.append(rating)
 		
-		writer.writerow(company)
+		scores.writerow(company)
 		
