@@ -21,59 +21,28 @@ with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', '
 	scores.writerow(campos)
 	pesos = csv.writer(p)
 
-	weights = []
+	weights = pesosCampos
 	somaWeights = 0
-	
-	'''
-	for _ in range(6):
-		weight = random.random()
-		weights.append(round(weight, 2))
-		somaWeights += weight
-	
-	pesos.writerow(weights)
-	
-	
-	for i in weights:
-		print("%.2f" % i)
-	
-	print(somaWeights)
-	'''
+
+	for item in pesosCampos :
+		somaWeights += item
+
 	
 	pesos.writerow(pesosCampos)
-	
-	
-	'''
-	for _ in range(100):
-		reputacao = randint(start,end)
-		periodicidade = randint(start,end)
-		cobertura = randint(start,end)
-		escopo = randint(start,end)
-		abrangencia = randint(start,end)
-		metodologia = randint(start,end)
-		'''
 		
 	count = 0
 	for row in csv_reader:
 		if count != 0 :
-			reputacao = row[0]
-			periodicidade = row[1]
-			cobertura = row[2]
-			escopo = row[3]
-			abrangencia = row[4]
-			metodologia = row[5]
+			reputacao = int(row[0])
+			periodicidade = int(row[1])
+			cobertura = int(row[2])
+			escopo = int(row[3])
+			abrangencia = int(row[4])
+			metodologia = int(row[5])
 			
 			company = [reputacao, periodicidade, cobertura, escopo, abrangencia, metodologia]
 			
-			pesoFinal = ((reputacao*weights[0])  + (periodicidade*weights[1]) + (cobertura*weights[2]) + (escopo*weights[3]) + (abrangencia*weights[4]) + (metodologia*weights[5]))/(somaWeights)*3
-			
-			
-			'''
-			print(companyWeights)
-			print(pesoFinal)
-			'''
-			
-			
-
+			pesoFinal = ((reputacao*weights[0])  + (periodicidade*weights[1]) + (cobertura*weights[2]) + (escopo*weights[3]) + (abrangencia*weights[4]) + (metodologia*weights[5]))/(somaWeights)*3.0
 			
 			if pesoFinal >= 5 :
 				rating = "Ótimo"
@@ -89,5 +58,6 @@ with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', '
 			company.append(rating)
 			
 			scores.writerow(company)
-			count += 1
+		
+		count += 1
 		
