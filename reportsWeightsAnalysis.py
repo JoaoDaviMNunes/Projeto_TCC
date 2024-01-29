@@ -1,6 +1,6 @@
+import random
 from random import seed
 from random import randint
-import random
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,29 +8,29 @@ import math
 import csv
 
 # inicializações
-companyWeights = []
 campos = ["Reputação", "Periodicidade", "Cobertura", "Escopo", "Abrangência", "Metodologia", "Peso Final", "Score"]
-pesosCampos = [0.8,0.3,0.3,0.3,0.3,0.8]
-start = 0
-end = 2
+pesosCampos = [1,0.5,0.5,0.5,0.5,0.9]
+compArray = []
 
-with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', 'w', newline='') as p, open('entradaEmpresas.csv') as entrada:
+with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', 'w', newline='') as p, open('entradaEmpresas.csv') as entrada, open('comparacaoAvaliacoes.csv', 'w', newline='') as c:
 	
 	csv_reader = csv.reader(entrada, delimiter=',')
+
 	scores = csv.writer(s)
 	scores.writerow(campos)
+	
 	pesos = csv.writer(p)
+	comp = csv.writer(c)
 
-	weights = pesosCampos
 	somaWeights = 0
-
 	for item in pesosCampos :
 		somaWeights += item
-
 	
 	pesos.writerow(pesosCampos)
 		
 	count = 0
+	equal = 0
+	diff = 0
 	for row in csv_reader:
 		if count != 0 :
 			reputacao = int(row[0])
@@ -42,7 +42,7 @@ with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', '
 			
 			company = [reputacao, periodicidade, cobertura, escopo, abrangencia, metodologia]
 			
-			pesoFinal = ((reputacao*weights[0])  + (periodicidade*weights[1]) + (cobertura*weights[2]) + (escopo*weights[3]) + (abrangencia*weights[4]) + (metodologia*weights[5]))/(somaWeights)*3.0
+			pesoFinal = ((reputacao*pesosCampos[0])  + (periodicidade*pesosCampos[1]) + (cobertura*pesosCampos[2]) + (escopo*pesosCampos[3]) + (abrangencia*pesosCampos[4]) + (metodologia*pesosCampos[5]))/(somaWeights)*3.0
 			
 			if pesoFinal >= 5 :
 				rating = "Ótimo"
@@ -56,8 +56,24 @@ with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', '
 				
 			company.append(round(pesoFinal, 2))
 			company.append(rating)
+
+			compArray = [row[6], row[7], company[6], company[7]]
+			if compArray[1] == compArray[3]:
+				equal += 1
 			
+			if float(compArray[0]) < compArray[2]:
+				compArray.append("+")
+				diff += 1
+			elif float(compArray[0]) > compArray[2]:
+				compArray.append("-")
+			else :
+				compArray.append("=")
+
+			comp.writerow(compArray)
 			scores.writerow(company)
 		
 		count += 1
-		
+
+	print(count)
+	print(equal)
+	print(equal/count*100)		
