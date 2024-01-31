@@ -9,7 +9,7 @@ import csv
 
 # inicializações
 campos = ["Reputação", "Periodicidade", "Cobertura", "Escopo", "Abrangência", "Metodologia", "Peso Final", "Score"]
-camposWeights = ["p1", "p2", "p3", "p4", "p5", "p6", "acertividade"]
+camposWeights = ["p1", "p2", "p3", "p4", "p5", "p6", "assertividade"]
 #pesosCampos = [1,0.6,0.2,0.2,0.1,1]
 #pesosCampos = [2.2,0.8,0.6,0.6,0.8,2.2]
 compArray = []
@@ -19,13 +19,13 @@ compArray = []
 # Gera pesos aleatórios entre 1 e 10 (possivelmente vamos reduzir a escala futuramente)
 def generatorRandomWeights():
 	aux = []
-	for a in np.arange(0, 1, 0.1):
-		for b in np.arange(0, 1, 0.1):
-			for c in np.arange(0, 1, 0.1):
-				for d in np.arange(0, 1, 0.1):
-					for e in np.arange(0, 1, 0.1):
-						for f in np.arange(0, 1, 0.1):
-							aux.append([a,b,c,d,e,f])
+	for rep in np.arange(0.1, 1, 0.1):
+		for per in np.arange(0.1, 1, 0.1):
+			for cob in np.arange(0.1, 1, 0.1):
+				for esc in np.arange(0.1, 1, 0.1):
+					for abr in np.arange(0.1, 1, 0.1):
+						for met in np.arange(0.1, 1, 0.1):
+							aux.append([rep,per,cob,esc,abr,met])
 	return aux
 
 
@@ -70,7 +70,7 @@ with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', '
 				company = [reputacao, periodicidade, cobertura, escopo, abrangencia, metodologia]
 				
 				pesoFinal = ((reputacao*pesosCampos[0])  + (periodicidade*pesosCampos[1]) + (cobertura*pesosCampos[2]) + (escopo*pesosCampos[3]) + (abrangencia*pesosCampos[4]) + (metodologia*pesosCampos[5]))/(somaWeights)*3.0
-				print(pesoFinal)
+				# print(pesoFinal)
 				
 				if pesoFinal >= 5 :
 					rating = "Ótimo" # Muito Relevante
@@ -96,7 +96,7 @@ with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', '
 				conf1 = True
 			if pesosCampos[2] < pesosCampos[0] and pesosCampos[2] < pesosCampos[5]:
 				conf2 = True
-			if nota[0] > 10.0 and conf1 and conf2:				
+			if nota[0] > 80.0 and conf1 and conf2:				
 				pesos.writerow(pesosCampos+nota)
 
 
