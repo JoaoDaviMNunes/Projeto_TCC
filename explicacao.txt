@@ -1,0 +1,3 @@
+% de precisão = dados os pesos gerados e o arquivo base das notas das empresas, a porcentagem de semelhança nas avaliações
+
+ex.: "MuitoRelevante" == "MuitoRelevante"

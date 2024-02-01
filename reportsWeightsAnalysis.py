@@ -27,6 +27,8 @@ def generatorRandomWeights():
 # ===========================================================================
 # Função principal
 # abre os arquivos de entrada, realiza testes com os pesos e salva num arquivo
+# scoresReports.csv = [rep,per,cob,esc,abr,met,notaCPeso,scoreCPeso] p/ cada empresa
+# pesosReports.csv = [p1,p2,p3,p4,p5,p6,]
 with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', 'w', newline='') as p, open('comparacaoAvaliacoes.csv', 'w', newline='') as c:
 
 	scores = csv.writer(s)
@@ -67,16 +69,21 @@ with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', '
 				# print(pesoFinal)
 				
 				if pesoFinal >= 5 :
-					rating = "Ótimo" # Muito Relevante
+					rating = "MuitoRelevante"
 				elif pesoFinal >= 3 :
-					rating = "Bom" # Relevante
+					rating = "Relevante"
 				else :
-					rating = "Ruim" # Pouco Relevante
+					rating = "PoucoRelevante"
 					
 				company.append(round(pesoFinal, 2))
 				company.append(rating)
 
-				#comparando o gerad
+				#comparando as notas originais das Empresas com o calculado usando os pesos
+				# linha[6] = notaOriginal
+				# linha[7] = scoreOriginal
+				# company[6] = notaCPeso
+				# company[7] = scoreCPeso
+				# linha[8] = scoreEmpirico
 				compArray = [linha[6], linha[7], company[6], company[7], linha[8]]
 				if compArray[3] == compArray[4]:
 					equal += 1
@@ -92,3 +99,4 @@ with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', '
 				conf2 = True
 			if nota[0] > 10.0 and conf1 and conf2:				
 				pesos.writerow(pesosCampos+nota)
+
