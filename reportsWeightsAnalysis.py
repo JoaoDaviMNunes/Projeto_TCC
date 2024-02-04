@@ -27,8 +27,12 @@ def generatorRandomWeights():
 # ===========================================================================
 # Função principal
 # abre os arquivos de entrada, realiza testes com os pesos e salva num arquivo
+# Entrada:
+# entradaEmpresas.csv = [6 notas de 0 a 2,notaSoma,notaEmpirica]
+# Saídas:
 # scoresReports.csv = [rep,per,cob,esc,abr,met,notaCPeso,scoreCPeso] p/ cada empresa
-# pesosReports.csv = [p1,p2,p3,p4,p5,p6,]
+# pesosReports.csv = [p1,p2,p3,p4,p5,p6,precisao] (pesosCampos+precisao)
+# comparacaoAvaliacoes.csv = [notaOriginal,scoreOriginal,notaCPeso,scoreCPeso,scoreEmpirico]
 with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', 'w', newline='') as p, open('comparacaoAvaliacoes.csv', 'w', newline='') as c:
 
 	scores = csv.writer(s)
@@ -91,12 +95,12 @@ with open('scoresReports.csv', 'w', newline='') as s, open('pesosReports.csv', '
 				comp.writerow(compArray)
 				scores.writerow(company)
 				
-			nota = [equal/count*100]
+			precisao = [equal/count*100]
 			conf1 = conf2 = False
 			if pesosCampos[2] > pesosCampos[1] and pesosCampos[2] > pesosCampos[3] and pesosCampos[2] > pesosCampos[4]:
 				conf1 = True
 			if pesosCampos[2] < pesosCampos[0] and pesosCampos[2] < pesosCampos[5]:
 				conf2 = True
-			if nota[0] > 10.0 and conf1 and conf2:				
-				pesos.writerow(pesosCampos+nota)
+			if precisao[0] > 10.0 and conf1 and conf2:				
+				pesos.writerow(pesosCampos+precisao)
 

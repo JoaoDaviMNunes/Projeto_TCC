@@ -20,6 +20,10 @@ pes50,pes51,pes52,pes53,pes54,pes55,pes56,pes57,pes58,pes59,pes510 = 0,0,0,0,0,0
 
 # ===========================================================================
 # Função principal
+# Entrada:
+# pesosReports.csv = 
+# Saída: 
+# contagemPesos.csv = 
 with open('pesosReports.csv') as p, open ('contagemPesos.csv', 'w', newline='') as c:
 	# abrindo os arquivos, um para ler os dados, outro para guardar as informações
 	pesos = csv.reader(p, delimiter=',')
@@ -211,6 +215,9 @@ with open('pesosReports.csv') as p, open ('contagemPesos.csv', 'w', newline='') 
 
 	x = ["70%","75%","80%","85%","90%","95%","100%"]
 	y = [totalPrecisao70,totalPrecisao75,totalPrecisao80,totalPrecisao85,totalPrecisao90,totalPrecisao95,totalPrecisao100]
+
+	for i in range(len(x)):
+		plt.text(i, y[i] + 0.1, str(y[i]), ha='center', va='bottom')
 
 	plt.bar(x, y)
 	plt.xlabel('Precisões')
