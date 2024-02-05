@@ -195,46 +195,46 @@ with open('randomCompanies.csv', 'w', newline='') as r:
 	print(mediaPP,mediaPR,mediaPM,mediaRP,mediaRR,mediaRM,mediaMP,mediaMR,mediaMM)
 	#'''
 	# Matriz de confusão - Média
-	matriz_real = np.array([[mediaPP,mediaPR,mediaPM],[mediaRP,mediaRR,mediaRM],[mediaMP,mediaMR,mediaMM]])
-	plt.imshow(matriz_real, interpolation='nearest', cmap=plt.cm.Blues)
+	matriz_media = np.array([[mediaPP,mediaPR,mediaPM],[mediaRP,mediaRR,mediaRM],[mediaMP,mediaMR,mediaMM]])
+	plt.imshow(matriz_media, interpolation='nearest', cmap=plt.cm.Blues)
 	plt.title('Matriz de Confusão - Média')
 	plt.colorbar()
-	tick_marks = np.arange(len(matriz_real))
+	tick_marks = np.arange(len(matriz_media))
 	plt.xticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
 	plt.yticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
-	for i in range(len(matriz_real)):
-	    for j in range(len(matriz_real)):
-	        plt.text(j, i, str(matriz_real[i][j]), horizontalalignment='center', verticalalignment='center', color='black')
+	for i in range(len(matriz_media)):
+	    for j in range(len(matriz_media)):
+	        plt.text(j, i, str(matriz_media[i][j]), horizontalalignment='center', verticalalignment='center', color='black')
 	plt.xlabel('Classe Prevista')
 	plt.ylabel('Classe Real')
 	plt.show()
 
 	# Matriz de confusão - Melhor caso
-	matriz_real = np.array([maximo[3],maximo[4],maximo[5]],[maximo[6],maximo[7],maximo[8]],[maximo[9],maximo[10],maximo[11]])
-	plt.imshow(matriz_real, interpolation='nearest', cmap=plt.cm.Blues)
+	matriz_melhor = np.array([[maximo[3],maximo[4],maximo[5]],[maximo[6],maximo[7],maximo[8]],[maximo[9],maximo[10],maximo[11]]])
+	plt.imshow(matriz_melhor, interpolation='nearest', cmap=plt.cm.Blues)
 	plt.title('Matriz de Confusão - Melhor caso')
 	plt.colorbar()
-	tick_marks = np.arange(len(matriz_real))
+	tick_marks = np.arange(len(matriz_melhor))
 	plt.xticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
 	plt.yticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
-	for i in range(len(matriz_real)):
-	    for j in range(len(matriz_real)):
-	        plt.text(j, i, str(matriz_real[i][j]), horizontalalignment='center', verticalalignment='center', color='black')
+	for i in range(len(matriz_melhor)):
+	    for j in range(len(matriz_melhor)):
+	        plt.text(j, i, str(matriz_melhor[i][j]), horizontalalignment='center', verticalalignment='center', color='black')
 	plt.xlabel('Classe Prevista')
 	plt.ylabel('Classe Real')
 	plt.show()
 
 	# Matriz de confusão - Pior Caso
-	matriz_real = np.array([minimo[3],minimo[4],minimo[5]],[minimo[6],minimo[7],minimo[8]],[minimo[9],minimo[10],minimo[11]])
-	plt.imshow(matriz_real, interpolation='nearest', cmap=plt.cm.Blues)
+	matriz_pior = np.array([[minimo[3],minimo[4],minimo[5]],[minimo[6],minimo[7],minimo[8]],[minimo[9],minimo[10],minimo[11]]])
+	plt.imshow(matriz_pior, interpolation='nearest', cmap=plt.cm.Blues)
 	plt.title('Matriz de Confusão - Pior caso')
 	plt.colorbar()
-	tick_marks = np.arange(len(matriz_real))
+	tick_marks = np.arange(len(matriz_pior))
 	plt.xticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
 	plt.yticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
-	for i in range(len(matriz_real)):
-	    for j in range(len(matriz_real)):
-	        plt.text(j, i, str(matriz_real[i][j]), horizontalalignment='center', verticalalignment='center', color='black')
+	for i in range(len(matriz_pior)):
+	    for j in range(len(matriz_pior)):
+	        plt.text(j, i, str(matriz_pior[i][j]), horizontalalignment='center', verticalalignment='center', color='black')
 	plt.xlabel('Classe Prevista')
 	plt.ylabel('Classe Real')
 	plt.show()
