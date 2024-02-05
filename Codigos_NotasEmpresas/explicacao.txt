@@ -1,0 +1,60 @@
+% de precisão = dados os pesos gerados e o arquivo base das notas das empresas, a porcentagem de semelhança nas avaliações
+
+ex.: "MuitoRelevante" == "MuitoRelevante"
+
+# ==========================================================
+
+Boa tarde/Boa noite, Muriel!
+
+Primeiramente, perdão por não ter mandado nada na sexta nem nada pelo decorrer do dia de hoje. Realmente eu estava me esforçando mas as coisas foram mais difíceis do que eu pensava e passei um bom tempo em cima solucionando. Boa parte foi por uma má escrita do código, sem documentação adequada, que dificultou a depuração e a correção do código. Ao longo desse tempo, melhorei (e muito!) a documentação e assim consegui me orientar no código e produzir o conhecimento desejado. Segue abaixo mais detalhes!
+
+Foram feitos 3 códigos: "analisePesosRelatorios.py", "analisePesos.py" e "comparacaoEmpresasAleatorias.py".
+
+# analisePesosRelatorios.py
+
+Serve para verificar a precisão* de pesos, referente à nota empírica. 
+Nenhum dos pesos alcançou uma precisão de 100%, o que eu considero muito bom, pois mostra que a utilidade dos pesos é assimilada e ajuda a avaliar uma empresa de forma mais correta (seja para pior ou para melhor).
+Esse código serviu como base para o próximo código.
+
+* precisão = entende-se que as notas da empresa (uma fazendo o somatório e outra usando os pesos) se mantiveram, garantindo uma segurança de que a empresa está sendo classificada corretamente
+
+# analisePesos.py
+
+Foi realizada uma análise da quantidade de pesos em cada categoria de precisão, mantendo uma certa prioridade escolhida anteriormente de deixar o peso da "Reputação" e da "Metodologia" maior que os demais pesos. Foi entendida há uma divisão: quase a metade dos pesos analisados ficam com 90%+ de precisão e a outra metade fica com 85%- de precisão, como mostra a imagem "0QntdPrecisaoPesos".
+Minha interpretação é de que os pesos contidos na metade inferior de precisão não seriam úteis, já que divergem muito do resultado esperado. A metade superior me pareceu mais agradável, pois mantém uma quantidade boa de notas iguais após a avaliação com os pesos e permite que seja percebida as alterações de notas onde realmente necessitava de alteração.
+Esse código permite mais análises, porém não foram realizadas, por motivos de nosso foco ser outro (os objetivos estabelecidos na nossa última reunião).
+
+# comparacaoEmpresasAleatorias.py
+
+Foi escolhido um dos pesos com 95% de precisão, um número de rodadas (30) e um número de empresas para serem geradas aleatoriamente por rodada (10000). Foi verificado, dada as empresas aleatórias e o peso escolhido, quantas empresas se mantinham na mesma nota. Foram gerados alguns gráficos que nos ajudam a entender melhor o cenário (nomes abaixo, assim como imagens em anexo), como se segue:
+
+- "1PorcentagemEmpresas" e "2NumeroEmpresas"
+
+A geração randômica aponta para uma maior distribuição de empresas de nota "Relevante". Acredito que é uma informação importante, já que nos mostra que, para ser da maior nota "MuitoRelevante", é necessário de que a reputação e a metodologia da empresa devem ser relevantes.
+
+- "3NumeroNotas"
+
+Gráfico muito legal, pois mostra uma média de empresas por notas e quais transicionaram ('P' = PoucoRelevante, 'R' = Relevante, 'M' = MuitoRelevante; "PR" = uma empresa fez uma transição de sua nota do "PoucoRelevante" para o "Relevante").
+Há uma grande quantidade de empresas que mantiveram suas notas, porém só as empresas "PoucoRelevante" conseguiram ter um aumento na nota. Para mim, indica (mais uma vez) a relevância dos pesos dado para a reputação e a metodologia da empresa, sendo fatores decisivos.
+
+- "4MatConfMedia", "5MatConfMediaPorc", "6MatConfMelhor" e "7MatConfPior"
+
+A quantidade de empresas "MuitoRelevante" dá uma assustada, pois parece um elemento escasso. Podemos ver pelo lado negativo, que podemos dizer que 
+
+- "8BarErrNotas"
+- "9AnaliseTransicao"
+
+
+Acima dos pormenores, quero dizer que sigo bastante focado, gastando boa parte do meu dia empenhado em produzir algo para o nosso trabalho. Obrigado pela atenção e compreensão! Sigamos firmes!
+
+Obs.: amanhã e quarta ficarei ocupado com compromissos de saúde, mas creio que podemos fazer uma vídeo-chamada na quarta final da tarde (16:30). O que acha? Podemos conversar na quinta também. Essa semana será bem puxada.
+
+Abraços,
+JDMN
+
+# ==========================================================
+
+1o gráfico - Matriz de Confusão - Média da precisão dos N casos (randomGenerationComparison)
+2o gráfico - Gráfico de barras de erros - Média da precisão dos N casos (randomGenerationComparison)
+3o gráfico - Matriz de Confusão - Melhor caso da precisão dos N casos (randomGenerationComparison)
+4o gráfico - Matriz de Confusão - Pior caso da precisão dos N casos (randomGenerationComparison)
