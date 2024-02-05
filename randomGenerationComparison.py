@@ -15,7 +15,7 @@ import seaborn as sns
 # ================================================================================================
 
 QNTD_EMP = 10000
-MAGIC_NUMBER = 1
+MAGIC_NUMBER = 5
 pesoEscolhido = [10,5,8,6,5,10] # [pes_rep,pes_per,pes_cob,pes_esc,pes_abr,pes_met], um dos que fazer 95% de precisão
 notasPossiveis = ["PoucoRelevante","Relevante","MuitoRelevante"]
 
@@ -83,60 +83,58 @@ with open('randomCompanies.csv', 'w', newline='') as r:
 			notaOriginal = notaEmpresas(somatorio)
 			notaPeso = notaEmpresasPeso([rep,per,cob,esc,abr,met])
 
-			conf = notasPossiveis.index(notaOriginal) - notasPossiveis.index(notaPeso)
-			
+			conf = notasPossiveis.index(notaPeso) - notasPossiveis.index(notaOriginal)
+			#print(notaOriginal + " || " + str(conf) + " || " + notaPeso)
 			if notaOriginal == "PoucoRelevante":
 				if conf == 0:
 					#iguais.append([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
-					print(pp)
 					equal += 1
 					pp += 1
 				elif conf == 1:
 					#falsosP.append([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
 					diffP += 1
 					pr += 1
-					print(pr)
 				elif conf == 2:
 					#falsosP.append([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
 					diffP += 1
 					pm += 1
-					print(pm)
+					print("pm")
 			elif notaOriginal == "Relevante":
 				if conf == 0:
 					#iguais.append([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
 					equal += 1
 					rr += 1
-					print(rr)
 				elif conf == -1:
 					#falsosN.append([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
 					diffN += 1
 					rp += 1
-					print(rp)
 				elif conf == 1:
 					#falsosP.append([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
 					diffP += 1
 					rm += 1
-					print(rm)
 			elif notaOriginal == "MuitoRelevante":
 				if conf == 0:
 					#iguais.append([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
 					equal += 1
 					mm += 1
-					print(mm)
 				elif conf == -1:
 					#falsosN.append([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
 					diffN += 1
 					mr += 1
-					print(mr)
 				elif conf == -2:
 					#falsosN.append([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
 					diffN += 1
 					mp += 1
-					print(mp)
+					print("mp")
 
-			print([equal,diffP,diffN,pp,pr,pm,rp,rr,rm,mp,mr,mm])
 			rc.writerow([rep,per,cob,esc,abr,met,somatorio,notaOriginal,notaPeso])
 
+		print("Resultado da rodada: ")
+		print([equal,diffP,diffN,pp,pr,pm,rp,rr,rm,mp,mr,mm])
+		print("Soma 1a parte")
+		print(equal+diffP+diffN)
+		print("Soma 2a parte")
+		print(pp+pr+pm+rp+rr+rm+mp+mr+mm)
 		print("Num. Empresas: " + str(QNTD_EMP))
 		print("Notas iguais: " + str(equal))
 		print("Falsos Positivos: " + str(diffP))
@@ -196,35 +194,50 @@ with open('randomCompanies.csv', 'w', newline='') as r:
 	mediaMM = float(somaMM/MAGIC_NUMBER)
 	print(mediaPP,mediaPR,mediaPM,mediaRP,mediaRR,mediaRM,mediaMP,mediaMR,mediaMM)
 	#'''
-	#--- plota o gráfico em matriz de confusão
-	matriz_real = np.array([[mediaPP,mediaPR,mediaPM],[mediaRP,mediaRR,mediaRM],[mediaMP,mediaMR,mediaRM]])
-
-	# ['Classe 0', 'Classe 1', 'Classe 2'] = ['PoucoRelevante', 'Relevante', 'MuitoRelevante']
-	#sns.heatmap(matriz_real, annot=True, fmt='f', cmap='Blues', xticklabels=['PoucoRelevante', 'Relevante', 'MuitoRelevante'], yticklabels=['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
-	#plt.xlabel('Classe Prevista')
-	#plt.ylabel('Classe Real')
-	#plt.title('Matriz de Confusão')
-	#plt.show()
-
-	# Plotagem da matriz de confusão
+	# Matriz de confusão - Média
+	matriz_real = np.array([[mediaPP,mediaPR,mediaPM],[mediaRP,mediaRR,mediaRM],[mediaMP,mediaMR,mediaMM]])
 	plt.imshow(matriz_real, interpolation='nearest', cmap=plt.cm.Blues)
-	plt.title('Matriz de Confusão')
+	plt.title('Matriz de Confusão - Média')
 	plt.colorbar()
-
-	# Rotulação dos eixos
 	tick_marks = np.arange(len(matriz_real))
 	plt.xticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
 	plt.yticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
-
-	# Adiciona os valores de cada célula
 	for i in range(len(matriz_real)):
 	    for j in range(len(matriz_real)):
 	        plt.text(j, i, str(matriz_real[i][j]), horizontalalignment='center', verticalalignment='center', color='black')
-
 	plt.xlabel('Classe Prevista')
 	plt.ylabel('Classe Real')
 	plt.show()
 
+	# Matriz de confusão - Melhor caso
+	matriz_real = np.array([maximo[3],maximo[4],maximo[5]],[maximo[6],maximo[7],maximo[8]],[maximo[9],maximo[10],maximo[11]])
+	plt.imshow(matriz_real, interpolation='nearest', cmap=plt.cm.Blues)
+	plt.title('Matriz de Confusão - Melhor caso')
+	plt.colorbar()
+	tick_marks = np.arange(len(matriz_real))
+	plt.xticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
+	plt.yticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
+	for i in range(len(matriz_real)):
+	    for j in range(len(matriz_real)):
+	        plt.text(j, i, str(matriz_real[i][j]), horizontalalignment='center', verticalalignment='center', color='black')
+	plt.xlabel('Classe Prevista')
+	plt.ylabel('Classe Real')
+	plt.show()
+
+	# Matriz de confusão - Pior Caso
+	matriz_real = np.array([minimo[3],minimo[4],minimo[5]],[minimo[6],minimo[7],minimo[8]],[minimo[9],minimo[10],minimo[11]])
+	plt.imshow(matriz_real, interpolation='nearest', cmap=plt.cm.Blues)
+	plt.title('Matriz de Confusão - Pior caso')
+	plt.colorbar()
+	tick_marks = np.arange(len(matriz_real))
+	plt.xticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
+	plt.yticks(tick_marks, ['PoucoRelevante', 'Relevante', 'MuitoRelevante'])
+	for i in range(len(matriz_real)):
+	    for j in range(len(matriz_real)):
+	        plt.text(j, i, str(matriz_real[i][j]), horizontalalignment='center', verticalalignment='center', color='black')
+	plt.xlabel('Classe Prevista')
+	plt.ylabel('Classe Real')
+	plt.show()
 
 	# plota o gráfico de barras de erro
 
