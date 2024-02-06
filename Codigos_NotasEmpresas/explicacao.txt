@@ -16,7 +16,11 @@ Serve para verificar a precisão* de pesos, referente à nota empírica.
 Nenhum dos pesos alcançou uma precisão de 100%, o que eu considero muito bom, pois mostra que a utilidade dos pesos é assimilada e ajuda a avaliar uma empresa de forma mais correta (seja para pior ou para melhor).
 Esse código serviu como base para o próximo código.
 
+<<<<<<< HEAD
 *precisão = entende-se que as notas da empresa (uma fazendo o somatório e outra usando os pesos) se mantiveram, garantindo uma segurança de que a empresa está sendo classificada corretamente
+=======
+* precisão = entende-se que as notas da empresa (uma fazendo o somatório e outra usando os pesos) se mantiveram, garantindo uma segurança de que a empresa está sendo classificada corretamente
+>>>>>>> e0384b012deb1bebb0f0a855c7f40dfa799ca8e7
 
 # analisePesos.py
 
@@ -39,6 +43,7 @@ Há uma grande quantidade de empresas que mantiveram suas notas, porém só as e
 
 - "4MatConfMedia", "5MatConfMediaPorc", "6MatConfMelhor" e "7MatConfPior"
 
+<<<<<<< HEAD
 Analisando a imagem pelo lado negativo, que podemos dizer a quantidade de empresas avaliadas como "MuitoRelevante" são escassas. Pelo lado positivo, a grande maioria manteve sua nota. Acredito que as cores confirmam o que antes já foi analisado: há uma predominância na nota "Relevante" e pouco do resto trocou de nota.
 
 - "8BarErrNotas"
@@ -54,6 +59,17 @@ Enfim, esses códigos permitem fazer mais coisas. Fico à disposição, caso sur
 Acima dos pormenores, quero dizer que sigo bastante focado, gastando boa parte do meu dia empenhado em produzir algo para o nosso trabalho. Obrigado pela atenção e compreensão! Sigamos firmes!
 
 Obs.: hoje (terça) e quarta ficarei ocupado com compromissos de saúde, mas creio que podemos fazer uma vídeo-chamada na quarta final da tarde (16:30). O que acha? Quinta eu vou estar no nosso laboratório também. Essa semana será bem puxada, pois a prova de Compiladores será na próxima semana.
+=======
+A quantidade de empresas "MuitoRelevante" dá uma assustada, pois parece um elemento escasso. Podemos ver pelo lado negativo, que podemos dizer que 
+
+- "8BarErrNotas"
+- "9AnaliseTransicao"
+
+
+Acima dos pormenores, quero dizer que sigo bastante focado, gastando boa parte do meu dia empenhado em produzir algo para o nosso trabalho. Obrigado pela atenção e compreensão! Sigamos firmes!
+
+Obs.: amanhã e quarta ficarei ocupado com compromissos de saúde, mas creio que podemos fazer uma vídeo-chamada na quarta final da tarde (16:30). O que acha? Podemos conversar na quinta também. Essa semana será bem puxada.
+>>>>>>> e0384b012deb1bebb0f0a855c7f40dfa799ca8e7
 
 Abraços,
 JDMN
