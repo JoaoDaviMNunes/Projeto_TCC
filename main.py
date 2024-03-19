@@ -8,7 +8,7 @@ import statistics
 import math
 import random
 import sqlite3
-import gerenciadorDados
+import moduloDados
 
 
 

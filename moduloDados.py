@@ -5,12 +5,18 @@ import csv
 import math
 import random
 import sqlite3
+import sys
+
+# ===========================================================================================================
+# GERENCIADOR DE DADOS
 
 def cria_tabela(cursor, nometabela):
 	if nometabela == 'probabilidades':
 		cursor.execute("CREATE TABLE IF NOT EXISTS "+nometabela+"(condicao1 text NOT NULL, condicao2 text, probabilidadeA VARCHAR(5) NOT NULL, probabilidadeAB VARCHAR(5), ano integer NOT NULL, empresa text NOT NULL, fonte text NOT NULL)")
 	elif nometabela == 'dados':
 		cursor.execute("CREATE TABLE IF NOT EXISTS "+nometabela+"(condicao1 text NOT NULL, condicao2 text, valor VARCHAR(10) NOT NULL, metrica text NOT NULL, ano integer NOT NULL, empresa text NOT NULL, fonte text NOT NULL)")
+	else:
+		print('nenhuma das tabelas base. tente novamente!')
 
 def atualizaDado_tabela(cursor, nometabela, valornovo,nomecampopesquisa, valorpesquisa):
 	cursor.execute("UPDATE "+nometabela+" SET "+nomecampo+" = "+valornovo+" WHERE "+nomecampopesquisa+" = "+valorpesquisa)
@@ -46,3 +52,32 @@ def comandolivre_tabela(cursor, command):
 		print("Comando executado com sucesso.")
 	except sqlite3.OperationalError as e:
 		print("Erro ao executar o comando:", e)
+
+def gerenciadorDados(acao, material, nometabela):
+	conn = sqlite3.connect(bancoDados)
+	cursor = conn.cursor()
+	# 0 - vem do Mapeador de Riscos
+	# 1 - vem do Módulo de Relatórios
+	# 2 - vem do Módulo de Simulações
+	# 3 - vem dos curadores e consultores
+	# 7 - numero para teste (comando livre)
+	if acao == 0:
+		insereDados_tabela(cursor,material,nometabela)
+	elif acao == 1:
+		
+
+
+
+# ===========================================================================================================
+
+def main():
+	print('Módulo de Dados!')
+	print('Digite o que deseja')
+	opc = input()
+	comandolivre_tabela(cursor, opc)
+
+	conn.commit()
+	conn.close()
+
+if __name__ == '__main__':
+	main()
