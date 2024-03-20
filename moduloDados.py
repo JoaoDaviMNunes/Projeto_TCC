@@ -8,6 +8,16 @@ import sqlite3
 import sys
 
 # ===========================================================================================================
+# MAPEADOR DE RISCOS
+def mapeador_riscos(dados):
+	return dados
+
+# ===========================================================================================================
+# PROCESSADOR DE DADOS
+def processador_dados(dados):
+	return mapeador_riscos(dados)
+
+# ===========================================================================================================
 # GERENCIADOR DE DADOS
 
 def cria_tabela(cursor, nometabela):
@@ -56,14 +66,21 @@ def comandolivre_tabela(cursor, command):
 def gerenciadorDados(acao, material, nometabela):
 	conn = sqlite3.connect(bancoDados)
 	cursor = conn.cursor()
-	# 0 - vem do Mapeador de Riscos
-	# 1 - vem do Módulo de Relatórios
-	# 2 - vem do Módulo de Simulações
-	# 3 - vem dos curadores e consultores
+	# 1 - vem do Mapeador de Riscos (inserção especial - dados tratados)
+	# 2 - vem do Módulo de Relatórios ou dos curadores e consultores (inserção normal)
+	# 3 - vem do Módulo de Simulações (requisição)
 	# 7 - numero para teste (comando livre)
-	if acao == 0:
-		insereDados_tabela(cursor,material,nometabela)
-	elif acao == 1:
+	# 0 - encerrar o módulo de dados
+	while acao:
+		if acao == 1:
+			insereDados_tabela(cursor,material,nometabela)
+			break
+		elif acao == 2:
+			insereDados_tabela()
+
+
+
+
 		
 
 
