@@ -10,6 +10,7 @@ import sys
 # ===========================================================================================================
 # MAPEADOR DE RISCOS
 def mapeador_riscos(dados):
+	# ... REALIZAR ORGANIZAÇÃO DOS DADOS
 	return dados
 
 # ===========================================================================================================
@@ -50,11 +51,22 @@ def deletaItem_tabela(cursor, nometabela, condicao):
 		cursor.execute("DELETE from " + nometabela + " WHERE " + condicao)
 		print("Dados removidos")
 	except sqlite3.Error as erro:
-		print ("Erro ao excluir:", erro)
+		print ("Erro ao excluir: ", erro)
 
 def mostra_tabela(cursor, nometabela):
 	cursor.execute("SELECT * from " + nometabela)
 	print(cursor.fetchall())
+
+def defineChaves(material):
+	chaves = []
+
+	# ... DESENVOLVER ...
+	
+	return chaves
+
+def buscaDados_tabela(cursor, chaves):
+	tabelas = []
+	return tabelas
 
 def comandolivre_tabela(cursor, command):
 	try:
@@ -71,14 +83,21 @@ def gerenciadorDados(acao, material, nometabela):
 	# 3 - vem do Módulo de Simulações (requisição)
 	# 7 - numero para teste (comando livre)
 	# 0 - encerrar o módulo de dados
-	while acao:
-		if acao == 1:
-			insereDados_tabela(cursor,material,nometabela)
-			break
-		elif acao == 2:
-			insereDados_tabela()
+	if acao == 1:
+		insereDados_tabela(cursor,material,nometabela)
+	elif acao == 2:
+		insereDados_tabela()
+	elif acao == 3:
+		chaves = defineChaves(material)
+		buscaDados_tabela(cursor, chaves)
+	elif acao == 7:
+			opc = input('Digite o comando que deseja (banco de dados): ')
+			comandolivre_tabela(cursor, opc)
+	elif acao == 0:
+		pass
 
-
+	conn.commit()		# enviando alterações para o banco de dados
+	conn.close()		# fechando o acesso ao banco de dados
 
 
 		
@@ -89,12 +108,7 @@ def gerenciadorDados(acao, material, nometabela):
 
 def main():
 	print('Módulo de Dados!')
-	print('Digite o que deseja')
-	opc = input()
-	comandolivre_tabela(cursor, opc)
-
-	conn.commit()
-	conn.close()
+	gerenciadorDados()
 
 if __name__ == '__main__':
 	main()
