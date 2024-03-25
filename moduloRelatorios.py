@@ -9,31 +9,46 @@ import sys
 # POPULADOR DE DADOS
 def populador_dados(dados):
 	print('POPULADOR DE DADOS')
-	moduloDados(dados)
+	moduloDados.gerenciadorDados(2,dados,'')
 
 # ===========================================================================================================
 # CLASSIFICAÇÃO DE RELATÓRIOS
 def classificacao_relatorios(dados):
 	print('CLASSIFICAÇÃO DE RELATÓRIOS')
 	populador_dados(dados)
+	pass
 
 # ===========================================================================================================
 # MODELO DE ANÁLISE DE RELATÓRIOS
-def modelo_analise_relatorios(dados):
+def modelo_analise_relatorios(entrada):
 	print('MODELO DE ANÁLISE DE RELATÓRIOS')
-	classificacao_relatorios(dados)
+	for dados in entrada:
+		totalSomatorio = 
+
+	classificacao_relatorios(entrada)
+	pass
 
 
 # ===========================================================================================================
 # SELEÇÃO DE MÉTRICAS
-def selecao_metricas():
+def selecao_metricas(entrada):
 	print('SELEÇÃO DE MÉTRICAS')
-	modelo_analise_relatorios(dados)
+	for dados in entrada:
+		# ... pedir para o chatGPT ranquear a empresa dentro dos nossos critérios (dado[0] = nome da empresa)
+		metricasEmpresa = 1 # query chatGPT
+		dados.extend(metricasEmpresa)
+
+	modelo_analise_relatorios(entrada)
+	pass
 
 
 # ===========================================================================================================
 def main():
-	teste = 0
+	if os.path.exists(sys.argv[1]):
+		entrada = sys.argv[1]
+		selecao_metricas(entrada)
+	else:
+		print('O arquivo \''+sys.argv[1]+'\' não existe no diretório')
 
 if __name__ == '__main__':
 	main()

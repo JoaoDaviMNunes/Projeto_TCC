@@ -34,7 +34,7 @@ def agrupador_informacoes():
 
 def simulador_riscos(analise):
 	# .... função
-	gerenciadorDados()
+	moduloDados.gerenciadorDados()
 	agrupador_informacoes()
 
 # ===========================================================================================================
@@ -46,7 +46,6 @@ def analisador_negocios(requisicao):
 
 	arquivo = open(requisicao,'r', encoding='utf-8')
 	for linha in arquivo:
-		
 
 	arquivo.close()
 	analise = [setor,tpataque,local,ativos]

@@ -29,7 +29,7 @@ def cria_tabela(cursor, nometabela):
 	else:
 		print('nenhuma das tabelas base. tente novamente!')
 
-def atualizaDado_tabela(cursor, nometabela, valornovo,nomecampopesquisa, valorpesquisa):
+def atualizaDado_tabela(cursor, nometabela, nomecampo, valornovo,nomecampopesquisa, valorpesquisa):
 	cursor.execute("UPDATE "+nometabela+" SET "+nomecampo+" = "+valornovo+" WHERE "+nomecampopesquisa+" = "+valorpesquisa)
 
 def insereDados_tabela(cursor, row, nometabela):
@@ -76,6 +76,7 @@ def comandolivre_tabela(cursor, command):
 		print("Erro ao executar o comando:", e)
 
 def gerenciadorDados(acao, material, nometabela):
+	bancoDados = 'bancoTCC.db'
 	conn = sqlite3.connect(bancoDados)
 	cursor = conn.cursor()
 	# 1 - vem do Mapeador de Riscos (inserção especial - dados tratados)
