@@ -1,0 +1,21 @@
+EMPRESA,ANO,INFERÊNCIA (A),INFERÊNCIA (B),VALOR,MÉTRICA,FONTE
+Sophos,2021,custo,ransomware,"$170,404",dólar,The State of Ransomware in Retail 2021 - Sophos
+Sophos,2021,custo,ransomware | setor de comércio,"$147,811",dólar,The State of Ransomware in Retail 2021 - Sophos
+Sophos,2021,custo,brecha,$4.45M,dólar,The State of Ransomware in Retail 2021 - Sophos
+IBM,2023,custo | brecha,Brasil,$1.22M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Estados Unidos,$9.48M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Oriente Médio,$8.07M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Canadá,$5.13M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Alemanha,$4.67M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Japão,$4.52M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Reino Unido,$4.21M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,França,$4.08M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Itália,$3.86M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,América Latina,$3.69M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Coréia do Sul,$3.48M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,África do Sul,$2.79M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Austrália,$2.70M,dólar,Cost of a Data Breach Report 2023 - IBM
+IBM,2023,custo | brecha,Índia,$2.18M,dólar,Cost of a Data Breach Report 2023 - IBM
+Sonicwall,2022,ransomware,-,693.3M,ataques,2023 SonicWall Cyber Threat Report
+Sonicwall,2022,malware,-,5.5B,ataques,2023 SonicWall Cyber Threat Report
+IBM,2021,custo | brecha,pequenas e médias empresas,$4.2M,dólar,https://www.ibm.com/security/data-breach

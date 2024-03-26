@@ -1,0 +1,159 @@
+EMPRESA,ANO,INFERÊNCIA (A),INFERÊNCIA (B),P(A),P(A|B),FONTE
+Positive Technologies,2020,ciberataque,aplicação web,-,0.17,https://www.ptsecurity.com/ww-en/analytics/web-vulnerabilities-2020-2021/
+ThoughtLab.,2022,melhorias,vazamento,-,0.38,https://thoughtlabgroup.com/cyber-solutions-riskier-world/
+Verizon,2022,vazamento de dados,elemento humano,-,0.82,https://www.verizon.com/business/resources/reports/2022/dbir/2022-data-breach-investigations-report-dbir.pdf
+Forbes,2022,plano de cibersegurança,empresa pequena,-,0.43,https://www.forbes.com/sites/chuckbrooks/2022/01/21/cybersecurity-in-2022--a-fresh-look-at-some-very-alarming-stats/?sh=77c0868d6b61/
+Positive Technologies,2022,setor de comércio,ransomware,-,0.79,https://www.ptsecurity.com/ww-en/analytics/cybersecurity-threatscape-2022-q2/
+Verizon,2023,phishing,e-mail,-,0.96,https://www.verizon.com/business/resources/reports/dbir/
+Cybertalk.org,2022,phishing,vazamento de dados,-,0.9,https://www.cybertalk.org/2022/03/30/top-15-phishing-attack-statistics-and-they-might-scare-you/
+Positive Technologies,2022,vazamento de dados confidenciais,malware,-,0.4,https://www.ptsecurity.com/ww-en/analytics/cybersecurity-threatscape-2022-q2/
+Positive Technologies,2022,roubo de dados de clientes,malware | setor de comércio,-,0.7,https://www.ptsecurity.com/ww-en/analytics/cybersecurity-threatscape-2022-q2/
+Threat Intelligence,2023,ciberataque,setor de comércio,-,0.24,https://www.threatintelligence.com/blog/retail-cybersecurity/
+Threat Intelligence,2023,E-commerce,setor de comércio,-,0.324,https://www.threatintelligence.com/blog/retail-cybersecurity/
+Fortinet,2021,phishing de credenciais,setor de comércio,-,0.3043,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
+Fortinet,2021,malware,setor de comércio,-,0.2174,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
+Fortinet,2021,ransomware,setor de comércio,-,0.1304,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
+Fortinet,2021,DDoS,setor de comércio,-,0.1014,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
+Fortinet,2021,outros ataques,setor de comércio,-,24.65,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
+Medicina S/A,2022,vazamento de dados,Brasil,-,0.43,https://medicinasa.com.br/ciberataque-saude/
+Medicina S/A,2022,setor de comércio,ciberataque | Brasil,-,0.19,https://medicinasa.com.br/ciberataque-saude/
+Medicina S/A,2022,setor financeiro,ciberataque | Brasil,-,0.09,https://medicinasa.com.br/ciberataque-saude/
+IBM,2023,uso de aplicações na nuvem,vazamento de dados,-,0.82,https://www.ibm.com/downloads/cas/E3G5JMBP
+Tausight,2023,perda de receita,ciberataque | setor de saúde,-,0.9,https://www.tausight.com/healthcare-and-cybersecurity-key-statistics/
+Astra Security,2023,vazamento de dados no setor de saúde,funcionários negligentes,-,0.61,https://www.getastra.com/blog/security-audit/healthcare-data-breach-statistics/
+Astra Security,2020,vazamento de dados,setor de saúde,-,0.93,https://www.getastra.com/blog/security-audit/healthcare-data-breach-statistics/
+Astra Security,2022,vazamento de segurança,setor de saúde,-,0.9,https://www.getastra.com/blog/security-audit/healthcare-data-breach-statistics/
+Astra Security,2022,vazamento de segurança,grandes empresas | setor de saúde,-,0.3,https://www.getastra.com/blog/security-audit/healthcare-data-breach-statistics/
+Astra Security,2023,ciberataque,pequenas e médias empresas,-,0.43,https://www.getastra.com/blog/security-audit/small-business-cyber-attack-statistics/
+Astra Security,2023,grande vazamento de dados,setor de saúde,-,0.3,https://www.getastra.com/blog/security-audit/small-business-cyber-attack-statistics/
+Astra Security,2023,erro humano,vazamento de segurança,-,0.95,https://www.getastra.com/blog/security-audit/small-business-cyber-attack-statistics/
+Astra Security,2023,falência,ransomware | pequenas e médias empresas,-,0.75,https://www.getastra.com/blog/security-audit/small-business-cyber-attack-statistics/
+Astra Security,2022,vazamento de dados,phishing,-,0.36,https://www.getastra.com/blog/security-audit/phishing-attack-statistics/
+Verizon,2022,ciberataque,pequenas e médias empresas,-,0.43,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Sophos,2023,ransomware,setor financeiro,-,0.64,"https://news.sophos.com/en-us/2023/07/13/the-state-of-ransomware-in-financial-services-2023/#:~:text=The%202023%20survey%20revealed%20that,sector%20in%20the%202021%20report."
+Sophos,2023,frequência de ataque de ransomware,setor financeiro,-,0.66,"https://news.sophos.com/en-us/2023/07/13/the-state-of-ransomware-in-financial-services-2023/#:~:text=The%202023%20survey%20revealed%20that,sector%20in%20the%202021%20report."
+CircleID,2022,phishing,setor de saúde,-,0.507,https://circleid.com/posts/20230208-healthcare-industry-was-the-most-common-victim-of-third-party-breaches-in-2022
+Verizon,2023,atores externos,vazamento de dados,-,0.83,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,vazamento de dados,-,0.19,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,aplicação web,brecha,-,0.6,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,ransomware,incidente,-,0.62,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,asset: server,brecha,-,0.82,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,asset: person,brecha,-,0.21,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,asset: user dev,brecha,-,0.17,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,dos,-,1,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,setor financeiro,-,0.66,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,setor financeiro,-,0.34,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: financeiro,setor financeiro,-,0.97,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados pessoais comprometidos,setor financeiro,-,0.74,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de credenciais comprometidos,setor financeiro,-,0.38,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,setor de saúde,-,0.66,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,setor de saúde,-,0.35,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: financeiro,setor de saúde,-,0.98,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados pessoais comprometidos,setor de saúde,-,0.67,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de credenciais comprometidos,setor de saúde,-,0.36,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados médicos comprometidos,setor de saúde,-,0.54,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,setor de comércio,-,0.94,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,setor de comércio,-,0.07,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: financeiro,setor de comércio,-,1,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados pessoais comprometidos,setor de comércio,-,0.23,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de credenciais comprometidos,setor de comércio,-,0.35,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de pagamentos comprometidos,setor de comércio,-,0.37,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,pequenas e médias empresas,-,0.94,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,pequenas e médias empresas,-,0.07,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: financeiro,pequenas e médias empresas,-,0.98,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados internos comprometidos,pequenas e médias empresas,-,0.37,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de credenciais comprometidos,pequenas e médias empresas,-,0.54,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,grandes empresas,-,0.89,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,grandes empresas,-,0.13,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: financeiro,grandes empresas,-,0.97,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados internos comprometidos,grandes empresas,-,0.41,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de credenciais comprometidos,grandes empresas,-,0.37,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,região: APAC,-,0.92,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,região: APAC,-,0.09,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: financeiro,região: APAC,-,0.61,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: espionagem,região: APAC,-,0.39,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados internos comprometidos,região: APAC,-,0.56,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados secretos comprometidos,região: APAC,-,0.42,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de credenciais comprometidos,região: APAC,-,0.29,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,região: EMEA,-,0.98,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,região: EMEA,-,0.02,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: financeiro,região: EMEA,-,0.91,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: espionagem,região: EMEA,-,0.08,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados internos comprometidos,região: EMEA,-,0.37,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de sistema comprometidos,região: EMEA,-,0.35,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de credenciais comprometidos,região: EMEA,-,0.53,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,região: LAC,-,0.95,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,região: LAC,-,0.05,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: financeiro,região: LAC,-,0.93,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: espionagem,região: LAC,-,0.11,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados internos comprometidos,região: LAC,-,0.32,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de sistema comprometidos,região: LAC,-,0.55,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de credenciais comprometidos,região: LAC,-,0.23,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores externos,região: NA,-,0.94,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,atores internos,região: NA,-,0.12,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: financeiro,região: NA,-,0.99,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,motivo: espionagem,região: NA,-,0.01,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados internos comprometidos,região: NA,-,0.5,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados pessoais comprometidos,região: NA,-,0.38,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+Verizon,2023,dados de credenciais comprometidos,região: NA,-,0.67,https://www.verizon.com/business/en-gb/resources/reports/dbir/
+IBM,2023,vazamento,dados guardados na nuvem,-,0.82,IBM Cost of a vazamento de dados Report 2023
+IBM,2023,ransomware,brecha,-,0.24,IBM Cost of a vazamento de dados Report 2023
+IBGE,2021,setor de comércio,Brasil,-,0.364,https://www.ibge.gov.br/estatisticas/economicas/comercio/22649-demografia-das-empresas-e-estatisticas-de-empreendedorismo.html
+IBGE,2021,setor de saúde,Brasil,-,0.064,https://www.ibge.gov.br/estatisticas/economicas/comercio/22649-demografia-das-empresas-e-estatisticas-de-empreendedorismo.html
+IBGE,2021,setor financeiro,Brasil,-,0.03,https://www.ibge.gov.br/estatisticas/economicas/comercio/22649-demografia-das-empresas-e-estatisticas-de-empreendedorismo.html
+OECD,2023,setor de comércio,-,0.3,-,https://stats.oecd.org/index.aspx?queryid=91
+WHO,2023,setor de saúde,-,0.1,-,https://www.who.int/data/gho/data/themes/topics/health-workforce
+IMF,2023,setor financeiro,-,0.07,-,https://www.imf.org/en/Home
+Microsoft,2022,DDoS,Brasil,-,0.0175,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
+Microsoft,2022,DDoS,Estados Unidos,-,0.4502,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
+Microsoft,2022,DDoS,India,-,0.1322,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
+Microsoft,2022,DDoS,Europa,-,0.1049,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
+Microsoft,2022,DDoS,Leste Asiático,-,0.1125,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
+Microsoft,2022,DDoS,Coréia do Sul,-,0.0422,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
+Microsoft,2022,DDoS,Reino Unido,-,0.0223,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
+Microsoft,2022,DDoS,Australia,-,0.0202,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
+Stormwall,2022,DDoS,setor financeiro,-,0.34,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,setor de comércio,-,0.17,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,setor de saúde,-,0.01,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,setor de telecomunicações,-,0.26,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,setor de entretenimento,-,0.12,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,setor de educação,-,0.02,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,Estados Unidos,-,0.183,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,China,-,0.107,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,India,-,0.092,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,Russia,-,0.084,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,Inglaterra,-,0.072,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,Alemanha,-,0.068,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,França,-,0.053,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,Japão,-,0.047,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,Ucrânia,-,0.045,https://stormwall.network/ddos-report-stormwall-2022
+Stormwall,2022,DDoS,Brasil,-,0.042,https://stormwall.network/ddos-report-stormwall-2022
+Radware,2022,DDoS,setor financeiro,-,0.526,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de comércio,-,0.06,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de saúde,-,0.105,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de telecomunicações,-,0.047,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de educação,-,0.028,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor financeiro | região: Américas,-,0.315,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de saúde | região: Américas,-,0.239,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de telecomunicações | região: Américas,-,0.123,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor financeiro | região: EMEA,-,0.706,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de saúde | região: EMEA,-,0.0332,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de telecomunicações | região: EMEA,-,0.0113,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de educação | região: EMEA,-,0.0128,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor financeiro | região: APAC,-,0.0935,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de saúde | região: APAC,-,0.0261,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de telecomunicações | região: APAC,-,0.023,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de educação | região: APAC,-,0.0411,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,DDoS,setor de saúde | região: APAC,-,0.0261,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ciberataque,Estados Unidos,-,0.484,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ciberataque,India,-,0.0994,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ciberataque,Itália,-,0.0813,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ciberataque,Rússia,-,0.0722,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ciberataque,Canadá,-,0.0564,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ciberataque,Alemanha,-,0.0478,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ciberataque,Reino Unido,-,0.0397,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ataque por uma aplicação web,setor financeiro,-,0.03,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ataque por uma aplicação web,setor de comércio,-,0.253,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ataque por uma aplicação web,setor de educação,-,0.0333,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Radware,2022,ataque por uma aplicação web,setor de saúde,-,0.0331,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+TESTE,2024,phishing,Brasil,-,90,
