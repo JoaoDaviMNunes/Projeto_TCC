@@ -22,8 +22,11 @@ def classificacao_relatorios(dados):
 # MODELO DE ANÁLISE DE RELATÓRIOS
 def modelo_analise_relatorios(entrada):
 	print('MODELO DE ANÁLISE DE RELATÓRIOS')
+	pesos = [10,5,8,6,5,10]
 	for dados in entrada:
-		totalSomatorio = 
+		totalSomatorio = (dados[8] + dados[9] + dados[10] + dados[11] + dados[12] + dados [13])/2
+		totalPeso = (dados[8]*pesos[0] + dados[9]*pesos[1] + dados[10]*pesos[2] + dados[11]*pesos[3] + dados[12]*pesos[4] + dados[13]*pesos[5])/(pesos[0]+pesos[1]+pesos[2]+pesos[3]+pesos[4]+pesos[5])
+		
 
 	classificacao_relatorios(entrada)
 	pass
