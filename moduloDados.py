@@ -1,22 +1,58 @@
-import os
 import pandas as pd
 import numpy as np
 import csv
-import math
-import random
 import sqlite3
-import sys
-
-# ===========================================================================================================
-# MAPEADOR DE RISCOS
-def mapeador_riscos(dados):
-	# ... REALIZAR ORGANIZAÇÃO DOS DADOS
-	return dados
 
 # ===========================================================================================================
 # PROCESSADOR DE DADOS
 def processador_dados(dados):
-	return mapeador_riscos(dados)
+	print('PROCESSADOR DE DADOS')
+
+	for dado in dados:
+		if len(dado) == 15:			# se possui todos os 15 campos
+			if not dado[0] and not dado[1] and not dado[7] and not dado[8]:		# se possui os campos essenciais
+				if dado[9] != '' and dado[10] != '' and dado[11] != '' and dado[12] != '' and dado[13] != '' and dado[14] != '':		# se possui os campos das métricas
+					if dado[4] == '-':
+						gerenciadorDados(1, dado, XXXXX)
+
+	print('FECHANDO PROCESSADOR DE DADOS')
+	mapeador_riscos(dados)
+	pass
+
+# ===========================================================================================================
+# MAPEADOR DE RISCOS
+
+# SALVA NUM ARQUIVO AS LINHAS DE DADOS QUE NÃO ESTÃO FORMATADAS CORRETAMENTE
+def salvaErrados_dados(dados):
+	print('Alguns dados estão fora do padrão. Olhar o arquivo dadosErrados.csv !')
+	with open('dadosErradosMAPRIS.csv', 'w', encoding='utf-8') as csvfile:
+		csvfinal = csv.writer(csvfile)
+		csvfinal.writerows(dados)
+		print('Arquivo criado!')
+	pass
+
+# VERIFICA SE O DADO É TANGÍVEL OU NÃO
+def mapeador_riscos(dados):
+	print('MAPEADOR DE RISCOS')
+	dadosT = []			# dados tangíveis
+	dadosNT = []		# dados não tangíveis
+	errados = []
+
+	for dado in dados:
+		info = dado[6]			# dadoAB/métrica (T/NT)
+		if isinstance(info, float) or isinstance(info, int):
+			dadosNT.append(dado)
+		elif isinstance(info, str):
+			dadosT.append(dado)
+		else:
+			errados.append(dado)
+
+	print('FECHANDO MAPEADOR DE RISCOS')
+	processador_dados(dadosNT)
+	processador_dados(dadosT)
+	if len(errados) == 0:
+		salvaErrados_dados(errados)
+	pass
 
 # ===========================================================================================================
 # GERENCIADOR DE DADOS
@@ -87,7 +123,7 @@ def gerenciadorDados(acao, material, nometabela):
 	if acao == 1:
 		insereDados_tabela(cursor,material,nometabela)
 	elif acao == 2:
-		insereDados_tabela()
+		insereDados_tabela(cursor, material,nometabela)
 	elif acao == 3:
 		chaves = defineChaves(material)
 		buscaDados_tabela(cursor, chaves)
@@ -99,7 +135,8 @@ def gerenciadorDados(acao, material, nometabela):
 
 	conn.commit()		# enviando alterações para o banco de dados
 	conn.close()		# fechando o acesso ao banco de dados
-
+	print('FECHANDO GERENCIADOR DE DADOS')
+	pass
 
 		
 
@@ -110,6 +147,7 @@ def gerenciadorDados(acao, material, nometabela):
 def main():
 	print('Módulo de Dados!')
 	gerenciadorDados()
+	pass
 
 if __name__ == '__main__':
 	main()

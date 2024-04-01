@@ -41,7 +41,22 @@ ativos=[1,1,0,0,1,0]
 # ------------------------------------------------------------------
 # ------------------------------------------------------------------
 # ------------------------------------------------------------------
-DADOS DE ENTRADA (RELATÓRIOS, ESTATÍSTICAS, CURADORES, CONSULTORES) (14 campos)
-[empresa,ano,avaliação,infoA,infoB,dadoA,dadoAB,fonte,reputacao,periodicidade,cobertura,escopo,abrangencia,metodologia]
+DADOS DE ENTRADA (RELATÓRIOS, ESTATÍSTICAS, CURADORES, CONSULTORES) (15 campos)
+[empresa,ano,avaliação,infoA,infoB,dadoA,dadoAB,fonte,referencia,reputacao,periodicidade,cobertura,escopo,abrangencia,metodologia]
+empresa = [0]
+ano = [1]
+avaliação = [2]
+infoA = [3]
+infoB = [4]
+dadoA = [5]
+dadoAB = [6]
+fonte = [7]
+referencia = [8]
+reputacao = [9]
+periodicidade = [10]
+cobertura = [11]
+escopo = [12]
+abrangencia = [13]
+metodologia = [14]
 
 

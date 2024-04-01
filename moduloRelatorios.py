@@ -107,6 +107,7 @@ def main():
 		selecao_metricas(entrada)
 	else:
 		print('O arquivo \''+sys.argv[1]+'\' não existe no diretório')
+	pass
 
 if __name__ == '__main__':
 	main()
