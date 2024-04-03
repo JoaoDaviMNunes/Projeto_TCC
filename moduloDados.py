@@ -2,21 +2,23 @@ import pandas as pd
 import numpy as np
 import csv
 import sqlite3
+import sys
 
 # ===========================================================================================================
 # PROCESSADOR DE DADOS
-def processador_dados(dados):
+def processador_dados(dados, tab):
 	print('PROCESSADOR DE DADOS')
+	nometab = ['dadosT', 'dadosNT']
+	dadosCorretos = []
 
 	for dado in dados:
 		if len(dado) == 15:			# se possui todos os 15 campos
 			if not dado[0] and not dado[1] and not dado[7] and not dado[8]:		# se possui os campos essenciais
 				if dado[9] != '' and dado[10] != '' and dado[11] != '' and dado[12] != '' and dado[13] != '' and dado[14] != '':		# se possui os campos das métricas
-					if dado[4] == '-':
-						gerenciadorDados(1, dado, XXXXX)
+					dadosCorretos.append(dado)
 
+	gerenciadorDados(1, dadosCorretos, nometab[tab])
 	print('FECHANDO PROCESSADOR DE DADOS')
-	mapeador_riscos(dados)
 	pass
 
 # ===========================================================================================================
@@ -24,7 +26,7 @@ def processador_dados(dados):
 
 # SALVA NUM ARQUIVO AS LINHAS DE DADOS QUE NÃO ESTÃO FORMATADAS CORRETAMENTE
 def salvaErrados_dados(dados):
-	print('Alguns dados estão fora do padrão. Olhar o arquivo dadosErrados.csv !')
+	print('Alguns dados estão fora do padrão. Olhar o arquivo dadosErradosMAPRIS.csv !')
 	with open('dadosErradosMAPRIS.csv', 'w', encoding='utf-8') as csvfile:
 		csvfinal = csv.writer(csvfile)
 		csvfinal.writerows(dados)
@@ -48,9 +50,9 @@ def mapeador_riscos(dados):
 			errados.append(dado)
 
 	print('FECHANDO MAPEADOR DE RISCOS')
-	processador_dados(dadosNT)
-	processador_dados(dadosT)
-	if len(errados) == 0:
+	processador_dados(dadosT, 0)
+	processador_dados(dadosNT, 1)
+	if len(errados) > 0:
 		salvaErrados_dados(errados)
 	pass
 
@@ -80,7 +82,7 @@ def insereDados_tabela(cursor, row, nometabela):
 		cursor.execute("INSERT INTO " + nometabela + " VALUES (?, ?, ?, ?, ?, ?, ?)", (condicao1, condicao2, dadoA, dadoB, ano, empresa, fonte))
 		print("Dados inseridos com sucesso. ")
 	except sqlite3.IntegrityError:
-		print("Erro: A linha já existe na tabe")
+		print("Erro: A linha já existe na tabela")
 
 def deletaItem_tabela(cursor, nometabela, condicao):
 	try:
@@ -115,9 +117,8 @@ def gerenciadorDados(acao, material, nometabela):
 	bancoDados = 'bancoTCC.db'
 	conn = sqlite3.connect(bancoDados)
 	cursor = conn.cursor()
-	# 1 - vem do Mapeador de Riscos (inserção especial - dados tratados)
-	# 2 - vem do Módulo de Relatórios ou dos curadores e consultores (inserção normal)
-	# 3 - vem do Módulo de Simulações (requisição)
+	# 1 - vem do Mapeador de Riscos (inserção dos dados já tratados)
+	# 3 - requisição vindo do Módulo de Simulações a partir das chaves da requisição do usuário
 	# 7 - numero para teste (comando livre)
 	# 0 - encerrar o módulo de dados
 	if acao == 1:
@@ -125,28 +126,23 @@ def gerenciadorDados(acao, material, nometabela):
 	elif acao == 2:
 		insereDados_tabela(cursor, material,nometabela)
 	elif acao == 3:
-		chaves = defineChaves(material)
-		buscaDados_tabela(cursor, chaves)
+		dadostabela = buscaDados_tabela(cursor, material)
+		return dadostabela
 	elif acao == 7:
 			opc = input('Digite o comando que deseja (banco de dados): ')
-			comandolivre_tabela(cursor, opc)
-	elif acao == 0:
-		pass
+			comandolivre_tabela(cursor, opc, nometabela)
 
 	conn.commit()		# enviando alterações para o banco de dados
 	conn.close()		# fechando o acesso ao banco de dados
 	print('FECHANDO GERENCIADOR DE DADOS')
 	pass
 
-		
-
-
-
 # ===========================================================================================================
 
 def main():
 	print('Módulo de Dados!')
-	gerenciadorDados()
+	entrada = sys.argv[1]
+	gerenciadorDados(7, entrada, 'teste')
 	pass
 
 if __name__ == '__main__':
