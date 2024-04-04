@@ -60,26 +60,31 @@ def mapeador_riscos(dados):
 # GERENCIADOR DE DADOS
 
 def cria_tabela(cursor, nometabela):
-	if nometabela == 'probabilidades':
-		cursor.execute("CREATE TABLE IF NOT EXISTS "+nometabela+"(condicao1 text NOT NULL, condicao2 text, probabilidadeA VARCHAR(5) NOT NULL, probabilidadeAB VARCHAR(5), ano integer NOT NULL, empresa text NOT NULL, fonte text NOT NULL)")
-	elif nometabela == 'dados':
-		cursor.execute("CREATE TABLE IF NOT EXISTS "+nometabela+"(condicao1 text NOT NULL, condicao2 text, valor VARCHAR(10) NOT NULL, metrica text NOT NULL, ano integer NOT NULL, empresa text NOT NULL, fonte text NOT NULL)")
-	else:
-		print('nenhuma das tabelas base. tente novamente!')
+	try:
+		cursor.execute("CREATE TABLE IF NOT EXISTS "+nometabela+"(empresa text NOT NULL, ano int NOT NULL, avaliacao text, dadoA text NOT NULL, dadoB text, probA VARCHAR(5) NOT NULL, probAB VARCHAR(5), refer text NOT NULL, rep int NOT NULL, per int NOT NULL, cob int NOT NULL, esc int NOT NULL, abr int NOT NULL, metod int NOT NULL)")
+	except:
+		print('Não foi possível criar tabela. Tente novamente!')
 
 def atualizaDado_tabela(cursor, nometabela, nomecampo, valornovo,nomecampopesquisa, valorpesquisa):
 	cursor.execute("UPDATE "+nometabela+" SET "+nomecampo+" = "+valornovo+" WHERE "+nomecampopesquisa+" = "+valorpesquisa)
 
 def insereDados_tabela(cursor, row, nometabela):
-	condicao1 = row[0]
-	condicao2 = row[1]
-	dadoA = row[2] # P(A) ou Valor
-	dadoB = row[3] # P(A|B) ou Métrica
-	ano = row[4]
-	empresa = row[5]
-	fonte = row[6]
+	empresa = row[0]		# empresa que publicou a informação
+	ano = row[1]			# ano referente a pesquisa da publicação
+	avaliacao = row[2]		# valor avaliação (feature)
+	condicao1 = row[3]		# P(A)
+	condicao2 = row[4]		# P(A/B)
+	dadoA = row[5] 			# P(A) ou Valor
+	dadoB = row[6] 			# P(A|B) ou Métrica
+	refer = row[7]			# link do site/da publicação
+	rep = row[8]			# valor métrica reputação
+	per = row[9]			# valor métrica periodicidade
+	cob = row[10]			# valor métrica cobertura
+	esc = row[11]			# valor métrica escopo
+	abr = row[12]			# valor métrica abrangência dos ataques
+	met = row[13]			# valor métrica metodologia
 	try:
-		cursor.execute("INSERT INTO " + nometabela + " VALUES (?, ?, ?, ?, ?, ?, ?)", (condicao1, condicao2, dadoA, dadoB, ano, empresa, fonte))
+		cursor.execute("INSERT INTO " + nometabela + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (empresa, ano, avaliacao, condicao1, condicao2, dadoA, dadoB, refer, rep, per, cob, esc, abr, met))
 		print("Dados inseridos com sucesso. ")
 	except sqlite3.IntegrityError:
 		print("Erro: A linha já existe na tabela")
@@ -104,33 +109,45 @@ def defineChaves(material):
 
 def buscaDados_tabela(cursor, chaves):
 	tabelas = []
+
+	# ... DESENVOLVER ...
+ 
+	print(str(len(tabelas))+' dados encontrads')
+
 	return tabelas
 
-def comandolivre_tabela(cursor, command):
+def comandolivre_tabela(cursor):
+	command = input('Digite o comando: ')
 	try:
-		cursor.execute(''+command+'')
+		cursor.execute(str(command))
 		print("Comando executado com sucesso.")
 	except sqlite3.OperationalError as e:
-		print("Erro ao executar o comando:", e)
+		print("Erro ao executar o comando: ", e)
 
 def gerenciadorDados(acao, material, nometabela):
 	bancoDados = 'bancoTCC.db'
 	conn = sqlite3.connect(bancoDados)
 	cursor = conn.cursor()
-	# 1 - vem do Mapeador de Riscos (inserção dos dados já tratados)
+	# 1 - vem do Módulo de Relatórios ou das inserções dos curadores e/ou consultores
+	# 2 - vem do Mapeador de Riscos (inserção dos dados já tratados)
 	# 3 - requisição vindo do Módulo de Simulações a partir das chaves da requisição do usuário
 	# 7 - numero para teste (comando livre)
 	# 0 - encerrar o módulo de dados
 	if acao == 1:
-		insereDados_tabela(cursor,material,nometabela)
+		mapeador_riscos(material)
 	elif acao == 2:
-		insereDados_tabela(cursor, material,nometabela)
+		insereDados_tabela(cursor,material,nometabela)
 	elif acao == 3:
-		dadostabela = buscaDados_tabela(cursor, material)
+		dadostabela = buscaDados_tabela(cursor, material)		# nesse caso, material são as chaves desejadas para procurar informações relevantes nas tabelas
 		return dadostabela
 	elif acao == 7:
 			opc = input('Digite o comando que deseja (banco de dados): ')
-			comandolivre_tabela(cursor, opc, nometabela)
+			repeat = True
+			while repeat:
+				comandolivre_tabela(cursor)
+				ans = input('Deseja tentar mais um comando? (S/N): ')
+				if ans == 'N':
+					repeat = False
 
 	conn.commit()		# enviando alterações para o banco de dados
 	conn.close()		# fechando o acesso ao banco de dados
