@@ -1,5 +1,3 @@
-import pandas as pd
-import numpy as np
 import csv
 import sqlite3
 import sys
@@ -7,18 +5,18 @@ import sys
 # ===========================================================================================================
 # PROCESSADOR DE DADOS
 def processador_dados(dados, tab):
-	print('PROCESSADOR DE DADOS')
-	nometab = ['dadosT', 'dadosNT']
+	print('ENTRANDO - PROCESSADOR DE DADOS')
+	nometab = ['dadosTang', 'dadosNTang']
 	dadosCorretos = []
 
 	for dado in dados:
-		if len(dado) == 15:			# se possui todos os 15 campos
+		if len(dado) == 14:			# se possui todos os 14 campos
 			if not dado[0] and not dado[1] and not dado[7] and not dado[8]:		# se possui os campos essenciais
 				if dado[9] != '' and dado[10] != '' and dado[11] != '' and dado[12] != '' and dado[13] != '' and dado[14] != '':		# se possui os campos das métricas
 					dadosCorretos.append(dado)
 
 	gerenciadorDados(1, dadosCorretos, nometab[tab])
-	print('FECHANDO PROCESSADOR DE DADOS')
+	print('FECHANDO - PROCESSADOR DE DADOS')
 	pass
 
 # ===========================================================================================================
@@ -35,7 +33,7 @@ def salvaErrados_dados(dados):
 
 # VERIFICA SE O DADO É TANGÍVEL OU NÃO
 def mapeador_riscos(dados):
-	print('MAPEADOR DE RISCOS')
+	print('ENTRANDO - MAPEADOR DE RISCOS')
 	dadosT = []			# dados tangíveis
 	dadosNT = []		# dados não tangíveis
 	errados = []
@@ -54,6 +52,7 @@ def mapeador_riscos(dados):
 	processador_dados(dadosNT, 1)
 	if len(errados) > 0:
 		salvaErrados_dados(errados)
+	print('FECHANDO - MAPEADOR DE RISCOS')
 	pass
 
 # ===========================================================================================================
@@ -61,12 +60,14 @@ def mapeador_riscos(dados):
 
 def cria_tabela(cursor, nometabela):
 	try:
-		cursor.execute("CREATE TABLE IF NOT EXISTS "+nometabela+"(empresa text NOT NULL, ano int NOT NULL, avaliacao text, dadoA text NOT NULL, dadoB text, probA VARCHAR(5) NOT NULL, probAB VARCHAR(5), refer text NOT NULL, rep int NOT NULL, per int NOT NULL, cob int NOT NULL, esc int NOT NULL, abr int NOT NULL, metod int NOT NULL)")
+		cursor.execute("CREATE TABLE IF NOT EXISTS "+nometabela+"(empresa text NOT NULL, ano text NOT NULL, avaliacao text, dadoA text NOT NULL, dadoB text, probA text NOT NULL, probAB text, refer text NOT NULL, rep text NOT NULL, per text NOT NULL, cob text NOT NULL, esc text NOT NULL, abr text NOT NULL, metod text NOT NULL)")
+		print('Tabela criada!')
 	except:
 		print('Não foi possível criar tabela. Tente novamente!')
 
-def atualizaDado_tabela(cursor, nometabela, nomecampo, valornovo,nomecampopesquisa, valorpesquisa):
+def atualizaDado_tabela(cursor, nometabela, nomecampo, valornovo, nomecampopesquisa, valorpesquisa):
 	cursor.execute("UPDATE "+nometabela+" SET "+nomecampo+" = "+valornovo+" WHERE "+nomecampopesquisa+" = "+valorpesquisa)
+	pass
 
 def insereDados_tabela(cursor, row, nometabela):
 	empresa = row[0]		# empresa que publicou a informação
@@ -83,11 +84,21 @@ def insereDados_tabela(cursor, row, nometabela):
 	esc = row[11]			# valor métrica escopo
 	abr = row[12]			# valor métrica abrangência dos ataques
 	met = row[13]			# valor métrica metodologia
-	try:
-		cursor.execute("INSERT INTO " + nometabela + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (empresa, ano, avaliacao, condicao1, condicao2, dadoA, dadoB, refer, rep, per, cob, esc, abr, met))
-		print("Dados inseridos com sucesso. ")
-	except sqlite3.IntegrityError:
-		print("Erro: A linha já existe na tabela")
+	print(nometabela)
+
+	params = (empresa,ano,avaliacao,condicao1,condicao2,dadoA,dadoB,refer,rep,per,cob,esc,abr,met)
+	if nometabela == "dadosNTang":
+		try:
+			cursor.execute("INSERT INTO dadosNTang (empresa,ano,avaliacao,dadoA,dadoB,probA,probAB,refer,rep,per,cob,esc,abr,metod) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", params)
+			print("Dados inseridos com sucesso. ")
+		except sqlite3.IntegrityError:
+				print("Erro: A linha já existe na tabela")
+	else:
+		try:
+			cursor.execute("INSERT INTO dadosTang (empresa,ano,avaliacao,dadoA,dadoB,probA,probAB,refer,rep,per,cob,esc,abr,metod) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", params)
+			print("Dados inseridos com sucesso. ")
+		except sqlite3.IntegrityError:
+			print("Erro: A linha já existe na tabela")
 
 def deletaItem_tabela(cursor, nometabela, condicao):
 	try:
@@ -125,9 +136,13 @@ def comandolivre_tabela(cursor):
 		print("Erro ao executar o comando: ", e)
 
 def gerenciadorDados(acao, material, nometabela):
+	print('ENTRANDO - GERENCIADOR DE DADOS')
 	bancoDados = 'bancoTCC.db'
 	conn = sqlite3.connect(bancoDados)
 	cursor = conn.cursor()
+
+	cria_tabela(cursor, "dadosNTang")
+	cria_tabela(cursor, "dadosTang")
 	# 1 - vem do Módulo de Relatórios ou das inserções dos curadores e/ou consultores
 	# 2 - vem do Mapeador de Riscos (inserção dos dados já tratados)
 	# 3 - requisição vindo do Módulo de Simulações a partir das chaves da requisição do usuário
@@ -151,7 +166,7 @@ def gerenciadorDados(acao, material, nometabela):
 
 	conn.commit()		# enviando alterações para o banco de dados
 	conn.close()		# fechando o acesso ao banco de dados
-	print('FECHANDO GERENCIADOR DE DADOS')
+	print('FECHANDO - GERENCIADOR DE DADOS')
 	pass
 
 # ===========================================================================================================
