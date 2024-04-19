@@ -3,19 +3,20 @@ import sqlite3
 import sys
 
 # ===========================================================================================================
-# PROCESSADOR DE DADOS
-def processador_dados(dados, tab):
+# VALIDADOR DE DADOS
+def validador_dados(dados, tab):
 	print('ENTRANDO - PROCESSADOR DE DADOS')
 	nometab = ['dadosTang', 'dadosNTang']
 	dadosCorretos = []
 
 	for dado in dados:
 		if len(dado) == 14:			# se possui todos os 14 campos
-			if not dado[0] and not dado[1] and not dado[7] and not dado[8]:		# se possui os campos essenciais
-				if dado[9] != '' and dado[10] != '' and dado[11] != '' and dado[12] != '' and dado[13] != '' and dado[14] != '':		# se possui os campos das métricas
+			if dado[0] != None and dado[1] != None and dado[3] != None and (dado[5] != None or dado[7] != None):		# se possui os campos essenciais (empresa, ano, dadoA e P(A) ou P(B))
+				if dado[8] != None and dado[9] != None and dado[10] != None and dado[11] != None and dado[12] != None and dado[13] != None:		# se possui os campos das métricas
 					dadosCorretos.append(dado)
 
-	gerenciadorDados(1, dadosCorretos, nometab[tab])
+	#print("Dados corretos:", dadosCorretos)
+	gerenciadorDados(2, dadosCorretos, nometab[tab])
 	print('FECHANDO - PROCESSADOR DE DADOS')
 	pass
 
@@ -28,7 +29,7 @@ def salvaErrados_dados(dados):
 	with open('dadosErradosMAPRIS.csv', 'w', encoding='utf-8') as csvfile:
 		csvfinal = csv.writer(csvfile)
 		csvfinal.writerows(dados)
-		print('Arquivo criado!')
+		print('Arquivo dos dados errados foi criado!')
 	pass
 
 # VERIFICA SE O DADO É TANGÍVEL OU NÃO
@@ -40,16 +41,19 @@ def mapeador_riscos(dados):
 
 	for dado in dados:
 		info = dado[6]			# dadoAB/métrica (T/NT)
-		if isinstance(info, float) or isinstance(info, int):
+		if info.replace('.','',1).isdigit() or info == '-':
 			dadosNT.append(dado)
 		elif isinstance(info, str):
 			dadosT.append(dado)
 		else:
 			errados.append(dado)
 
-	print('FECHANDO MAPEADOR DE RISCOS')
-	processador_dados(dadosT, 0)
-	processador_dados(dadosNT, 1)
+	if len(dadosT) > 0:
+		print("Tam dadosTang = "+str(len(dadosT)))
+		validador_dados(dadosT, 0)
+	if len(dadosNT) > 0:
+		print("Tam dadosNTang = "+str(len(dadosNT)))
+		validador_dados(dadosNT, 1)
 	if len(errados) > 0:
 		salvaErrados_dados(errados)
 	print('FECHANDO - MAPEADOR DE RISCOS')
@@ -61,7 +65,7 @@ def mapeador_riscos(dados):
 def cria_tabela(cursor, nometabela):
 	try:
 		cursor.execute("CREATE TABLE IF NOT EXISTS "+nometabela+"(empresa text NOT NULL, ano text NOT NULL, avaliacao text, dadoA text NOT NULL, dadoB text, probA text NOT NULL, probAB text, refer text NOT NULL, rep text NOT NULL, per text NOT NULL, cob text NOT NULL, esc text NOT NULL, abr text NOT NULL, metod text NOT NULL)")
-		print('Tabela criada!')
+		print('CRIAÇÃO')
 	except:
 		print('Não foi possível criar tabela. Tente novamente!')
 
@@ -70,35 +74,38 @@ def atualizaDado_tabela(cursor, nometabela, nomecampo, valornovo, nomecampopesqu
 	pass
 
 def insereDados_tabela(cursor, row, nometabela):
-	empresa = row[0]		# empresa que publicou a informação
-	ano = row[1]			# ano referente a pesquisa da publicação
-	avaliacao = row[2]		# valor avaliação (feature)
-	condicao1 = row[3]		# P(A)
-	condicao2 = row[4]		# P(A/B)
-	dadoA = row[5] 			# P(A) ou Valor
-	dadoB = row[6] 			# P(A|B) ou Métrica
-	refer = row[7]			# link do site/da publicação
-	rep = row[8]			# valor métrica reputação
-	per = row[9]			# valor métrica periodicidade
-	cob = row[10]			# valor métrica cobertura
-	esc = row[11]			# valor métrica escopo
-	abr = row[12]			# valor métrica abrangência dos ataques
-	met = row[13]			# valor métrica metodologia
 	print(nometabela)
+	for linha in row:
+		empresa = linha[0]		# empresa que publicou a informação
+		ano = linha[1]			# ano referente a pesquisa da publicação
+		avaliacao = linha[2]		# valor avaliação (feature)
+		condicao1 = linha[3]		# P(A)
+		condicao2 = linha[4]		# P(A/B)
+		dadoA = linha[5] 			# P(A) ou Valor
+		dadoB = linha[6] 			# P(A|B) ou Métrica
+		refer = linha[7]			# link do site/da publicação
+		rep = linha[8]			# valor métrica reputação
+		per = linha[9]			# valor métrica periodicidade
+		cob = linha[10]			# valor métrica cobertura
+		esc = linha[11]			# valor métrica escopo
+		abr = linha[12]			# valor métrica abrangência dos ataques
+		met = linha[13]			# valor métrica metodologia
+		params = (empresa,ano,avaliacao,condicao1,condicao2,dadoA,dadoB,refer,rep,per,cob,esc,abr,met)
+		#print(params)
 
-	params = (empresa,ano,avaliacao,condicao1,condicao2,dadoA,dadoB,refer,rep,per,cob,esc,abr,met)
-	if nometabela == "dadosNTang":
-		try:
-			cursor.execute("INSERT INTO dadosNTang (empresa,ano,avaliacao,dadoA,dadoB,probA,probAB,refer,rep,per,cob,esc,abr,metod) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", params)
-			print("Dados inseridos com sucesso. ")
-		except sqlite3.IntegrityError:
+		if nometabela == "dadosNTang":
+			try:
+				cursor.execute("INSERT INTO dadosNTang VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", params)
+				print("Dados inseridos com sucesso.")
+			except sqlite3.IntegrityError:
 				print("Erro: A linha já existe na tabela")
-	else:
-		try:
-			cursor.execute("INSERT INTO dadosTang (empresa,ano,avaliacao,dadoA,dadoB,probA,probAB,refer,rep,per,cob,esc,abr,metod) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", params)
-			print("Dados inseridos com sucesso. ")
-		except sqlite3.IntegrityError:
-			print("Erro: A linha já existe na tabela")
+		else:
+			try:
+				cursor.execute("INSERT INTO dadosTang VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", params)
+				print("Dados inseridos com sucesso. ")
+			except sqlite3.IntegrityError:
+				print("Erro: A linha já existe na tabela")
+	pass
 
 def deletaItem_tabela(cursor, nometabela, condicao):
 	try:
@@ -127,8 +134,7 @@ def buscaDados_tabela(cursor, chaves):
 
 	return tabelas
 
-def comandolivre_tabela(cursor):
-	command = input('Digite o comando: ')
+def comandolivre_tabela(cursor, command):
 	try:
 		cursor.execute(str(command))
 		print("Comando executado com sucesso.")
@@ -156,12 +162,12 @@ def gerenciadorDados(acao, material, nometabela):
 		dadostabela = buscaDados_tabela(cursor, material)		# nesse caso, material são as chaves desejadas para procurar informações relevantes nas tabelas
 		return dadostabela
 	elif acao == 7:
-			opc = input('Digite o comando que deseja (banco de dados): ')
 			repeat = True
 			while repeat:
-				comandolivre_tabela(cursor)
+				opc = input('Digite o comando que deseja (banco de dados): ')
+				comandolivre_tabela(cursor,opc)
 				ans = input('Deseja tentar mais um comando? (S/N): ')
-				if ans == 'N':
+				if ans == 'N' or ans == 'n':
 					repeat = False
 
 	conn.commit()		# enviando alterações para o banco de dados
@@ -172,9 +178,11 @@ def gerenciadorDados(acao, material, nometabela):
 # ===========================================================================================================
 
 def main():
-	print('Módulo de Dados!')
-	entrada = sys.argv[1]
-	gerenciadorDados(7, entrada, 'teste')
+	if len(sys.argv) >= 2:
+		entrada = sys.argv[1]
+		gerenciadorDados(1, entrada, 'teste')
+	else:
+		gerenciadorDados(7, [], 'teste')
 	pass
 
 if __name__ == '__main__':
