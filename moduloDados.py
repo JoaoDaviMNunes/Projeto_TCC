@@ -79,30 +79,48 @@ def insereDados_tabela(cursor, row, nometabela):
 		empresa = linha[0]		# empresa que publicou a informação
 		ano = linha[1]			# ano referente a pesquisa da publicação
 		avaliacao = linha[2]		# valor avaliação (feature)
-		condicao1 = linha[3]		# P(A)
-		condicao2 = linha[4]		# P(A/B)
-		dadoA = linha[5] 			# P(A) ou Valor
-		dadoB = linha[6] 			# P(A|B) ou Métrica
+		dadoA = linha[3]		# P(A)
+		dadoB = linha[4]		# P(A/B)
+		probA = linha[5] 			# P(A) ou Valor
+		probAB = linha[6] 			# P(A|B) ou Métrica
 		refer = linha[7]			# link do site/da publicação
 		rep = linha[8]			# valor métrica reputação
 		per = linha[9]			# valor métrica periodicidade
 		cob = linha[10]			# valor métrica cobertura
 		esc = linha[11]			# valor métrica escopo
 		abr = linha[12]			# valor métrica abrangência dos ataques
-		met = linha[13]			# valor métrica metodologia
-		params = (empresa,ano,avaliacao,condicao1,condicao2,dadoA,dadoB,refer,rep,per,cob,esc,abr,met)
+		metod = linha[13]			# valor métrica metodologia
+		params = (empresa,ano,avaliacao,dadoA,dadoB,probA,probAB,refer,rep,per,cob,esc,abr,metod)
 		#print(params)
 
 		if nometabela == "dadosNTang":
 			try:
-				cursor.execute("INSERT INTO dadosNTang VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", params)
+				cursor.execute("""
+					INSERT INTO dadosNTang 
+					SELECT ?,?,?,?,?,?,?,?,?,?,?,?,?,? 
+					WHERE NOT EXISTS (
+						SELECT 1 FROM dadosNTang 
+						WHERE empresa=? AND ano=? AND avaliacao=? AND dadoA=? AND dadoB=? 
+						AND probA=? AND probAB=? AND refer=? AND rep=? AND per=? AND cob=? 
+						AND esc=? AND abr=? AND metod=?
+					)
+				""", (*params, *params))
 				print("Dados inseridos com sucesso.")
 			except sqlite3.IntegrityError:
 				print("Erro: A linha já existe na tabela")
 		else:
 			try:
-				cursor.execute("INSERT INTO dadosTang VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", params)
-				print("Dados inseridos com sucesso. ")
+				cursor.execute("""
+					INSERT INTO dadosTang 
+						SELECT ?,?,?,?,?,?,?,?,?,?,?,?,?,? 
+						WHERE NOT EXISTS (
+						SELECT 1 FROM dadosTang 
+						WHERE empresa=? AND ano=? AND avaliacao=? AND dadoA=? AND dadoB=? 
+						AND probA=? AND probAB=? AND refer=? AND rep=? AND per=? AND cob=? 
+						AND esc=? AND abr=? AND metod=?
+					)
+				""", (*params, *params))
+				print("Dados inseridos com sucesso.")
 			except sqlite3.IntegrityError:
 				print("Erro: A linha já existe na tabela")
 	pass
@@ -126,13 +144,30 @@ def defineChaves(material):
 	return chaves
 
 def buscaDados_tabela(cursor, chaves):
-	tabelas = []
+	infoT, infoNT = [],[]
 
-	# ... DESENVOLVER ...
- 
-	print(str(len(tabelas))+' dados encontrads')
+	for key in chaves:
 
-	return tabelas
+		cursor.execute("SELECT * FROM dadosTang WHERE dadoA = ? OR dadoB = ?", (key,key))
+		resposta = cursor.fetchall()
+		if resposta != None:
+			infoT.extend(resposta)
+
+		cursor.execute("SELECT * FROM dadosNTang WHERE dadoA = ? OR dadoB = ?", (key,key))
+		resposta = cursor.fetchall()
+		if resposta != None:
+			infoNT.extend(resposta)
+
+		#wait = input("Pausa:")
+	
+	for info in infoT:
+		print(info)
+	print(str(len(infoT))+' dados tangíveis encontrados na pesquisa')
+	for info in infoNT:
+		print(info)
+	print(str(len(infoNT))+' dados não tangíveis encontrados na pesquisa')
+
+	return infoT, infoNT
 
 def comandolivre_tabela(cursor, command):
 	try:
@@ -159,8 +194,8 @@ def gerenciadorDados(acao, material, nometabela):
 	elif acao == 2:
 		insereDados_tabela(cursor,material,nometabela)
 	elif acao == 3:
-		dadostabela = buscaDados_tabela(cursor, material)		# nesse caso, material são as chaves desejadas para procurar informações relevantes nas tabelas
-		return dadostabela
+		infoT, infoNT = buscaDados_tabela(cursor, material)		# nesse caso, material são as chaves desejadas para procurar informações relevantes nas tabelas
+		return infoT, infoNT
 	elif acao == 7:
 			repeat = True
 			while repeat:
