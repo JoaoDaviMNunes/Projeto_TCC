@@ -26,8 +26,8 @@ local = [1,1,1,1,1,1]
 # [0] = primeiro campo indica que a empresa possui o ativo de uso de nuvem
 # [1] = segundo campo indica que a empresa possui o ativo de firewall
 # [2] = terceiro campo indica que a empresa possui o ativo de acesso remoto
-# [3] = quarto campo indica que a empresa possui o ativo de
-# [4] = quinto campo indica que a empresa possui o ativo de
+# [3] = quarto campo indica que a empresa possui o ativo de 
+# [4] = quinto campo indica que a empresa possui o ativo de 
 # [5] = sexto campo indica que a empresa possui o ativo de
 ativos = [1,1,1,1,1,1]
 
