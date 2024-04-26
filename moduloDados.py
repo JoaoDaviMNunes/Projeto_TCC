@@ -65,7 +65,6 @@ def mapeador_riscos(dados):
 def cria_tabela(cursor, nometabela):
 	try:
 		cursor.execute("CREATE TABLE IF NOT EXISTS "+nometabela+"(empresa text NOT NULL, ano text NOT NULL, avaliacao text, dadoA text NOT NULL, dadoB text, probA text NOT NULL, probAB text, refer text NOT NULL, rep text NOT NULL, per text NOT NULL, cob text NOT NULL, esc text NOT NULL, abr text NOT NULL, metod text NOT NULL)")
-		print('CRIAÇÃO')
 	except:
 		print('Não foi possível criar tabela. Tente novamente!')
 
@@ -136,35 +135,35 @@ def mostra_tabela(cursor, nometabela):
 	cursor.execute("SELECT * from " + nometabela)
 	print(cursor.fetchall())
 
-def defineChaves(material):
-	chaves = []
-
-	# ... DESENVOLVER ...
-	
-	return chaves
-
 def buscaDados_tabela(cursor, chaves):
 	infoT, infoNT = [],[]
 
-	for key in chaves:
-
-		cursor.execute("SELECT * FROM dadosTang WHERE dadoA = ? OR dadoB = ?", (key,key))
+	for chave in chaves:
+		cursor.execute("SELECT * FROM dadosTang WHERE dadoA LIKE ?", ('%' + chave + '%',))
+		resposta = cursor.fetchall()
+		if resposta != None:
+			infoT.extend(resposta)
+		cursor.execute("SELECT * FROM dadosTang WHERE dadoB LIKE ?", ('%' + chave + '%',))
 		resposta = cursor.fetchall()
 		if resposta != None:
 			infoT.extend(resposta)
 
-		cursor.execute("SELECT * FROM dadosNTang WHERE dadoA = ? OR dadoB = ?", (key,key))
+		cursor.execute("SELECT * FROM dadosNTang WHERE dadoA LIKE ?", ('%' + chave + '%',))
+		resposta = cursor.fetchall()
+		if resposta != None:
+			infoNT.extend(resposta)
+		cursor.execute("SELECT * FROM dadosNTang WHERE dadoB LIKE ?", ('%' + chave + '%',))
 		resposta = cursor.fetchall()
 		if resposta != None:
 			infoNT.extend(resposta)
 
 		#wait = input("Pausa:")
 	
-	for info in infoT:
-		print(info)
+	'''for info in infoT:
+		print(info)'''
 	print(str(len(infoT))+' dados tangíveis encontrados na pesquisa')
-	for info in infoNT:
-		print(info)
+	'''for info in infoNT:
+		print(info)'''
 	print(str(len(infoNT))+' dados não tangíveis encontrados na pesquisa')
 
 	return infoT, infoNT
@@ -174,7 +173,7 @@ def comandolivre_tabela(cursor, command):
 		cursor.execute(str(command))
 		print("Comando executado com sucesso.")
 	except sqlite3.OperationalError as e:
-		print("Erro ao executar o comando: ", e)
+		print("Erro ao executar o comando! => ", e)
 
 def gerenciadorDados(acao, material, nometabela):
 	print('ENTRANDO - GERENCIADOR DE DADOS')

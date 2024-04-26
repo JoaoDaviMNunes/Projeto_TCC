@@ -1,4 +1,7 @@
 111
 110
 100000
-110010
+11001
+Brasil
+Argentina
+nuvem
