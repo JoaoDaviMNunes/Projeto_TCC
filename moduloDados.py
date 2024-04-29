@@ -159,13 +159,12 @@ def buscaDados_tabela(cursor, chaves):
 
 		#wait = input("Pausa:")
 	
-	'''for info in infoT:
-		print(info)'''
 	print(str(len(infoT))+' dados tangíveis encontrados na pesquisa')
-	'''for info in infoNT:
-		print(info)'''
 	print(str(len(infoNT))+' dados não tangíveis encontrados na pesquisa')
 
+	# removendo os itens duplicados
+	infoT = list(dict.fromkeys(infoT))
+	infoNT = list(dict.fromkeys(infoNT))
 	return infoT, infoNT
 
 def comandolivre_tabela(cursor, command):
