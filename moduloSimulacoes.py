@@ -33,7 +33,6 @@ def agrupador_informacoes(info):
 
 # ===========================================================================================================
 # SIMULADOR DE RISCOS
-<<<<<<< HEAD
 def montecarlo_simulacao_ataque(rodadas, prob_ataque):
 	contadorAtaque = 0
 	prob_ataque /= 100
@@ -42,13 +41,12 @@ def montecarlo_simulacao_ataque(rodadas, prob_ataque):
 		if random.random() <= prob_ataque:
 			contadorAtaque += 1
 	
-	probFinal = contadorAtaque/rodadas
+	probFinal = round(contadorAtaque/rodadas*100,2)
 	return probFinal
 
-=======
->>>>>>> 7a6bc8db031bfe444f9c737cbf07ab493d1b1cd9
-def simulador_riscos(infoT, infoNT):
+def simulador_riscos(infoT, infoNT, tudo):
 	wait = input("Parada no simulador. Continuar? ")
+	print(tudo)
 
 	final = [[],[]]
 	riscoM, riscoP, riscoD = 0,0,0	# contator total das porcentagens de cada ataque
@@ -65,36 +63,33 @@ def simulador_riscos(infoT, infoNT):
 		else:
 			risco = float(info[6])
 
-		if "malware" in info[3] or "ransomware" in info[3]:
+		if ("malware" in info[3] or "ransomware" in info[3]) and tudo[3] == '1':
 			print("==> malware = "+str(info[3])+" = "+str(risco))
 			riscoM += risco
 			cm += 1
 		
-		if "phishing" in info[3]:
+		if "phishing" in info[3] and tudo[4] == '1':
 			print("==> phishing = "+str(info[3])+" = "+str(risco))
 			riscoP += risco
 			cp += 1
 		
-		if "DDoS" in info[3]:
+		if "DDoS" in info[3] and tudo[5] == '1':
 			print("==> DDoS = "+str(info[3])+" = "+str(risco))
 			riscoD += risco
 			cd += 1
 
-<<<<<<< HEAD
 	prob_ataque_malware = montecarlo_simulacao_ataque(rodadas, riscoM/cm if cm else 0)
 	prob_ataque_phishing = montecarlo_simulacao_ataque(rodadas, riscoP/cp if cp else 0)
 	prob_ataque_ddos = montecarlo_simulacao_ataque(rodadas, riscoD/cd if cd else 0)
 	final[0].append(prob_ataque_malware)
 	final[0].append(prob_ataque_phishing)
 	final[0].append(prob_ataque_ddos)
-=======
-	final[0].append(round((riscoM/cm),2) if cm else 0)
-	final[0].append(round((riscoP/cp),2) if cp else 0)
-	final[0].append(round((riscoD/cd),2) if cd else 0)
->>>>>>> 7a6bc8db031bfe444f9c737cbf07ab493d1b1cd9
-	print("A probabilidade de ocorrer um ataque de Malware é de " + str(final[0][0]) + "%")
-	print("A probabilidade de ocorrer um ataque de Phishing é de " + str(final[0][1]) + "%")
-	print("A probabilidade de ocorrer um ataque de DDoS é de " + str(final[0][2]) + "%")
+	if prob_ataque_malware > 0:
+		print("A probabilidade de ocorrer um ataque de Malware é de " + str(final[0][0]) + "%")
+	if prob_ataque_phishing > 0:
+		print("A probabilidade de ocorrer um ataque de Phishing é de " + str(final[0][1]) + "%")
+	if prob_ataque_ddos > 0:
+		print("A probabilidade de ocorrer um ataque de DDoS é de " + str(final[0][2]) + "%")
 	wait = input("Parada. Continuar? ")
 
 	# VERIFICAR O RISCO DE CADA IMPACTO (infoNT)
@@ -110,11 +105,12 @@ def simulador_riscos(infoT, infoNT):
 
 def analisador_negocios(requisicao):
 	print("ENTRANDO - ANALISADOR DE NEGÓCIOS")
-	analise = []
+	analise, tudo = [], []
 	arquivo = list(open(requisicao,"r", encoding="utf-8"))
 	tamARQ = len(arquivo)
 
 	for linha in range(tamARQ):
+		tudo.extend(arquivo[linha])
 		if linha == 0:
 			if arquivo[linha][0] == "1":
 				analise.append("setor financeiro")
@@ -150,6 +146,12 @@ def analisador_negocios(requisicao):
 				analise.append("África")
 				analise.append("região: EMEA")
 
+	while True:
+		if '\n' in tudo:
+			tudo.remove('\n')
+		else:
+			break
+
 	# ADICIONA AS PALAVRAS CHAVES DESEJADAS NA LISTA DE DADOS A SEREM COLETADOS NO BANCO DE DADOS
 	if tamARQ > 3:
 		for i in range(4,tamARQ):
@@ -163,7 +165,7 @@ def analisador_negocios(requisicao):
 	wait = input("Parada no analisador. Continuar? ")
 	infoT, infoNT = moduloDados.gerenciadorDados(3,analise,None)
 	print("FECHANDO - ANALISADOR DE NEGÓCIOS")
-	simulador_riscos(infoT, infoNT)
+	simulador_riscos(infoT, infoNT, tudo)
 	pass
 
 # ===========================================================================================================
