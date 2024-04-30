@@ -33,6 +33,7 @@ def agrupador_informacoes(info):
 
 # ===========================================================================================================
 # SIMULADOR DE RISCOS
+<<<<<<< HEAD
 def montecarlo_simulacao_ataque(rodadas, prob_ataque):
 	contadorAtaque = 0
 	prob_ataque /= 100
@@ -44,6 +45,8 @@ def montecarlo_simulacao_ataque(rodadas, prob_ataque):
 	probFinal = contadorAtaque/rodadas
 	return probFinal
 
+=======
+>>>>>>> 7a6bc8db031bfe444f9c737cbf07ab493d1b1cd9
 def simulador_riscos(infoT, infoNT):
 	wait = input("Parada no simulador. Continuar? ")
 
@@ -77,12 +80,18 @@ def simulador_riscos(infoT, infoNT):
 			riscoD += risco
 			cd += 1
 
+<<<<<<< HEAD
 	prob_ataque_malware = montecarlo_simulacao_ataque(rodadas, riscoM/cm if cm else 0)
 	prob_ataque_phishing = montecarlo_simulacao_ataque(rodadas, riscoP/cp if cp else 0)
 	prob_ataque_ddos = montecarlo_simulacao_ataque(rodadas, riscoD/cd if cd else 0)
 	final[0].append(prob_ataque_malware)
 	final[0].append(prob_ataque_phishing)
 	final[0].append(prob_ataque_ddos)
+=======
+	final[0].append(round((riscoM/cm),2) if cm else 0)
+	final[0].append(round((riscoP/cp),2) if cp else 0)
+	final[0].append(round((riscoD/cd),2) if cd else 0)
+>>>>>>> 7a6bc8db031bfe444f9c737cbf07ab493d1b1cd9
 	print("A probabilidade de ocorrer um ataque de Malware é de " + str(final[0][0]) + "%")
 	print("A probabilidade de ocorrer um ataque de Phishing é de " + str(final[0][1]) + "%")
 	print("A probabilidade de ocorrer um ataque de DDoS é de " + str(final[0][2]) + "%")
