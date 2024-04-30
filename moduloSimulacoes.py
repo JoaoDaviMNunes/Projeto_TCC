@@ -46,7 +46,7 @@ def montecarlo_simulacao_ataque(rodadas, prob_ataque):
 
 def simulador_riscos(infoT, infoNT, tudo):
 	wait = input("Parada no simulador. Continuar? ")
-	print(tudo)
+	#print(tudo)
 
 	final = [[],[]]
 	riscoM, riscoP, riscoD = 0,0,0	# contator total das porcentagens de cada ataque
@@ -64,17 +64,17 @@ def simulador_riscos(infoT, infoNT, tudo):
 			risco = float(info[6])
 
 		if ("malware" in info[3] or "ransomware" in info[3]) and tudo[3] == '1':
-			print("==> malware = "+str(info[3])+" = "+str(risco))
+			#print("==> malware = "+str(info[3])+" = "+str(risco))
 			riscoM += risco
 			cm += 1
 		
 		if "phishing" in info[3] and tudo[4] == '1':
-			print("==> phishing = "+str(info[3])+" = "+str(risco))
+			#print("==> phishing = "+str(info[3])+" = "+str(risco))
 			riscoP += risco
 			cp += 1
 		
 		if "DDoS" in info[3] and tudo[5] == '1':
-			print("==> DDoS = "+str(info[3])+" = "+str(risco))
+			#print("==> DDoS = "+str(info[3])+" = "+str(risco))
 			riscoD += risco
 			cd += 1
 
