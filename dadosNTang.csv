@@ -1,158 +1,378 @@
 EMPRESA,ANO,INFERÊNCIA (A),INFERÊNCIA (B),P(A),P(A|B),FONTE
-Positive Technologies,2020,ciberataque,aplicação web,-,17.00,https://www.ptsecurity.com/ww-en/analytics/web-vulnerabilities-2020-2021/
-ThoughtLab.,2022,melhorias,vazamento,-,38.00,https://thoughtlabgroup.com/cyber-solutions-riskier-world/
-Verizon,2022,vazamento de dados,elemento humano,-,82.00,https://www.verizon.com/business/resources/reports/2022/dbir/2022-data-breach-investigations-report-dbir.pdf
-Forbes,2022,plano de cibersegurança,empresa pequena,-,43.00,https://www.forbes.com/sites/chuckbrooks/2022/01/21/cybersecurity-in-2022--a-fresh-look-at-some-very-alarming-stats/?sh=77c0868d6b61/
-Positive Technologies,2022,setor de comércio,ransomware,-,79.00,https://www.ptsecurity.com/ww-en/analytics/cybersecurity-threatscape-2022-q2/
-Verizon,2023,phishing,e-mail,-,96.00,https://www.verizon.com/business/resources/reports/dbir/
-Cybertalk.org,2022,phishing,vazamento de dados,-,90.00,https://www.cybertalk.org/2022/03/30/top-15-phishing-attack-statistics-and-they-might-scare-you/
-Positive Technologies,2022,vazamento de dados confidenciais,malware,-,40.00,https://www.ptsecurity.com/ww-en/analytics/cybersecurity-threatscape-2022-q2/
-Positive Technologies,2022,roubo de dados de clientes,malware | setor de comércio,-,70.00,https://www.ptsecurity.com/ww-en/analytics/cybersecurity-threatscape-2022-q2/
-Threat Intelligence,2023,ciberataque,setor de comércio,-,24.00,https://www.threatintelligence.com/blog/retail-cybersecurity/
-Threat Intelligence,2023,E-commerce,setor de comércio,-,32.40,https://www.threatintelligence.com/blog/retail-cybersecurity/
-Fortinet,2021,phishing de credenciais,setor de comércio,-,30.43,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
-Fortinet,2021,malware,setor de comércio,-,21.74,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
-Fortinet,2021,ransomware,setor de comércio,-,13.04,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
-Fortinet,2021,DDoS,setor de comércio,-,10.14,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
-Fortinet,2021,outros ataques,setor de comércio,-,24.65,https://www.fortinet.com/solutions/industries/retail/retail-cybersecurity-statistics/
-Medicina S/A,2022,vazamento de dados,Brasil,-,43.00,https://medicinasa.com.br/ciberataque-saude/
-Medicina S/A,2022,setor de comércio,ciberataque | Brasil,-,19.00,https://medicinasa.com.br/ciberataque-saude/
-Medicina S/A,2022,setor financeiro,ciberataque | Brasil,-,9.00,https://medicinasa.com.br/ciberataque-saude/
-IBM,2023,uso de aplicações na nuvem,vazamento de dados,-,82.00,https://www.ibm.com/downloads/cas/E3G5JMBP
-Tausight,2023,perda de receita,ciberataque | setor de saúde,-,90.00,https://www.tausight.com/healthcare-and-cybersecurity-key-statistics/
-Astra Security,2023,vazamento de dados no setor de saúde,funcionários negligentes,-,61.00,https://www.getastra.com/blog/security-audit/healthcare-data-breach-statistics/
-Astra Security,2020,vazamento de dados,setor de saúde,-,93.00,https://www.getastra.com/blog/security-audit/healthcare-data-breach-statistics/
-Astra Security,2022,vazamento de segurança,setor de saúde,-,90.00,https://www.getastra.com/blog/security-audit/healthcare-data-breach-statistics/
-Astra Security,2022,vazamento de segurança,grandes empresas | setor de saúde,-,30.00,https://www.getastra.com/blog/security-audit/healthcare-data-breach-statistics/
-Astra Security,2023,ciberataque,pequenas e médias empresas,-,43.00,https://www.getastra.com/blog/security-audit/small-business-cyber-attack-statistics/
-Astra Security,2023,grande vazamento de dados,setor de saúde,-,30.00,https://www.getastra.com/blog/security-audit/small-business-cyber-attack-statistics/
-Astra Security,2023,erro humano,vazamento de segurança,-,95.00,https://www.getastra.com/blog/security-audit/small-business-cyber-attack-statistics/
-Astra Security,2023,falência,ransomware | pequenas e médias empresas,-,75.00,https://www.getastra.com/blog/security-audit/small-business-cyber-attack-statistics/
-Astra Security,2022,vazamento de dados,phishing,-,36.00,https://www.getastra.com/blog/security-audit/phishing-attack-statistics/
-Verizon,2022,ciberataque,pequenas e médias empresas,-,43.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Sophos,2023,ransomware,setor financeiro,-,64.00,"https://news.sophos.com/en-us/2023/07/13/the-state-of-ransomware-in-financial-services-2023/#:~:text=The%202023%20survey%20revealed%20that,sector%20in%20the%202021%20report."
-Sophos,2023,frequência de ataque de ransomware,setor financeiro,-,66.00,"https://news.sophos.com/en-us/2023/07/13/the-state-of-ransomware-in-financial-services-2023/#:~:text=The%202023%20survey%20revealed%20that,sector%20in%20the%202021%20report."
-CircleID,2022,phishing,setor de saúde,-,50.70,https://circleid.com/posts/20230208-healthcare-industry-was-the-most-common-victim-of-third-party-breaches-in-2022
-Verizon,2023,atores externos,vazamento de dados,-,83.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,vazamento de dados,-,19.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,aplicação web,brecha,-,60.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,ransomware,incidente,-,62.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,asset: server,brecha,-,82.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,asset: person,brecha,-,21.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,asset: user dev,brecha,-,17.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,dos,-,100.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,setor financeiro,-,66.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,setor financeiro,-,34.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: financeiro,setor financeiro,-,97.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados pessoais comprometidos,setor financeiro,-,74.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de credenciais comprometidos,setor financeiro,-,38.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,setor de saúde,-,66.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,setor de saúde,-,35.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: financeiro,setor de saúde,-,98.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados pessoais comprometidos,setor de saúde,-,67.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de credenciais comprometidos,setor de saúde,-,36.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados médicos comprometidos,setor de saúde,-,54.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,setor de comércio,-,96.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,setor de comércio,-,7.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: financeiro,setor de comércio,-,100.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados pessoais comprometidos,setor de comércio,-,23.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de credenciais comprometidos,setor de comércio,-,35.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de pagamentos comprometidos,setor de comércio,-,37.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,pequenas e médias empresas,-,94.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,pequenas e médias empresas,-,7.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: financeiro,pequenas e médias empresas,-,98.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados internos comprometidos,pequenas e médias empresas,-,37.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de credenciais comprometidos,pequenas e médias empresas,-,54.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,grandes empresas,-,89.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,grandes empresas,-,13.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: financeiro,grandes empresas,-,97.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados internos comprometidos,grandes empresas,-,41.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de credenciais comprometidos,grandes empresas,-,37.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,região: APAC,-,92.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,região: APAC,-,9.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: financeiro,região: APAC,-,61.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: espionagem,região: APAC,-,39.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados internos comprometidos,região: APAC,-,56.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados secretos comprometidos,região: APAC,-,42.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de credenciais comprometidos,região: APAC,-,29.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,região: EMEA,-,98.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,região: EMEA,-,2.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: financeiro,região: EMEA,-,91.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: espionagem,região: EMEA,-,8.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados internos comprometidos,região: EMEA,-,37.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de sistema comprometidos,região: EMEA,-,35.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de credenciais comprometidos,região: EMEA,-,53.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,região: LAC,-,95.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,região: LAC,-,5.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: financeiro,região: LAC,-,93.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: espionagem,região: LAC,-,11.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados internos comprometidos,região: LAC,-,32.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de sistema comprometidos,região: LAC,-,55.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de credenciais comprometidos,região: LAC,-,23.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores externos,região: NA,-,94.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,atores internos,região: NA,-,12.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: financeiro,região: NA,-,99.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,motivo: espionagem,região: NA,-,1.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados internos comprometidos,região: NA,-,50.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados pessoais comprometidos,região: NA,-,38.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-Verizon,2023,dados de credenciais comprometidos,região: NA,-,67.00,https://www.verizon.com/business/en-gb/resources/reports/dbir/
-IBM,2023,vazamento,dados guardados na nuvem,-,82.00,IBM Cost of a vazamento de dados Report 2023
-IBM,2023,ransomware,brecha,-,24.00,IBM Cost of a vazamento de dados Report 2023
-IBGE,2021,setor de comércio,Brasil,-,36.40,https://www.ibge.gov.br/estatisticas/economicas/comercio/22649-demografia-das-empresas-e-estatisticas-de-empreendedorismo.html
-IBGE,2021,setor de saúde,Brasil,-,6.40,https://www.ibge.gov.br/estatisticas/economicas/comercio/22649-demografia-das-empresas-e-estatisticas-de-empreendedorismo.html
-IBGE,2021,setor financeiro,Brasil,-,3.00,https://www.ibge.gov.br/estatisticas/economicas/comercio/22649-demografia-das-empresas-e-estatisticas-de-empreendedorismo.html
-OECD,2023,setor de comércio,-,30.00,-,https://stats.oecd.org/index.aspx?queryid=91
-WHO,2023,setor de saúde,-,10.00,-,https://www.who.int/data/gho/data/themes/topics/health-workforce
-IMF,2023,setor financeiro,-,7.00,-,https://www.imf.org/en/Home
-Microsoft,2022,DDoS,Brasil,-,1.75,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
-Microsoft,2022,DDoS,Estados Unidos,-,45.02,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
-Microsoft,2022,DDoS,India,-,13.22,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
-Microsoft,2022,DDoS,Europa,-,10.49,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
-Microsoft,2022,DDoS,Leste Asiático,-,11.25,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
-Microsoft,2022,DDoS,Coréia do Sul,-,4.22,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
-Microsoft,2022,DDoS,Reino Unido,-,2.23,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
-Microsoft,2022,DDoS,Australia,-,2.02,https://www.microsoft.com/en-us/security/blog/2023/02/21/2022-in-review-ddos-attack-trends-and-insights/
-Stormwall,2022,DDoS,setor financeiro,-,34.00,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,setor de comércio,-,17.00,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,setor de saúde,-,1.00,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,setor de telecomunicações,-,26.00,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,setor de entretenimento,-,12.00,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,setor de educação,-,2.00,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,Estados Unidos,-,18.30,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,China,-,10.70,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,India,-,9.20,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,Russia,-,8.40,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,Inglaterra,-,7.20,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,Alemanha,-,6.80,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,França,-,5.30,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,Japão,-,4.70,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,Ucrânia,-,4.50,https://stormwall.network/ddos-report-stormwall-2022
-Stormwall,2022,DDoS,Brasil,-,4.20,https://stormwall.network/ddos-report-stormwall-2022
-Radware,2022,DDoS,setor financeiro,-,52.60,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de comércio,-,6.00,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de saúde,-,10.50,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de telecomunicações,-,4.70,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de educação,-,2.80,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor financeiro | região: Américas,-,31.50,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de saúde | região: Américas,-,23.90,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de telecomunicações | região: Américas,-,12.30,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor financeiro | região: EMEA,-,70.60,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de saúde | região: EMEA,-,3.32,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de telecomunicações | região: EMEA,-,1.13,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de educação | região: EMEA,-,1.28,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor financeiro | região: APAC,-,9.35,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de saúde | região: APAC,-,2.61,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de telecomunicações | região: APAC,-,2.30,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de educação | região: APAC,-,4.11,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,DDoS,setor de saúde | região: APAC,-,2.61,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ciberataque,Estados Unidos,-,48.40,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ciberataque,India,-,9.94,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ciberataque,Itália,-,8.13,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ciberataque,Rússia,-,7.22,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ciberataque,Canadá,-,5.64,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ciberataque,Alemanha,-,4.78,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ciberataque,Reino Unido,-,3.97,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ataque por uma aplicação web,setor financeiro,-,3.00,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ataque por uma aplicação web,setor de comércio,-,25.30,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ataque por uma aplicação web,setor de educação,-,3.33,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
-Radware,2022,ataque por uma aplicação web,setor de saúde,-,3.31,https://www.radware.com/getattachment/b775fe9c-326f-4f97-b6c7-8545b5b68e42/Radware-2022-Global-Threat-Analysis-Report.pdf.aspx
+Acronis,2023,phishing,ciberataque,-,73.00,Acronis Cyberthreats Report H1 2023
+Acronis,2023,malware,ciberataque,-,11.00,Acronis Cyberthreats Report H1 2023
+Acronis,2023,phishing,ciberataque,-,79.00,Acronis Cyberthreats Report H1 2023
+Acronis,2023,malware,ciberataque,-,15.00,Acronis Cyberthreats Report H1 2023
+Acronis,2023,DDoS,ciberataque,-,7.00,Acronis Cyberthreats Report H1 2023
+Acronis,2023,perda financeira,ciberataque,-,7.00,Acronis Cyberthreats Report H1 2023
+Acronis,2023,perda de desempenho,ciberataque,-,7.50,Acronis Cyberthreats Report H1 2023
+Acronis,2023,disrupção de serviços,ciberataque,-,5.00,Acronis Cyberthreats Report H1 2023
+Acronis,2023,indisponibilidade do sistema,ciberataque,-,7.50,Acronis Cyberthreats Report H1 2023
+Acronis,2023,dados roubados,ciberataque,-,4.70,Acronis Cyberthreats Report H1 2023
+Acronis,2023,roubo de credenciais,ciberataque,-,3.80,Acronis Cyberthreats Report H1 2023
+APWG,2023,setor financeiro,phishing,-,14.00,"Phishing Activity Trends Report, 4th Quarter 2023"
+APWG,2023,setor de comércio,phishing,-,6.00,"Phishing Activity Trends Report, 4th Quarter 2024"
+Astra Security,2020,dados roubados,setor de saúde,-,93.00,80+ Healthcare Data Breach Statistics 2024
+Astra Security,2023,ciberataque,pequenas e médias empresas,-,43.00,51 Small Business Cyber Attack Statistics 2024 (And What You Can Do About Them)
+Astra Security,2023,dados roubados,setor de saúde,-,30.00,51 Small Business Cyber Attack Statistics 2024 (And What You Can Do About Them)
+Astra Security,2023,perda financeira,ransomware | pequenas e médias empresas,-,75.00,51 Small Business Cyber Attack Statistics 2024 (And What You Can Do About Them)
+Astra Security,2022,dados roubados,phishing,-,36.00,81 Phishing Attack Statistics 2023: The Ultimate Insight
+Barracuda,2023,ciberataque,phishing,-,50.00,2023 Spear-Phishing Trends
+Barracuda,2023,dados roubados,phishing,-,49.00,2023 Spear-Phishing Trends
+Barracuda,2023,roubo de credenciais,phishing,-,48.00,2023 Spear-Phishing Trends
+Barracuda,2023,perda financeira,phishing,-,39.00,2023 Spear-Phishing Trends
+Barracuda,2023,perda de reputação,phishing,-,37.00,2023 Spear-Phishing Trends
+BLATAMkpoint,2024,setor de comércio,ciberataque,-,13.98,Annual Threat Report 2024
+BLATAMkpoint,2024,setor financeiro,ciberataque,-,4.41,Annual Threat Report 2024
+BLATAMkpoint,2024,setor de saúde,ciberataque,-,4.64,Annual Threat Report 2024
+CircleID,2022,phishing,setor de saúde,-,50.70,Healthcare Industry Was the Most Common Victim of Third-Party Breaches in 2022
+CrowdStrike,2024,setor financeiro,ciberataque,-,13.00,2024 Global Threat Report
+CrowdStrike,2024,setor de comércio,ciberataque,-,9.00,2024 Global Threat Report
+CrowdStrike,2024,setor de saúde,ciberataque,-,8.00,2024 Global Threat Report
+Cybertalk.org,2022,dados roubados,phishing,-,90.00,Top 15 phishing attack statistics (and they might scare you)
+Darktrace,2023,phishing,e-mail,-,45.00,Analysis Of The Second Half Of 2023 - End Of Year Threat Report
+Expel,2024,setor de comércio,ciberataque,-,9.00,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor financeiro,ciberataque,-,11.00,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor de saúde,ciberataque,-,4.80,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor de comércio | ciberataque,nuvem,-,4.20,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor financeiro | ciberataque,nuvem,-,17.00,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor de saúde | ciberataque,nuvem,-,5.50,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor de comércio,malware,-,3.50,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor financeiro,malware,-,19.00,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor de saúde,malware,-,5.50,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor financeiro,phishing,-,5.00,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Expel,2024,setor de saúde,phishing,-,5.00,"Annual Threat Report 2024: Cybersecurity insights, resilience recommendations, and predictions"
+Flashpoint,2023,ransomware,dados roubados | setor de comércio,-,54.60,2024 Global Threat Intelligence Report
+Flashpoint,2023,ransomware,dados roubados | setor de saúde,-,65.30,2024 Global Threat Intelligence Report
+Flashpoint,2023,ransomware,dados roubados | setor financeiro,-,52.60,2024 Global Threat Intelligence Report
+Flashpoint,2023,setor de comércio,ransomware,-,27.00,2024 Global Threat Intelligence Report
+Flashpoint,2023,setor de saúde,ransomware,-,12.29,2024 Global Threat Intelligence Report
+Flashpoint,2023,setor financeiro,ransomware,-,13.77,2024 Global Threat Intelligence Report
+Fortinet,2021,roubo de credenciais,setor de comércio,-,30.43,Retail Cybersecurity Statistics Not To Be Ignored
+Fortinet,2021,malware,setor de comércio,-,21.74,Retail Cybersecurity Statistics Not To Be Ignored
+Fortinet,2021,ransomware,setor de comércio,-,13.04,Retail Cybersecurity Statistics Not To Be Ignored
+Fortinet,2021,DDoS,setor de comércio,-,10.14,Retail Cybersecurity Statistics Not To Be Ignored
+IBGE,2021,setor de comércio,Brasil,-,36.40,Demografia das Empresas e Estatísticas de Empreendedorismo
+IBGE,2021,setor de saúde,Brasil,-,6.40,Demografia das Empresas e Estatísticas de Empreendedorismo
+IBGE,2021,setor financeiro,Brasil,-,3.00,Demografia das Empresas e Estatísticas de Empreendedorismo
+IBM,2023,uso de aplicações na nuvem,dados roubados,-,82.00,Cost of a Data Breach Report 2023
+IBM,2023,dados roubados,nuvem,-,82.00,Cost of a Data Breach Report 2023
+IBM,2023,ransomware,brecha,-,24.00,Cost of a Data Breach Report 2023
+IBM,2023,dados roubados,ciberataque,-,32.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,malware,ciberataque,-,43.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,ransomware,ciberataque,-,20.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,phishing,ciberataque,-,41.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,phishing,ciberataque,-,30.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,dados roubados,ciberataque,-,19.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,ciberataque,-,21.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,roubo de credenciais,ciberataque,-,11.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda de reputação,ciberataque,-,9.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,dados roubados,ciberataque,-,32.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,ciberataque,-,24.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,roubo de credenciais,ciberataque,-,23.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda de reputação,ciberataque,-,9.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2020,EMEA,ciberataque,-,31.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2020,NA,ciberataque,-,27.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2020,LATAM,ciberataque,-,9.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2020,Oriente Médio,ciberataque,-,8.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2020,APAC,ciberataque,-,25.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2021,EMEA,ciberataque,-,24.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2021,NA,ciberataque,-,23.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2021,LATAM,ciberataque,-,13.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2021,Oriente Médio,ciberataque,-,14.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2021,APAC,ciberataque,-,26.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,EMEA,ciberataque,-,28.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,NA,ciberataque,-,25.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,LATAM,ciberataque,-,12.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,Oriente Médio,ciberataque,-,4.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,APAC,ciberataque,-,31.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,EMEA,ciberataque,-,32.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,NA,ciberataque,-,26.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,LATAM,ciberataque,-,12.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,Oriente Médio,ciberataque,-,7.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,APAC,ciberataque,-,23.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,ransomware,EMEA,-,26.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,roubo de credenciais,ciberataque | EMEA,-,28.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,ciberataque | EMEA,-,24.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,dados roubados,ciberataque | EMEA,-,16.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,phishing,ciberataque | EMEA,-,30.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor de comércio,ciberataque | EMEA,-,25.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor financeiro,ciberataque | EMEA,-,16.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2021,NA,ciberataque,-,23.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,NA,ciberataque,-,25.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,NA,ciberataque,-,26.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,malware,ciberataque | NA,-,46.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,phishing,ciberataque | NA,-,27.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,roubo de credenciais,ciberataque | NA,-,25.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,roubo de credenciais,ciberataque | NA,-,28.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,ciberataque | NA,-,24.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,dados roubados,ciberataque | NA,-,24.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor de comércio,ciberataque | NA,-,18.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor de saúde,ciberataque | NA,-,15.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,ransomware,ciberataque | APAC,-,17.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,malware,ciberataque | APAC,-,45.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,phishing,ciberataque | APAC,-,36.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,ciberataque | APAC,-,20.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,dados roubados,ciberataque | APAC,-,27.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor financeiro,ciberataque | APAC,-,12.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda de reputação,ciberataque | APAC,-,27.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,malware,ciberataque | LATAM,-,31.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,ransomware,ciberataque | LATAM,-,31.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,phishing,ciberataque | LATAM,-,22.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,dados roubados,ciberataque | LATAM,-,33.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda de reputação,ciberataque | LATAM,-,22.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,ciberataque | LATAM,-,22.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,roubo de credenciais,ciberataque | LATAM,-,11.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor de comércio,ciberataque | LATAM,-,25.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor financeiro,ciberataque | LATAM,-,25.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,malware,ciberataque | EMEA,-,50.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,DDoS,ciberataque | EMEA,-,17.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor financeiro,ciberataque | EMEA,-,38.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor de comércio,ciberataque | EMEA,-,13.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,phishing,ciberataque,-,29.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,malware,ciberataque,-,44.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,ransomware,ciberataque,-,23.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,dados roubados,ciberataque,-,29.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,roubo de credenciais,ciberataque,-,24.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,ciberataque,-,24.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2019,setor de comércio,ciberataque,-,16.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2019,setor de saúde,ciberataque,-,3.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2019,setor financeiro,ciberataque,-,17.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2020,setor de comércio,ciberataque,-,10.20,IBM X-Force Threat Intelligence Index 2024
+IBM,2020,setor de saúde,ciberataque,-,6.60,IBM X-Force Threat Intelligence Index 2024
+IBM,2020,setor financeiro,ciberataque,-,23.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2021,setor de comércio,ciberataque,-,7.30,IBM X-Force Threat Intelligence Index 2024
+IBM,2021,setor de saúde,ciberataque,-,5.10,IBM X-Force Threat Intelligence Index 2024
+IBM,2021,setor financeiro,ciberataque,-,22.40,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,setor de comércio,ciberataque,-,8.70,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,setor de saúde,ciberataque,-,5.80,IBM X-Force Threat Intelligence Index 2024
+IBM,2022,setor financeiro,ciberataque,-,18.90,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor de comércio,ciberataque,-,10.70,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor de saúde,ciberataque,-,6.30,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,setor financeiro,ciberataque,-,18.20,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,malware,setor financeiro,-,38.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,ciberataque,setor financeiro,-,18.20,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,ransomware,setor financeiro,-,25.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,setor financeiro,-,35.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,roubo de credenciais,setor financeiro,-,19.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,phishing,setor financeiro,-,28.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,ciberataque,setor de comércio,-,10.70,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,malware,setor de comércio,-,50.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,ransomware,setor de comércio,-,26.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,setor de comércio,-,25.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,phishing,setor de comércio,-,29.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,malware,setor de saúde,-,29.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,phishing,setor de saúde,-,20.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,roubo de credenciais,setor de saúde,-,20.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,perda financeira,setor de saúde,-,20.00,IBM X-Force Threat Intelligence Index 2024
+IBM,2023,dados roubados,setor de saúde,-,20.00,IBM X-Force Threat Intelligence Index 2024
+IMF,2023,setor financeiro,-,7.00,-,INTERNATIONAL MONETARY FUND
+Imperva,2023,setor de comércio,DDoS,-,8.70,The Imperva Global DDoS Threat Landscape Report 2023
+Imperva,2023,setor de saúde,DDoS,-,3.30,The Imperva Global DDoS Threat Landscape Report 2023
+Imperva,2023,setor financeiro,DDoS,-,10.10,The Imperva Global DDoS Threat Landscape Report 2023
+Mandiant,2023,phishing,APAC,-,18.00,M-Trends 2024 Special Report
+Mandiant,2023,ransomware,APAC,-,33.00,M-Trends 2024 Special Report
+Mandiant,2023,ransomware,EMEA,-,22.00,M-Trends 2024 Special Report
+Mandiant,2023,phishing,EMEA,-,16.00,M-Trends 2024 Special Report
+Mandiant,2023,phishing,ciberataque,-,16.30,M-Trends 2024 Special Report
+Mandiant,2023,dados criptografados,ciberataque,-,25.50,M-Trends 2024 Special Report
+Mandiant,2023,parada de serviço,ciberataque,-,15.90,M-Trends 2024 Special Report
+Mandiant,2023,perda financeira,ciberataque,-,7.90,M-Trends 2024 Special Report
+Mandiant,2023,indisponibilidade do sistema,ciberataque,-,6.90,M-Trends 2024 Special Report
+Mandiant,2023,dados roubados,ciberataque,-,2.80,M-Trends 2024 Special Report
+Mandiant,2023,DDoS,ciberataque,-,0.40,M-Trends 2024 Special Report
+Medicina S/A,2022,dados roubados,Brasil,-,43.00,"Saúde responde por 35,4% dos casos de ciberataques"
+Medicina S/A,2022,setor de comércio,ciberataque | Brasil,-,19.00,"Saúde responde por 35,4% dos casos de ciberataques"
+Medicina S/A,2022,setor financeiro,ciberataque | Brasil,-,9.00,"Saúde responde por 35,4% dos casos de ciberataques"
+Microsoft,2022,DDoS,Brasil,-,1.75,2022 in review: DDoS attack trends and insights
+Microsoft,2022,DDoS,Estados Unidos,-,45.02,2022 in review: DDoS attack trends and insights
+Microsoft,2022,DDoS,India,-,13.22,2022 in review: DDoS attack trends and insights
+Microsoft,2022,DDoS,EMEA,-,10.49,2022 in review: DDoS attack trends and insights
+Microsoft,2022,DDoS,Leste Asiático,-,11.25,2022 in review: DDoS attack trends and insights
+Microsoft,2022,DDoS,Coréia,-,4.22,2022 in review: DDoS attack trends and insights
+Microsoft,2022,DDoS,Reino Unido,-,2.23,2022 in review: DDoS attack trends and insights
+Microsoft,2022,DDoS,Australia,-,2.02,2022 in review: DDoS attack trends and insights
+OECD,2023,setor de comércio,-,30.00,-,Production and Sales (MEI)
+Positive Technologies,2020,ciberataque,aplicação web,-,17.00,Threats and vulnerabilities in web applications 2020–2021
+Positive Technologies,2022,setor de comércio,ransomware,-,79.00,Cybersecurity threatscape: Q2 2022
+Positive Technologies,2022,dados roubados,malware,-,40.00,Cybersecurity threatscape: Q2 2022
+Positive Technologies,2022,dados roubados,malware | setor de comércio,-,70.00,Cybersecurity threatscape: Q2 2022
+Proofpoint,2022,perda financeira,phishing,-,76.00,2023 State of the Phish
+Proofpoint,2022,perda financeira,ransomware,-,64.00,2023 State of the Phish
+Proofpoint,2022,dados roubados,ciberataque,-,65.00,2023 State of the Phish
+Proofpoint,2022,ransomware,ciberataque,-,76.00,2023 State of the Phish
+Proofpoint,2021,ransomware,ciberataque,-,78.00,2023 State of the Phish
+Proofpoint,2022,bulk phishing,ciberataque,-,85.00,2023 State of the Phish
+Proofpoint,2021,bulk phishing,ciberataque,-,86.00,2023 State of the Phish
+Proofpoint,2022,spear phishing,ciberataque,-,74.00,2023 State of the Phish
+Proofpoint,2021,spear phishing,ciberataque,-,79.00,2023 State of the Phish
+Proofpoint,2022,smishing,ciberataque,-,76.00,2023 State of the Phish
+Proofpoint,2021,smishing,ciberataque,-,75.00,2023 State of the Phish
+Proofpoint,2022,vishing,ciberataque,-,71.00,2023 State of the Phish
+Proofpoint,2021,vishing,ciberataque,-,69.00,2023 State of the Phish
+Proofpoint,2022,dados roubados,ciberataque,-,33.00,2023 State of the Phish
+Proofpoint,2021,dados roubados,ciberataque,-,44.00,2023 State of the Phish
+Proofpoint,2022,roubo de credenciais,ciberataque,-,36.00,2023 State of the Phish
+Proofpoint,2021,roubo de credenciais,ciberataque,-,48.00,2023 State of the Phish
+Proofpoint,2022,perda financeira,ciberataque,-,30.00,2023 State of the Phish
+Proofpoint,2021,perda financeira,ciberataque,-,17.00,2023 State of the Phish
+Proofpoint,2022,perda de reputação,ciberataque,-,18.00,2023 State of the Phish
+Proofpoint,2021,perda de reputação,ciberataque,-,24.00,2023 State of the Phish
+Proofpoint,2022,phishing,setor de comércio,-,26.00,2023 State of the Phish
+Proofpoint,2022,phishing,setor financeiro,-,30.00,2023 State of the Phish
+Proofpoint,2022,phishing,setor de saúde,-,26.00,2023 State of the Phish
+PWC,2024,ransomware,ciberataque,-,29.00,The C-Suite Playbook: Putting Security at the epicenter of innovation
+PWC,2024,DDoS,ciberataque,-,17.00,The C-Suite Playbook: Putting Security at the epicenter of innovation
+Radware,2022,DDoS,setor financeiro,-,52.60,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de comércio,-,6.00,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de saúde,-,10.50,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de telecomunicações,-,4.70,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de educação,-,2.80,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor financeiro | LATAM,-,31.50,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de saúde | LATAM,-,23.90,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de telecomunicações | LATAM,-,12.30,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor financeiro | EMEA,-,70.60,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de saúde | EMEA,-,3.32,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de telecomunicações | EMEA,-,1.13,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de educação | EMEA,-,1.28,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor financeiro | APAC,-,9.35,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de saúde | APAC,-,2.61,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de telecomunicações | APAC,-,2.30,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de educação | APAC,-,4.11,2022 Global Threat Analysis Report
+Radware,2022,DDoS,setor de saúde | APAC,-,2.61,2022 Global Threat Analysis Report
+Radware,2022,ciberataque,Estados Unidos,-,48.40,2022 Global Threat Analysis Report
+Radware,2022,ciberataque,India,-,9.94,2022 Global Threat Analysis Report
+Radware,2022,ciberataque,Itália,-,8.13,2022 Global Threat Analysis Report
+Radware,2022,ciberataque,Rússia,-,7.22,2022 Global Threat Analysis Report
+Radware,2022,ciberataque,Canadá,-,5.64,2022 Global Threat Analysis Report
+Radware,2022,ciberataque,Alemanha,-,4.78,2022 Global Threat Analysis Report
+Radware,2022,ciberataque,Reino Unido,-,3.97,2022 Global Threat Analysis Report
+Radware,2022,ciberataque por uma aplicação web,setor financeiro,-,3.00,2022 Global Threat Analysis Report
+Radware,2022,ciberataque por uma aplicação web,setor de comércio,-,25.30,2022 Global Threat Analysis Report
+Radware,2022,ciberataque por uma aplicação web,setor de educação,-,3.33,2022 Global Threat Analysis Report
+Radware,2022,ciberataque por uma aplicação web,setor de saúde,-,3.31,2022 Global Threat Analysis Report
+Radware,2023,setor de comércio,DDoS,-,4.31,2023 H1 Global Threat Analysis Report
+Radware,2023,setor financeiro,DDoS,-,3.44,2023 H1 Global Threat Analysis Report
+Radware,2023,setor de saúde,DDoS,-,3.61,2023 H1 Global Threat Analysis Report
+Radware,2023,ciberataque por uma aplicação web,setor financeiro,-,2.16,2023 H1 Global Threat Analysis Report
+Radware,2023,ciberataque por uma aplicação web,setor de comércio,-,35.50,2023 H1 Global Threat Analysis Report
+Radware,2023,ciberataque por uma aplicação web,setor de saúde,-,3.30,2023 H1 Global Threat Analysis Report
+Radware,2023,Estados Unidos,ciberataque,-,41.20,2023 H1 Global Threat Analysis Report
+Radware,2023,China,ciberataque,-,12.10,2023 H1 Global Threat Analysis Report
+Radware,2023,Holanda,ciberataque,-,16.50,2023 H1 Global Threat Analysis Report
+Radware,2023,Reino Unido,ciberataque,-,7.45,2023 H1 Global Threat Analysis Report
+Radware,2023,França,ciberataque,-,1.98,2023 H1 Global Threat Analysis Report
+Radware,2023,Rússia,ciberataque,-,8.99,2023 H1 Global Threat Analysis Report
+SlashNext,2023,smishing,ciberataques a dispositivos móveis,-,39.00,The State of Phishing 2023
+SlashNext,2023,ferramenta colaborativa,phishing,-,10.00,The State of Phishing 2023
+SlashNext,2023,plataforma de mensagens,phishing,-,14.00,The State of Phishing 2023
+SlashNext,2023,mídias sociais,phishing,-,23.00,The State of Phishing 2023
+SlashNext,2023,chamada telefônica,phishing,-,23.00,The State of Phishing 2023
+SlashNext,2023,mensagem de texto,phishing,-,28.00,The State of Phishing 2023
+SlashNext,2023,e-mail,phishing,-,80.00,The State of Phishing 2023
+Sonicwall,2023,NA,malware,-,52.28,2024 Sonicwall Cyber Threat Report
+Sonicwall,2023,EMEA,malware,-,23.70,2024 Sonicwall Cyber Threat Report
+Sonicwall,2023,LATAM,malware,-,7.84,2024 Sonicwall Cyber Threat Report
+Sonicwall,2023,APAC,malware,-,13.41,2024 Sonicwall Cyber Threat Report
+Sophos,2023,ransomware,setor financeiro,-,64.00,The State of Ransomware in Financial Services 2023
+Stormwall,2022,DDoS,setor financeiro,-,34.00,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,setor de comércio,-,17.00,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,setor de saúde,-,1.00,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,setor de telecomunicações,-,26.00,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,setor de entretenimento,-,12.00,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,setor de educação,-,2.00,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,Estados Unidos,-,18.30,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,China,-,10.70,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,India,-,9.20,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,Russia,-,8.40,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,Inglaterra,-,7.20,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,Alemanha,-,6.80,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,França,-,5.30,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,Japão,-,4.70,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,Ucrânia,-,4.50,2022: DDoS Year-in-Review Report by StormWall
+Stormwall,2022,DDoS,Brasil,-,4.20,2022: DDoS Year-in-Review Report by StormWall
+Tausight,2023,perda financeira,ciberataque | setor de saúde,-,90.00,Healthcare and Cybersecurity: 35 Key Statistics and Facts You Should Know
+Threat Intelligence,2023,ciberataque,setor de comércio,-,24.00,"Retail Cybersecurity: Threats, Statistics and Best Practices"
+Threat Intelligence,2023,E-commerce,setor de comércio,-,32.40,"Retail Cybersecurity: Threats, Statistics and Best Practices"
+Trend,2023,setor financeiro,malware,-,8.05,Calibrating Expansion - 2023 Annual Cybersecurity Report
+Verizon,2023,motivo: financeiro,setor financeiro,-,97.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: financeiro,setor de saúde,-,98.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados médicos comprometidos,setor de saúde,-,54.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: financeiro,setor de comércio,-,100.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados de pagamentos comprometidos,setor de comércio,-,37.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: financeiro,pequenas e médias empresas,-,98.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: financeiro,grandes empresas,-,97.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: financeiro,APAC,-,61.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: espionagem,APAC,-,39.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: financeiro,EMEA,-,91.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: espionagem,EMEA,-,8.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: financeiro,LATAM,-,93.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: espionagem,LATAM,-,11.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: financeiro,NA,-,99.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,motivo: espionagem,NA,-,1.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2022,dados roubados,elemento humano,-,82.00,2022 DBIR - Data Breach Investigations Report
+Verizon,2023,phishing,e-mail,-,96.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2022,ciberataque,pequenas e médias empresas,-,43.00,2022 DBIR - Data Breach Investigations Report
+Verizon,2023,aplicação web,brecha,-,60.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,ransomware,ciberataque,-,62.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,setor financeiro,-,74.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,roubo de credenciais,setor financeiro,-,38.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,setor de saúde,-,67.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,roubo de credenciais,setor de saúde,-,36.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,setor de comércio,-,23.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,roubo de credenciais,setor de comércio,-,35.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,pequenas e médias empresas,-,37.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,roubo de credenciais,pequenas e médias empresas,-,54.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,grandes empresas,-,41.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,roubo de credenciais,grandes empresas,-,37.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,APAC,-,56.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,APAC,-,42.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,roubo de credenciais,APAC,-,29.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,EMEA,-,37.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,EMEA,-,35.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,roubo de credenciais,EMEA,-,53.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,LATAM,-,32.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,LATAM,-,55.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,roubo de credenciais,LATAM,-,23.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,NA,-,50.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,dados roubados,NA,-,38.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2023,roubo de credenciais,NA,-,67.00,2023 DBIR - Data Breach Investigations Report
+Verizon,2022,dados roubados,DDoS,-,97.00,https://www.verizon.com/business/resources/reports/2024-dbir-data-breach-investigations-report.pdf
+Verizon,2023,phishing,ciberataque,-,17.00,2024 Data Breach Investigations Report
+Verizon,2023,ransomware,ciberataque,-,32.00,2024 Data Breach Investigations Report
+Verizon,2023,ransomware,ciberataque,-,23.00,2024 Data Breach Investigations Report
+Verizon,2023,phishing,ciberataque,-,13.00,2024 Data Breach Investigations Report
+Verizon,2023,DDoS,ciberataque,-,58.00,2024 Data Breach Investigations Report
+Verizon,2023,ransomware,ciberataque,-,14.00,2024 Data Breach Investigations Report
+Verizon,2023,phishing,ciberataque,-,7.00,2024 Data Breach Investigations Report
+Verizon,2023,dados roubados,ciberataque,-,90.90,2024 Data Breach Investigations Report
+Verizon,2023,setor de comércio,ciberataque,-,2.39,2024 Data Breach Investigations Report
+Verizon,2023,setor de saúde,ciberataque,-,4.53,2024 Data Breach Investigations Report
+Verizon,2023,setor financeiro,ciberataque,-,10.99,2024 Data Breach Investigations Report
+Verizon,2023,dados roubados,setor de comércio,-,3.47,2024 Data Breach Investigations Report
+Verizon,2023,dados roubados,setor de saúde,-,11.48,2024 Data Breach Investigations Report
+Verizon,2023,dados roubados,setor financeiro,-,10.49,2024 Data Breach Investigations Report
+Verizon,2023,DDoS,setor financeiro,-,60.57,2024 Data Breach Investigations Report
+Verizon,2023,malware,setor financeiro,-,13.27,2024 Data Breach Investigations Report
+Verizon,2023,DDoS,setor de saúde,-,3.18,2024 Data Breach Investigations Report
+Verizon,2023,malware,setor de saúde,-,16.18,2024 Data Breach Investigations Report
+Verizon,2023,DDoS,setor de comércio,-,35.73,2024 Data Breach Investigations Report
+Verizon,2023,malware,setor de comércio,-,28.76,2024 Data Breach Investigations Report
+Verizon,2023,DDoS,APAC,,23.45,2024 Data Breach Investigations Report
+Verizon,2023,malware,APAC,,16.50,2024 Data Breach Investigations Report
+Verizon,2023,DDoS,EMEA,,22.98,2024 Data Breach Investigations Report
+Verizon,2023,malware,EMEA,,17.77,2024 Data Breach Investigations Report
+Verizon,2023,DDoS,LATAM,,70.75,2024 Data Breach Investigations Report
+Verizon,2023,malware,LATAM,,14.85,2024 Data Breach Investigations Report
+Verizon,2023,DDoS,NA,,80.28,2024 Data Breach Investigations Report
+Verizon,2023,malware,NA,,10.03,2024 Data Breach Investigations Report
+WHO,2023,setor de saúde,-,10.00,-,Global Health Workforce statistics database
+Zimperium,2023,setor financeiro,phishing,-,13.20,2023 Global Mobile Threat Report
+Zimperium,2023,setor de comércio,phishing,-,17.80,2023 Global Mobile Threat Report
+Zimperium,2023,LATAM,malware,-,19.40,2023 Global Mobile Threat Report
+Zimperium,2023,APAC,malware,-,20.80,2023 Global Mobile Threat Report
+Zimperium,2023,EMEA,malware,-,35.40,2023 Global Mobile Threat Report
+Zimperium,2023,NA,malware,-,24.50,2023 Global Mobile Threat Report
+Zimperium,2023,setor financeiro,ransomware,-,10.13,2023 Global Mobile Threat Report
+Zimperium,2023,setor de comércio,ransomware,-,6.67,2023 Global Mobile Threat Report
+Zimperium,2023,setor de saúde,ransomware,-,24.17,2023 Global Mobile Threat Report

@@ -103,6 +103,24 @@ def simulador_riscos(infoT, infoNT, tudo):
 # ===========================================================================================================
 # ANALISADOR DE NEGÓCIOS
 
+# verifica se todas as informações dos campos infoA e infoB são referentes ao que estamos pesquisando
+def verifica_utilidade(infoNT, analise):
+	infosCertas = []
+	for info in infoNT:
+		infoA, infoB = False, False
+		for dado in analise:
+			if info[3] in dado:
+				infoA = True
+			if info[4] in dado or info[4] == "-":
+				infoB = True
+		if infoA and infoB:
+			print(info[3]+"  &  "+str(infoA)+"  &  "+info[4]+"  &  "+str(infoB)+"  &  OK")
+			infosCertas.append(info)
+		else:
+			print(info[3]+"  &  "+str(infoA)+"  &  "+info[4]+"  &  "+str(infoB))
+	return infosCertas
+
+
 def analisador_negocios(requisicao):
 	print("ENTRANDO - ANALISADOR DE NEGÓCIOS")
 	analise, tudo = [], []
@@ -124,27 +142,19 @@ def analisador_negocios(requisicao):
 				analise.append("ransomware")
 			if arquivo[linha][1] == "1":
 				analise.append("phishing")
+				analise.append("smishing")
+				analise.append("vishing")
 			if arquivo[linha][2] == "1":
 				analise.append("DDoS")
 		elif linha == 2:
 			if arquivo[linha][0] == "1":
-				analise.append("América do Sul")
-				analise.append("região: LAC")
+				analise.append("APAC")
 			if arquivo[linha][1] == "1":
-				analise.append("América do Norte")
-				analise.append("região: NA")
+				analise.append("LATAM")
 			if arquivo[linha][2] == "1":
-				analise.append("Europa")
-				analise.append("região: EMEA")
+				analise.append("EMEA")
 			if arquivo[linha][3] == "1":
-				analise.append("Ásia")
-				analise.append("região: APAC")
-			if arquivo[linha][4] == "1":
-				analise.append("Oceania")
-				analise.append("região: APAC")
-			if arquivo[linha][5] == "1":
-				analise.append("África")
-				analise.append("região: EMEA")
+				analise.append("NA")
 
 	while True:
 		if '\n' in tudo:
@@ -161,9 +171,11 @@ def analisador_negocios(requisicao):
 			else:
 				analise.append(dadoPesquisa)
 
+	analise.append("ciberataque")
 	print(analise)
 	wait = input("Parada no analisador. Continuar? ")
 	infoT, infoNT = moduloDados.gerenciadorDados(3,analise,None)
+	infoNT = verifica_utilidade(infoNT,analise)
 	print("FECHANDO - ANALISADOR DE NEGÓCIOS")
 	simulador_riscos(infoT, infoNT, tudo)
 	pass
