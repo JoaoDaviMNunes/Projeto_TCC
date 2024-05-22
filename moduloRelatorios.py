@@ -18,7 +18,7 @@ def classificacao_relatorios(entrada):
 	pesos = [10,5,8,6,5,10]
 	for dados in entrada:
 		totalPeso = (int(dados[7])*pesos[0] + int(dados[8])*pesos[1] + int(dados[9])*pesos[2] + int(dados[10])*pesos[3] + int(dados[11])*pesos[4] + int(dados[12])*pesos[5])/(pesos[0]+pesos[1]+pesos[2]+pesos[3]+pesos[4]+pesos[5])*3
-		print(totalPeso)
+		#print(totalPeso)
 		if totalPeso >= 5:
 			avaliacao = 'MR'
 		elif totalPeso >= 3:

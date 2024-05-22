@@ -1,21 +1,136 @@
 EMPRESA,ANO,INFERÊNCIA (A),INFERÊNCIA (B),VALOR,MÉTRICA,FONTE
-Sophos,2021,custo,ransomware,"170,404.00",dólar,The State of Ransomware in Retail 2021 - Sophos
-Sophos,2021,custo,ransomware | setor de comércio,"147,811.00",dólar,The State of Ransomware in Retail 2021 - Sophos
-Sophos,2021,custo,brecha,"4,450,000.00",dólar,The State of Ransomware in Retail 2021 - Sophos
-IBM,2023,custo | brecha,Brasil,"1,220,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Estados Unidos,"9,480,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Oriente Médio,"8,070,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Canadá,"5,130,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Alemanha,"4,670,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Japão,"4,520,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Reino Unido,"4,210,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,França,"4,080,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Itália,"3,860,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,América Latina,"3,690,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Coréia do Sul,"3,480,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,África do Sul,"2,790,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Austrália,"2,700,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
-IBM,2023,custo | brecha,Índia,"2,180,000.00",dólar,Cost of a Data Breach Report 2023 - IBM
+Sophos,2021,custo,ransomware,"170,404.00",dólar,The State of Ransomware in Retail 2021
+Sophos,2021,custo,ransomware & setor de comércio,"147,811.00",dólar,The State of Ransomware in Retail 2021
+Sophos,2021,custo,ciberataque,"4,450,000.00",dólar,The State of Ransomware in Retail 2021
+IBM,2023,ransomware,-,"5,130,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,ransomware,-,"4,540,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Brasil,"1,220,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Estados Unidos,"9,480,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Oriente Médio,"8,070,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Canadá,"5,130,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Alemanha,"4,670,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Japão,"4,520,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Reino Unido,"4,210,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,França,"4,080,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Itália,"3,860,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,América Latina,"3,690,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Coréia do Sul,"3,480,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,África do Sul,"2,790,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Austrália,"2,700,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,Índia,"2,180,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Brasil,"1,380,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Estados Unidos,"9,440,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Oriente Médio,"7,460,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Canadá,"5,640,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Alemanha,"4,850,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Japão,"4,570,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Reino Unido,"5,050,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,França,"4,340,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Itália,"3,740,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,América Latina,"2,800,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Coréia do Sul,"3,570,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,África do Sul,"3,360,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Austrália,"2,920,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,Índia,"2,320,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,-,"4,450,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,-,"4,350,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2021,vazamento de dados,-,"4,240,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2020,vazamento de dados,-,"3,860,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2019,vazamento de dados,-,"3,920,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2018,vazamento de dados,-,"3,860,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2017,vazamento de dados,-,"3,620,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,setor de saúde,"10,930,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,-,165.00,dólar por dado,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,-,164.00,dólar por dado,Cost of a Data Breach Report 2023
+IBM,2021,vazamento de dados,-,161.00,dólar por dado,Cost of a Data Breach Report 2023
+IBM,2020,vazamento de dados,-,146.00,dólar por dado,Cost of a Data Breach Report 2023
+IBM,2019,vazamento de dados,-,150.00,dólar por dado,Cost of a Data Breach Report 2023
+IBM,2018,vazamento de dados,-,148.00,dólar por dado,Cost of a Data Breach Report 2023
+IBM,2017,vazamento de dados,-,141.00,dólar por dado,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,setor de saúde,"10,930,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,setor de comércio,"2,960,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2023,vazamento de dados,setor financeiro,"5,900,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,setor de saúde,"10,100,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,setor de comércio,"3,280,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,setor financeiro,"5,970,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+IBM,2022,vazamento de dados,-,"3,860,000.00",dólar por ataque,IBM X-Force Threat Intelligence Index 2022
+Cybereason,2023,dados criptografados,-,"4,400,000.00",dólar por ataque,Cybereason 2023 Breach Report
+Gartner,2022,perda de desempenho,-,"1,275.00",dólar por hora,Gartner 2022 IT Cost of Downtime Study
+Gartner,2022,indisponibilidade do sistema,-,"5,762.00",dólar por hora,Gartner 2022 IT Cost of Downtime Study
+Cybersecurity Ventures,2023,perda financeira,-,"6,600,000.00",dólar por ano,Cybercrime Magazine 2023
+FBI,2023,perda financeira,phishing,"17,000,000.00",dólar por ano,FBI Internet Crime Complaint Center (IC3) 2023
+Verizon,2023,perda de credenciais,phishing,117.00,dólar por credencial,Verizon Data Breach Investigations DBIR 2023
+AAG,2023,whaling,phishing,"47,000,000.00",dólar por ataque,The Latest 2024 Phishing Statistics (updated May 2024)
+HoxHunt,2023,ransomware,-,"5,130,000.00",dólar por ataque,What are the top 10 costs of phishing?
+IBM,2023,vazamento de dados,phishing,"4,760,000.00",dólar por ataque,Cost of a Data Breach Report 2023
+Security Magazine,2023,indisponibilidade do sistema,-,"6,130.00",dólar por minuto,Downtime cost of an application DDoS attack averages $6130 per minute
+Imperva,2023,indisponibilidade do sistema,DDoS,"500,000.00",dólar por ataque,What DDoS Attacks Really Cost Your Business
+Zayo,2023,indisponibilidade do sistema,DDoS,68.00,minutos por ataque,Protecting Your Business From Cyber Attacks: The State of DDoS Attacks
+Zayo,2023,indisponibilidade do sistema,DDoS,"408,000.00",dólar por ataque,Protecting Your Business From Cyber Attacks: The State of DDoS Attacks
+Ponemon,2023,roubo de credenciais,-,"679,621.00",dólar por ataque,Cost of Insider Risks: Global Report 2023
 Sonicwall,2022,ransomware,-,693.3M,ataques,2023 SonicWall Cyber Threat Report
 Sonicwall,2022,malware,-,5.5B,ataques,2023 SonicWall Cyber Threat Report
-IBM,2021,custo | brecha,pequenas e médias empresas,"420,000.00",dólar,https://www.ibm.com/security/data-breach
+IBM,2021,vazamento de dados,pequenas e médias empresas,"420,000.00",dólar,Cost of a Data Breach Report 2023
+NETSCOUT,2023,DDoS,-,"13,142,840.00",ataques,NETSCOUT DDoS THREAT INTELLIGENCE REPORT
+SlashNext,2023,custo,ransomware,"4,500,000.00",dólar,The State of Phishing 2023
+Ponemon,2021,custo,malware & phishing,"353,582.00",dólar,The 2021 Cost of Phishing Study
+Ponemon,2021,perda de produtividade,phishing,"3,234,459.00",dólar por ano,The 2021 Cost of Phishing Study
+Ponemon,2021,roubo de credenciais,phishing,"692,531.00",dólar por ano,The 2021 Cost of Phishing Study
+Ponemon,2015,perda de produtividade,phishing,"1,800,000.00",dólar por ano,The 2021 Cost of Phishing Study
+Ponemon,2015,roubo de credenciais,phishing,"381,920.00",dólar por ano,The 2021 Cost of Phishing Study
+Ponemon,2021,malware,phishing,"338,098.00",dólar por ano,The 2021 Cost of Phishing Study
+Ponemon,2021,phishing,-,"14,800,000.00",dólar por ano,The 2021 Cost of Phishing Study
+Ponemon,2021,malware,phishing,"807,506.00",dólar por ano,The 2021 Cost of Phishing Study
+Ponemon,2021,roubo de credenciais,phishing,5.30,ataques por ano,The 2021 Cost of Phishing Study
+Ponemon,2021,ransomware,-,"5,660,000.00",dólar por ataque,The 2021 Cost of Phishing Study
+Ponemon,2015,phishing,-,"3,800,000.00",dólar por ano,The 2021 Cost of Phishing Study
+Ponemon,2021,perda de produtividade,malware,"2,157,630.00",dólar por ano,The 2021 Cost of Phishing Study
+Ponemon,2021,ransomware,-,"790,000.00",dólar por ano,
+Ponemon,2023,ciberataque,,"4,991,500.00",dólar,Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 2023
+Ponemon,2023,disrupção de serviços,setor de saúde,"1,297,790.00",dólar,Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 2023
+Ponemon,2023,perda de produtividade,setor de saúde,"1,148,045.00",dólar,Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 2023
+Ponemon,2022,disrupção de serviços,setor de saúde,"1,018,670.00",dólar,Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 2023
+Ponemon,2022,perda de produtividade,setor de saúde,"1,107,250.00",dólar,Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 2023
+Cybereason,2024,ransomware,Estados Unidos,"1,400,000.00",dólar,Ransomware: The True Cost to Business 2024
+Cybereason,2024,ransomware,Reino Unido,"423,000.00",dólar,Ransomware: The True Cost to Business 2024
+Cybereason,2024,ransomware,Alemanha,"762,000.00",dólar,Ransomware: The True Cost to Business 2024
+Cybereason,2024,ransomware,França,"1,000,000.00",dólar,Ransomware: The True Cost to Business 2024
+Sophos,2024,ransomware,-,"2,073,000.00",dólar,The State of Ransomware 2024
+Sophos,2023,ransomware,-,"1,082,000.00",dólar,The State of Ransomware 2024
+Sophos,2022,ransomware,-,"1,400,000.00",dólar,The State of Ransomware 2024
+Sophos,2021,ransomware,-,"1,850,000.00",dólar,The State of Ransomware 2024
+Osterman Research,2022,phishing,-,"45,726.00",dólar,The Business Cost of Phishing
+Symantec,2020,ransomware,-,"260,000.00",dólar,Targeted Ransomware
+TrendMicro,2019,ransomware,-,"61,132,338.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2020,ransomware,-,"41,271,208.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2021,ransomware,-,"14,066,778.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2022,ransomware,-,"14,983,271.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2023,ransomware,-,"14,169,866.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2023,setor financeiro,ransomware,"20,300.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2023,setor de comércio,ransomware,"6,300.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2023,setor de saúde,malware & Estados Unidos,"45,030.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2023,setor financeiro,malware & Brasil,"8,051.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2023,Estados Unidos,malware,"993,996,354.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+TrendMicro,2023,Brasil,malware,"256,383,037.00",ataques por ano,Calibration Expansion: 2023 Annual Cybersecurity Report
+APWG,2023,phishing,-,"4,987,809.00",ataques por ano,"Phishing Activity Trends Report, 4th Quarter 2023"
+Arelion,2022,DDoS,-,11.00,média duração em minutos,DDoS Threat Landscape Report 2023
+Sonicwall,2023,malware,-,"6,060,000,000.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2022,NA,malware,"2,747,184,428.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2022,Europa,malware,"1,459,991,177.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2022,LATAM,malware,"366,328,290.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2022,APAC,malware,"825,782,692.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2023,NA,malware,"3,170,719,591.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2023,Europa,malware,"1,437,227,130.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2023,LATAM,malware,"475,173,006.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2023,APAC,malware,"813,156,625.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2019,ransomware,-,"187,909,053.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2020,ransomware,-,"304,638,987.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2021,ransomware,-,"623,254,877.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2022,ransomware,-,"493,327,151.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Sonicwall,2023,ransomware,-,"317,593,178.00",ataques por ano,Acronis Mid-Year Cyberthreats Report 2023
+Zayo,2023,DDoS,-,"6,000.00",dólar por minuto,Protecting Your Business From Cyber Attacks: The State of DDoS Attacks
+Zayo,2023,DDoS,-,4.00,ataques por semana,Protecting Your Business From Cyber Attacks: The State of DDoS Attacks
+Zayo,2023,DDoS,-,"200,000.00",dólar por ataque,Protecting Your Business From Cyber Attacks: The State of DDoS Attacks
+Osterman Research,2022,phishing,-,27.50,média duração em minutos,The Business Cost of Phishing
+Osterman Research,2022,phishing,-,31.32,dólar por mensagem,The Business Cost of Phishing
+NexusGuard,2023,DDoS,,0.80,tamanho do ataque em Gbps,

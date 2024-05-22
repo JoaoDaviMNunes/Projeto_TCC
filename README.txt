@@ -23,13 +23,6 @@ tpataque = 111
 # [5] = sexto campo indica que o local da empresa é África
 local = 111111
 
-# [0] = primeiro campo indica que a empresa possui uso de nuvem
-# [1] = segundo campo indica que a empresa possui firewall
-# [2] = terceiro campo indica que a empresa possui acesso remoto
-# [3] = quarto campo indica que a empresa possui aplicação web
-# [4] = quinto campo indica que a empresa possui servidor
-ativos = 11111
-
 # ------------------------------------------------------------------
 # EXEMPLO
 100

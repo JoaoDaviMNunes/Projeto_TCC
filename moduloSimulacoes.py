@@ -6,9 +6,13 @@ import random
 import sqlite3
 import moduloDados
 
+paisesLATAM = ["Brasil","Argentina"]
+paisesEMEA = ["Alemanha","Reino Unido","França","Inglaterra","Itália","Ucrânia","Holanda"]
+paisesAPAC = ["Australia","China","Coréia","India","Japão","Leste Asiático","Russia","Rússia"]
+paisesNA = ["Estados Unidos", "Canadá"]
 setor = ["setor financeiro","setor de saúde","setor de comércio"]
 ataques = ["malware", "ransomware", "phishing", "DDoS"]
-local = ["América do Sul","região: LAC","América do Norte","região: NA","Europa","região: EMEA","Ásia","região: APAC","Oceania","região: APAC","África","região: EMEA"]
+local = ["LATAM","NA","APAC","EMEA","América do Sul","América do Norte","Europa","Ásia","Oceania","África","Oriente Médio"]
 rodadas = 1000000
 
 # ===========================================================================================================
@@ -105,6 +109,10 @@ def simulador_riscos(infoT, infoNT, tudo):
 
 # verifica se todas as informações dos campos infoA e infoB são referentes ao que estamos pesquisando
 def verifica_utilidade(infoNT, analise):
+	for info in infoNT:
+		for a in analise:
+			if info[3] == a:
+				print(info)
 	infosCertas = []
 	for info in infoNT:
 		infoA, infoB = False, False
@@ -114,10 +122,9 @@ def verifica_utilidade(infoNT, analise):
 			if info[4] in dado or info[4] == "-":
 				infoB = True
 		if infoA and infoB:
-			print(info[3]+"  &  "+str(infoA)+"  &  "+info[4]+"  &  "+str(infoB)+"  &  OK")
 			infosCertas.append(info)
-		else:
-			print(info[3]+"  &  "+str(infoA)+"  &  "+info[4]+"  &  "+str(infoB))
+	'''for info in infosCertas:
+					print(info)'''
 	return infosCertas
 
 

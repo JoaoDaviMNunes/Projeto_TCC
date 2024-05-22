@@ -1,22 +1,55 @@
-EMPRESA,GEMINI,,,,,
-Positive Technologies,2,2,1,2,2,2
-ThoughtLab.,1,1,2,2,2,1
-Verizon,2,2,2,2,2,2
-Forbes,1,1,2,0,2,1
-Cybertalk.org,1,1,1,0,1,1
-Threat Intelligence,2,2,2,2,2,2
-Fortinet,2,1,2,1,2,2
-Medicina S/A,0,0,0,0,0,0
-IBM,2,2,2,2,2,2
-Tausight,1,1,2,1,2,1
+EMPRESA,Reputação da empresa,Periodicidade,Cobertura,Escopo,Abrangência de ataques,Metodologia de pesquisa
+AAG,1,1,1,1,1,1
+Acronis,1,1,2,1,2,2
+APWG,2,2,2,2,2,2
+Arelion,1,2,1,1,2,1
 Astra Security,1,1,1,1,2,1
-Sophos,2,1,2,1,2,2
+Barracuda,2,1,2,1,2,2
+Blackpoint,1,1,1,1,1,1
 CircleID,1,1,2,1,2,1
+CrowdStrike,2,2,2,2,2,2
+Cybereason,1,1,2,1,2,2
+Cybersecurity Ventures,1,1,2,2,1,1
+Cybertalk.org,1,1,1,0,1,1
+Darktrace,2,2,2,1,2,2
+Egress,1,1,1,1,1,1
+Expel,1,1,2,1,2,2
+FBI,2,2,1,1,2,2
+Flashpoint,2,2,2,2,2,2
+Forbes,1,1,2,0,2,1
+Fortinet,2,1,2,1,2,2
+Gartner,2,2,2,2,2,2
+HoxHunt,1,1,2,1,2,2
 IBGE,2,1,1,0,1,2
-OECD,2,2,2,2,2,2
-WHO,2,2,2,2,2,2
+IBM,2,2,2,2,2,2
 IMF,2,2,2,2,2,2
+Imperva,2,2,2,1,2,2
+Mandiant,2,2,2,1,2,2
+Medicina S/A,0,0,0,0,0,0
 Microsoft,2,2,2,2,2,2
-Stormwall,1,1,1,1,2,1
+NETSCOUT,2,2,2,2,2,2
+NexusGuard,1,1,1,1,1,1
+OECD,2,2,2,2,2,2
+Osterman Research,1,1,2,2,1,1
+PhishLabs,2,2,2,1,2,2
+Ponemon,2,1,2,2,1,2
+Positive Technologies,2,2,1,2,2,2
+Proofpoint,2,2,2,1,2,2
+PWC,2,2,2,2,2,2
 Radware,1,1,2,1,2,2
+Security Magazine,1,1,2,2,1,1
+SlashNext,1,1,2,1,2,2
 Sonicwall,1,1,2,1,2,2
+Sophos,2,1,2,1,2,2
+Stormwall,1,1,1,1,2,1
+Symantec,2,2,2,2,2,2
+Tausight,1,1,2,1,2,1
+ThoughtLab.,1,1,2,2,2,1
+Threat Intelligence,2,2,2,2,2,2
+Trend,1,1,2,1,2,1
+TrendMicro,2,2,2,1,2,2
+Verizon,2,2,2,2,2,2
+WHO,2,2,2,2,2,2
+WHO,2,2,2,2,2,2
+Zayo,1,1,1,1,1,1
+Zimperium,1,1,2,1,2,2
