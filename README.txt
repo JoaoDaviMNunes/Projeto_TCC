@@ -4,7 +4,10 @@ FORMATO DA REQUISIÇÃO
 # EXPLICAÇÃO
 
 valores com campos são apenas 0 e 1
+0 indica ausência de tal informação
+1 indica presença de tal informação
 
+# Apenas um campo pode ser acionado
 # [0] = primeiro campo indica que o setor da empresa é o Financeiro
 # [1] = segundo campo indica que o setor da empresa é o Saúde
 # [2] = terceiro campo indica que o setor da empresa é o Comércio
@@ -23,12 +26,18 @@ tpataque = 111
 # [5] = sexto campo indica que o local da empresa é África
 local = 111111
 
+# Apenas um campo pode ser acionado
+# [0] = primeiro campo indica que busca qualquer tipo de dado no Banco de Dados
+# [1] = segundo campo indica que busca dados de empresa relevantes ou muito relevantes no Banco de Dados
+# [2] = terceiro campo indica que busca dados de empresas muito relevantes no Banco de Dados
+classifDados = 111
+
 # ------------------------------------------------------------------
 # EXEMPLO
 100
 110
 100000
-110010
+110
 
 # ------------------------------------------------------------------
 # ------------------------------------------------------------------
