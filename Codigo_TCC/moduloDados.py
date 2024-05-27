@@ -159,8 +159,7 @@ def buscaDados_tabela(cursor, chaves):
 
 		#wait = input("Pausa:")
 	
-	print(str(len(infoT))+' dados tangíveis encontrados na pesquisa')
-	print(str(len(infoNT))+' dados não tangíveis encontrados na pesquisa')
+	print(str(len(infoT))+' dadosTang e '+ str(len(infoNT))+' dadosNTang')
 
 	# removendo os itens duplicados
 	infoT = list(dict.fromkeys(infoT))
