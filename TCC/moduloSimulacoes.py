@@ -5,6 +5,9 @@ import math
 import random
 import sqlite3
 import moduloDados
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 
 paisesLATAM = ["Brasil","Argentina"]
 paisesEMEA = ["Alemanha","Reino Unido","França","Inglaterra","Itália","Ucrânia","Holanda"]
@@ -22,11 +25,50 @@ rodadas = 1000000
 # Este documento igualmente contém o risco da empresa de sofrer um ciberataque de Malware, Phishing e DDoS, com base nas simulações realizadas previamente.
 
 def gerador_relatorios(info):
-	#saida = open("relatoriofinal.pdf", "w")
+	nome_arquivo = "relatoriofinal.pdf"
 
-	# ...
-	
-	#saida.close()
+	# Cria o documento PDF
+	pdf = SimpleDocTemplate(nome_arquivo, pagesize=letter)
+
+	# Estilos para o documento
+	estilos = getSampleStyleSheet()
+	estilo_titulo = estilos['Title']
+	estilo_subtitulo = estilos['Heading2']
+	estilo_normal = estilos['BodyText']
+
+	# Conteúdo do PDF
+	conteudo = []
+
+	# Adiciona um título
+	titulo = Paragraph("Título do Documento", estilo_titulo)
+	conteudo.append(titulo)
+
+	# Adiciona um espaço
+	conteudo.append(Spacer(1, 12))
+
+	# Adiciona um subtítulo
+	subtitulo = Paragraph("Subtítulo do Documento", estilo_subtitulo)
+	conteudo.append(subtitulo)
+
+	# Adiciona um parágrafo
+	paragrafo = Paragraph("Este é um exemplo de parágrafo no documento PDF. "
+	                      "Você pode adicionar mais texto aqui conforme necessário.", estilo_normal)
+	conteudo.append(paragrafo)
+
+	# Adiciona um espaço
+	conteudo.append(Spacer(1, 12))
+
+	# Adiciona uma imagem (certifique-se de ter uma imagem chamada 'imagem.jpg' no mesmo diretório)
+	try:
+		imagem = Image('imagem.jpg')
+		imagem.drawHeight = 2 * 72
+		imagem.drawWidth = 2 * 72
+		conteudo.append(imagem)
+	except IOError:
+		conteudo.append(Paragraph("Imagem não encontrada.", estilo_normal))
+
+	# Constrói o PDF
+	pdf.build(conteudo)
 	print("FIM! Arquivo de saída gerado!")
 
 # ===========================================================================================================
@@ -38,6 +80,9 @@ def agrupador_informacoes(info):
 
 # ===========================================================================================================
 # SIMULADOR DE RISCOS
+def calculo_custo_impacto(tipo_impacto, analise):
+	
+
 def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos):
 	'''
 	prob_ataque = lista de todas probabilidades de ocorrer o ataque
@@ -53,6 +98,7 @@ def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos):
 	contadorImpacto = [0,0,0,0,0]
 
 	print("PROB ATAQUE - " + str(prob_ataque) + ' - ' + str(len(prob_ataque)))
+	print("PROB IMPACTOS - " + str(prob_impactos) + ' - ' + str(len(prob_impactos)))
 
 	for _ in range(rodadas):
 		pos = random.randint(0, len(prob_ataque)-1)
@@ -85,13 +131,13 @@ def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos):
 def simulador_riscos(infoT, infoNT, tudo):
 
 	final = []
-	#riscoM, riscoP, riscoD = 0,0,0											# contator total das porcentagens de cada ataque
-	riscoM, riscoP, riscoD = [],[],[]
+	riscoM, riscoP, riscoD = [],[],[]										# contator total das porcentagens de cada ataque
 	impVaz, impCrip, impDes, impInd, impCred = 0,0,0,0,0 					# contador total das porcentagens de sucesso de cada impacto
 	cm, cp, cd = 0,0,0														# contador de itens de cada ataque
 	contVaz, contCrip, contDes, contInd, contCred = 0,0,0,0,0 				# contador de itens de cada impacto
-	probM_impactos, probP_impactos, probD_impactos = 0,0,0 					# 
-	prob_ataque_malware, prob_ataque_phishing, prob_ataque_ddos = 0,0,0 	# 
+	probM_impactos, probP_impactos, probD_impactos = 0,0,0 					# probabilidade de ocorrer cada impacto, dependendo do tipo de ataque
+	prob_ataque_malware, prob_ataque_phishing, prob_ataque_ddos = 0,0,0 	# probabilidade de ocorrer cada tipo de ataque
+	ciber = 0
 
 	# VERIFICAR OS RISCOS E OS IMPACTOS DA EMPRESA SOFRER O RISCO DO ATAQUE
 	for info in infoNT:		
@@ -100,16 +146,6 @@ def simulador_riscos(infoT, infoNT, tudo):
 			risco = float(info[5])
 		else:
 			risco = float(info[6])
-
-		'''if ("malware" in info[3] or "ransomware" in info[3]) and tudo[3] == '1':
-			riscoM += risco
-			cm += 1
-		if "phishing" in info[3] and tudo[4] == '1':
-			riscoP += risco
-			cp += 1
-		if "DDoS" in info[3] and tudo[5] == '1':
-			riscoD += risco
-			cd += 1'''
 
 		if ("malware" in info[3] or "ransomware" in info[3] or "ciberataque" in info[3]) and tudo[3] == '1':
 			riscoM.append(risco)
@@ -120,8 +156,6 @@ def simulador_riscos(infoT, infoNT, tudo):
 		if ("DDoS" in info[3] or "ciberataque" in info[3]) and tudo[5] == '1':
 			riscoD.append(risco)
 			cd += 1
-		if "ciberataque" in info[3]:
-			print("+1")
 		
 		if "vazamento de dados" in info[3]:
 			impVaz +=1
@@ -145,12 +179,11 @@ def simulador_riscos(infoT, infoNT, tudo):
 				round(contInd/impInd if impInd else 0,2),
 				round(contCred/impCred if impCred else 0,2)]
 
-	print("PORCENTAGENS IMPACTOS - " + str(len(prob_impactos)))
-	print("PORCENTAGENS MALWARE - " + str(len(riscoM)))
-	print("PORCENTAGENS PHISHING - " + str(len(riscoP)))
-	print("PORCENTAGENS DDOS - " + str(len(riscoD)))
+	print("Nº_DADOS M - " + str(len(riscoM)))
+	print("Nº_DADOS P - " + str(len(riscoP)))
+	print("Nº_DADOS D - " + str(len(riscoD)))
 
-
+	# verifica via simulação quais são os riscos e impactos de cada tipo de ataque
 	if cm > 0:
 		prob_ataque_malware, probM_impactos = montecarlo_simulacao_ataque(rodadas, riscoM, prob_impactos)
 	if cp > 0:
@@ -161,7 +194,7 @@ def simulador_riscos(infoT, infoNT, tudo):
 	final.append([prob_ataque_phishing, probP_impactos])
 	final.append([prob_ataque_ddos, probD_impactos])
 
-	# PRINTANDO PARA SABER O STATUS
+	# PRINTANDO PARA SABER O STATUS ----> tais informações irão para o relatório e não serão printadas na tela
 	if prob_ataque_malware > 0:
 		print("A probabilidade de ocorrer um ataque de Malware é de " + str(final[0][0]) + "%")
 		print("Dado que é malware, a probabilidade de ocorrer vazamento de dados é de " + str(final[0][1][0]) + "%")
