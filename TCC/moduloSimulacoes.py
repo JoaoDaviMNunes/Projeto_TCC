@@ -5,9 +5,9 @@ import math
 import random
 import sqlite3
 import moduloDados
-from reportlab.lib.pagesizes import letter
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+#from reportlab.lib.pagesizes import letter
+#from reportlab.lib.styles import getSampleStyleSheet
+#from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 
 paisesLATAM = ["Brasil","Argentina"]
 paisesEMEA = ["Alemanha","Reino Unido","França","Inglaterra","Itália","Ucrânia","Holanda"]
@@ -26,7 +26,7 @@ rodadas = 1000000
 
 def gerador_relatorios(info):
 	nome_arquivo = "relatoriofinal.pdf"
-
+	'''
 	# Cria o documento PDF
 	pdf = SimpleDocTemplate(nome_arquivo, pagesize=letter)
 
@@ -68,7 +68,7 @@ def gerador_relatorios(info):
 		conteudo.append(Paragraph("Imagem não encontrada.", estilo_normal))
 
 	# Constrói o PDF
-	pdf.build(conteudo)
+	pdf.build(conteudo)'''
 	print("FIM! Arquivo de saída gerado!")
 
 # ===========================================================================================================
@@ -81,7 +81,7 @@ def agrupador_informacoes(info):
 # ===========================================================================================================
 # SIMULADOR DE RISCOS
 def calculo_custo_impacto(tipo_impacto, analise):
-	
+	print("something")
 
 def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos):
 	'''
