@@ -69,7 +69,7 @@ def gerador_relatorios(info):
 
 	# Constrói o PDF
 	pdf.build(conteudo)'''
-	print("FIM! Arquivo de saída gerado!")
+	print("--------------------------- FIM ---------------------------")
 
 # ===========================================================================================================
 # AGRUPADOR DE INFORMAÇÕES
@@ -80,8 +80,8 @@ def agrupador_informacoes(info):
 
 # ===========================================================================================================
 # SIMULADOR DE RISCOS
-def calculo_custo_impacto(tipo_impacto, analise):
-	print("something")
+def calculo_custo_impacto(impactos):
+	print("Calculando...")
 
 def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos):
 	'''
@@ -212,7 +212,8 @@ def simulador_riscos(infoT, infoNT, tudo):
 		print("Dado que é DDoS, a probabilidade de ocorrer indisponibilidade do sistema é de " + str(final[2][1][3]) + "%")
 
 	# VERIFICAR O RISCO FINANCEIRO (infoT)
-
+	impactos = [int(tudo[3]), int(tudo[4]), int(tudo[5])]
+	custoFinal = calculo_custo_impacto(impactos)
 
 	agrupador_informacoes(final)
 
@@ -234,7 +235,6 @@ def verifica_utilidade(infoNT, analise):
 	'''for info in infosCertas:
 		print(info)'''
 	return infosCertas
-
 
 def analisador_negocios(requisicao):
 	print("ENTRANDO - ANALISADOR DE NEGÓCIOS")
@@ -264,12 +264,20 @@ def analisador_negocios(requisicao):
 		elif linha == 2:
 			if arquivo[linha][0] == "1":
 				analise.append("APAC")
+				for pais in paisesAPAC:
+					analise.append(pais)
 			if arquivo[linha][1] == "1":
 				analise.append("LATAM")
+				for pais in paisesLATAM:
+					analise.append(pais)
 			if arquivo[linha][2] == "1":
 				analise.append("EMEA")
+				for pais in paisesEMEA:
+					analise.append(pais)
 			if arquivo[linha][3] == "1":
 				analise.append("NA")
+				for pais in paisesNA:
+					analise.append(pais)
 
 	while True:
 		if '\n' in tudo:
@@ -314,8 +322,6 @@ def analisador_negocios(requisicao):
 	analise.append("ciberataque")
 	print(analise)
 	infoT, infoNT = moduloDados.gerenciadorDados(3,analise,None)
-	infoNT = verifica_utilidade(infoNT,analise)
-	print('UTIL =>' + str(len(infoT))+' dadosTang e '+ str(len(infoNT))+' dadosNTang')
 	print("FECHANDO - ANALISADOR DE NEGÓCIOS")
 	simulador_riscos(infoT, infoNT, tudo)
 	pass
