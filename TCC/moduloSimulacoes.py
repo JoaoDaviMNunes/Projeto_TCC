@@ -80,8 +80,14 @@ def agrupador_informacoes(info):
 
 # ===========================================================================================================
 # SIMULADOR DE RISCOS
-def calculo_custo_impacto(impactos):
+def calculo_custo_impacto(impactos, infoT):
 	print("Calculando...")
+
+def add_impactos(impactos, tps_impactos):
+	for i in range(len(impactos)):
+		if impactos[i] < tps_impactos[i]:
+			impactos[i] = 1
+	return impactos
 
 def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos):
 	'''
@@ -212,8 +218,15 @@ def simulador_riscos(infoT, infoNT, tudo):
 		print("Dado que é DDoS, a probabilidade de ocorrer indisponibilidade do sistema é de " + str(final[2][1][3]) + "%")
 
 	# VERIFICAR O RISCO FINANCEIRO (infoT)
-	impactos = [int(tudo[3]), int(tudo[4]), int(tudo[5])]
-	custoFinal = calculo_custo_impacto(impactos)
+	impactos = [0,0,0,0,0]
+	if int(tudo[3]) == 1:
+		impactos = add_impactos(impactos, [1,1,1,1,0])
+	if int(tudo[4]) == 1:
+		impactos = add_impactos(impactos, [1,0,1,0,1])
+	if int(tudo[5]) == 1:
+		impactos = add_impactos(impactos, [0,0,1,1,0])
+
+	custoFinal = calculo_custo_impacto(impactos, infoT)
 
 	agrupador_informacoes(final)
 
