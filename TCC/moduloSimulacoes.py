@@ -81,7 +81,110 @@ def agrupador_informacoes(info):
 # ===========================================================================================================
 # SIMULADOR DE RISCOS
 def calculo_custo_impacto(impactos, infoT):
-	print("Calculando...")
+	custo_vaz_min, custo_crip_min, custo_des_min, custo_sis_min, custo_cred_min = 0,0,0,0,0
+	custo_vaz_max, custo_crip_max, custo_des_max, custo_sis_max, custo_cred_max = 0,0,0,0,0
+	custo_vazFinal, custo_cripFinal, custo_desFinal, custo_sisFinal, custo_credFinal = 0,0,0,0,0
+	custo_malware_min, custo_phishing_min, custo_ddos_min, custo_cib_min = 0,0,0,0
+	custo_malware_max, custo_phishing_max, custo_ddos_max, custo_cib_max = 0,0,0,0
+	custo_malwareFinal, custo_phishingFinal, custo_ddosFinal, custo_cibFinal = 0,0,0,0
+
+	for info in infoT:
+		#print(info)
+		valor = int(info[5])
+		if "dólar por ataque" == info[6]:
+			if "vazamento de dados" in info[3] or ("vazamento de dados" in info[4] and "custo" in info[3]):
+				if custo_vaz_max == 0 and custo_vaz_min == 0:
+					custo_vaz_min = valor
+					custo_vaz_max = valor
+				if valor > custo_vaz_max:
+					custo_vaz_max = valor
+				if valor < custo_vaz_min:
+					custo_vaz_min = valor
+			if "dados criptografados" in info[3] or ("dados criptografados" in info[4] and "custo" in info[3]):
+				if custo_crip_max == 0 and custo_crip_min == 0:
+					custo_crip_min = valor
+					custo_crip_max = valor
+				if valor > custo_crip_max:
+					custo_crip_max = valor
+				if valor < custo_crip_min:
+					custo_crip_min = valor
+			if "perda de desempenho" in info[3] or ("perda de desempenho" in info[4] and "custo" in info[3]):
+				if custo_des_max == 0 and custo_des_min == 0:
+					custo_des_min = valor
+					custo_des_max = valor
+				if valor > custo_des_max:
+					custo_des_max = valor
+				if valor < custo_des_min:
+					custo_des_min = valor
+			if "indisponibilidade do sistema" in info[3] or ("indisponibilidade do sistema" in info[4] and "custo" in info[3]):
+				if custo_sis_max == 0 and custo_sis_min == 0:
+					custo_sis_min = valor
+					custo_sis_max = valor
+				if valor > custo_sis_max:
+					custo_sis_max = valor
+				if valor < custo_sis_min:
+					custo_sis_min = valor
+			if "roubo de credenciais" in info[3] or ("roubo de credenciais" in info[4] and "custo" in info[3]):
+				if custo_cred_max == 0 and custo_cred_min == 0:
+					custo_cred_min = valor
+					custo_cred_max = valor
+				if valor > custo_cred_max:
+					custo_cred_max = valor
+				if valor < custo_cred_min:
+					custo_cred_min = valor
+			if "malware" in info[3] or "malware" in info[4]:
+				if custo_malware_min == 0 and custo_malware_max == 0:
+					custo_malware_min = valor
+					custo_malware_max = valor
+				if valor > custo_malware_max:
+					custo_malware_max = valor
+				if valor < custo_malware_min:
+					custo_malware_min = valor
+			if "phishing" in info[3] or "phishing" in info[4]:
+				if custo_phishing_min == 0 and custo_phishing_max == 0:
+					custo_phishing_min = valor
+					custo_phishing_max = valor
+				if valor > custo_phishing_max:
+					custo_phishing_max = valor
+				if valor < custo_phishing_min:
+					custo_phishing_min = valor
+			if "DDoS" in info[3] or "DDoS" in info[4]:
+				if custo_ddos_min == 0 and custo_ddos_max == 0:
+					custo_ddos_min = valor
+					custo_ddos_max = valor
+				if valor > custo_ddos_max:
+					custo_ddos_max = valor
+				if valor < custo_ddos_min:
+					custo_ddos_min = valor
+			if "ciberataque" in info[3] or "ciberataque" in info[4]:
+				if custo_cib_min == 0 and custo_cib_max == 0:
+					custo_cib_min = valor
+					custo_cib_max = valor
+				if valor > custo_cib_max:
+					custo_cib_max = valor
+				if valor < custo_cib_min:
+					custo_cib_min = valor
+	
+	custo_vazFinal = round(random.uniform(custo_vaz_min, custo_vaz_max),2)
+	custo_cripFinal = round(random.uniform(custo_crip_min, custo_crip_max),2)
+	custo_desFinal = round(random.uniform(custo_des_min, custo_des_max),2)
+	custo_sisFinal = round(random.uniform(custo_sis_min, custo_sis_max),2)
+	custo_credFinal = round(random.uniform(custo_cred_min, custo_cred_max),2)
+	custo_malwareFinal = round(random.uniform(custo_malware_min, custo_malware_max),2)
+	custo_phishingFinal = round(random.uniform(custo_phishing_min, custo_phishing_max),2)
+	custo_ddosFinal = round(random.uniform(custo_ddos_min, custo_ddos_max),2)
+
+	custos_impactos = [custo_vazFinal, custo_cripFinal, custo_desFinal, custo_sisFinal, custo_credFinal, custo_malwareFinal, custo_phishingFinal, custo_ddosFinal]
+	custos_impactos_sem_zeros = [elemento for elemento in custos_impactos if elemento != 0]
+
+	custoFinal_min = min(custos_impactos_sem_zeros)
+	custoFinal_max = max(custos_impactos_sem_zeros)
+	custoFinal = round(random.uniform(custoFinal_min, custoFinal_max),2)
+	
+	return custoFinal
+
+	
+
 
 def add_impactos(impactos, tps_impactos):
 	for i in range(len(impactos)):
@@ -103,8 +206,8 @@ def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos):
 	contadorAtaque = 0
 	contadorImpacto = [0,0,0,0,0]
 
-	print("PROB ATAQUE - " + str(prob_ataque) + ' - ' + str(len(prob_ataque)))
-	print("PROB IMPACTOS - " + str(prob_impactos) + ' - ' + str(len(prob_impactos)))
+	#print("PROB ATAQUE - " + str(prob_ataque) + ' - ' + str(len(prob_ataque)))
+	#print("PROB IMPACTOS - " + str(prob_impactos) + ' - ' + str(len(prob_impactos)))
 
 	for _ in range(rodadas):
 		pos = random.randint(0, len(prob_ataque)-1)
@@ -227,6 +330,8 @@ def simulador_riscos(infoT, infoNT, tudo):
 		impactos = add_impactos(impactos, [0,0,1,1,0])
 
 	custoFinal = calculo_custo_impacto(impactos, infoT)
+	print("Custo final: " + str(custoFinal))
+	final.append(custoFinal)
 
 	agrupador_informacoes(final)
 
