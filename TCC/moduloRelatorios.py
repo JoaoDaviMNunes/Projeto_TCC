@@ -6,15 +6,15 @@ import sys
 # ===========================================================================================================
 # POPULADOR DE DADOS
 def populador_dados(dados):
-	print('ENTRANDO - POPULADOR DE DADOS')
+	#print('ENTRANDO - POPULADOR DE DADOS')
 	moduloDados.gerenciadorDados(1,dados,'')
-	print('FECHANDO - POPULADOR DE DADOS')
+	#print('FECHANDO - POPULADOR DE DADOS')
 	pass
 
 # ===========================================================================================================
 # CLASSIFICAÇÃO DE RELATÓRIOS
 def classificacao_relatorios(entrada):
-	print('ENTRANDO - CLASSIFICAÇÃO DE RELATÓRIOS')
+	#print('ENTRANDO - CLASSIFICAÇÃO DE RELATÓRIOS')
 	pesos = [10,5,8,6,5,10]
 	for dados in entrada:
 		totalPeso = (int(dados[7])*pesos[0] + int(dados[8])*pesos[1] + int(dados[9])*pesos[2] + int(dados[10])*pesos[3] + int(dados[11])*pesos[4] + int(dados[12])*pesos[5])/(pesos[0]+pesos[1]+pesos[2]+pesos[3]+pesos[4]+pesos[5])*3
@@ -27,10 +27,9 @@ def classificacao_relatorios(entrada):
 			avaliacao = 'PR'
 		dados.insert(2, avaliacao)
 
-	print('FECHANDO - CLASSIFICAÇÃO DE RELATÓRIOS')
+	#print('FECHANDO - CLASSIFICAÇÃO DE RELATÓRIOS')
 	populador_dados(entrada)
 	pass
-
 
 # ===========================================================================================================
 # SELEÇÃO DE MÉTRICAS
@@ -41,7 +40,7 @@ def acharIndice(lista, info):
 	return -1
 
 def selecao_metricas(entrada):
-	print('ENTRANDO - SELEÇÃO DE MÉTRICAS')
+	#print('ENTRANDO - SELEÇÃO DE MÉTRICAS')
 
 	with open('empresas.csv', 'r',  encoding='utf-8') as arquivoEmpresas:
 		empresas = list(csv.reader(arquivoEmpresas))
@@ -55,7 +54,7 @@ def selecao_metricas(entrada):
 			else:
 				print("ERRO => " + str(dados))
 
-	print('FECHANDO - SELEÇÃO DE MÉTRICAS')
+	#print('FECHANDO - SELEÇÃO DE MÉTRICAS')
 	classificacao_relatorios(arq)
 	pass
 

@@ -68,8 +68,9 @@ def gerador_relatorios(info):
 		conteudo.append(Paragraph("Imagem não encontrada.", estilo_normal))
 
 	# Constrói o PDF
-	pdf.build(conteudo)'''
-	print("--------------------------- FIM ---------------------------")
+	pdf.build(conteudo)
+	'''
+	#print("--------------------------- FIM ---------------------------")
 
 # ===========================================================================================================
 # AGRUPADOR DE INFORMAÇÕES
@@ -307,9 +308,12 @@ def simulador_riscos(infoT, infoNT, tudo):
 	#print("Nº_DADOS M - " + str(len(riscoM)))
 	#print("Nº_DADOS P - " + str(len(riscoP)))
 	#print("Nº_DADOS D - " + str(len(riscoD)))
+<<<<<<< Updated upstream
 
 	# VERIFICAR O RISCO FINANCEIRO (infoT)
 	impactosM, impactosP, impactosD = [1,1,1,1,0],[1,0,1,0,1],[0,0,1,1,0]
+=======
+>>>>>>> Stashed changes
 
 	# verifica via simulação quais são os riscos e impactos de cada tipo de ataque
 	if cm > 0:
@@ -368,7 +372,7 @@ def verifica_utilidade(infoNT, analise):
 	return infosCertas
 
 def analisador_negocios(requisicao):
-	print("ENTRANDO - ANALISADOR DE NEGÓCIOS")
+	#print("ENTRANDO - ANALISADOR DE NEGÓCIOS")
 	analise, tudo = [], []
 	arquivo = list(open(requisicao,"r", encoding="utf-8"))
 	tamARQ = len(arquivo)
@@ -453,7 +457,7 @@ def analisador_negocios(requisicao):
 	analise.append("ciberataque")
 	#print(analise)
 	infoT, infoNT = moduloDados.gerenciadorDados(3,analise,None)
-	print("FECHANDO - ANALISADOR DE NEGÓCIOS")
+	#print("FECHANDO - ANALISADOR DE NEGÓCIOS")
 	simulador_riscos(infoT, infoNT, tudo)
 	pass
 

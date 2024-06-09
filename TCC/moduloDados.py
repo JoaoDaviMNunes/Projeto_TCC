@@ -5,7 +5,7 @@ import sys
 # ===========================================================================================================
 # VALIDADOR DE DADOS
 def validador_dados(dados, tab):
-	print('ENTRANDO - PROCESSADOR DE DADOS')
+	#print('ENTRANDO - PROCESSADOR DE DADOS')
 	nometab = ['dadosTang', 'dadosNTang']
 	dadosCorretos = []
 
@@ -17,7 +17,7 @@ def validador_dados(dados, tab):
 
 	#print("Dados corretos:", dadosCorretos)
 	gerenciadorDados(2, dadosCorretos, nometab[tab])
-	print('FECHANDO - PROCESSADOR DE DADOS')
+	#print('FECHANDO - PROCESSADOR DE DADOS')
 	pass
 
 # ===========================================================================================================
@@ -34,7 +34,7 @@ def salvaErrados_dados(dados):
 
 # VERIFICA SE O DADO É TANGÍVEL OU NÃO
 def mapeador_riscos(dados):
-	print('ENTRANDO - MAPEADOR DE RISCOS')
+	#print('ENTRANDO - MAPEADOR DE RISCOS')
 	dadosT = []			# dados tangíveis
 	dadosNT = []		# dados não tangíveis
 	errados = []
@@ -49,14 +49,14 @@ def mapeador_riscos(dados):
 			errados.append(dado)
 
 	if len(dadosT) > 0:
-		print("Tam dadosTang = "+str(len(dadosT)))
+		#print("Tam dadosTang = "+str(len(dadosT)))
 		validador_dados(dadosT, 0)
 	if len(dadosNT) > 0:
-		print("Tam dadosNTang = "+str(len(dadosNT)))
+		#print("Tam dadosNTang = "+str(len(dadosNT)))
 		validador_dados(dadosNT, 1)
 	if len(errados) > 0:
 		salvaErrados_dados(errados)
-	print('FECHANDO - MAPEADOR DE RISCOS')
+	#print('FECHANDO - MAPEADOR DE RISCOS')
 	pass
 
 # ===========================================================================================================
@@ -73,7 +73,7 @@ def atualizaDado_tabela(cursor, nometabela, nomecampo, valornovo, nomecampopesqu
 	pass
 
 def insereDados_tabela(cursor, row, nometabela):
-	print(nometabela)
+	#print(nometabela)
 	for linha in row:
 		empresa = linha[0]		# empresa que publicou a informação
 		ano = linha[1]			# ano referente a pesquisa da publicação
@@ -159,7 +159,7 @@ def buscaDados_tabela(cursor, chaves):
 
 		#wait = input("Pausa:")
 	
-	print(str(len(infoT))+' dadosTang e '+ str(len(infoNT))+' dadosNTang')
+	#print(str(len(infoT))+' dadosTang e '+ str(len(infoNT))+' dadosNTang')
 
 	# removendo os itens duplicados
 	infoT = list(dict.fromkeys(infoT))
@@ -174,7 +174,7 @@ def comandolivre_tabela(cursor, command):
 		print("Erro ao executar o comando! => ", e)
 
 def gerenciadorDados(acao, material, nometabela):
-	print('ENTRANDO - GERENCIADOR DE DADOS')
+	#print('ENTRANDO - GERENCIADOR DE DADOS')
 	bancoDados = 'bancoTCC.db'
 	conn = sqlite3.connect(bancoDados)
 	cursor = conn.cursor()
@@ -204,7 +204,7 @@ def gerenciadorDados(acao, material, nometabela):
 
 	conn.commit()		# enviando alterações para o banco de dados
 	conn.close()		# fechando o acesso ao banco de dados
-	print('FECHANDO - GERENCIADOR DE DADOS')
+	#print('FECHANDO - GERENCIADOR DE DADOS')
 	pass
 
 # ===========================================================================================================
