@@ -16,7 +16,7 @@ paisesNA = ["Estados Unidos", "Canadá"]
 setor = ["setor financeiro","setor de saúde","setor de comércio"]
 ataques = ["malware", "ransomware", "phishing", "DDoS"]
 local = ["LATAM","NA","APAC","EMEA","América do Sul","América do Norte","Europa","Ásia","Oceania","África","Oriente Médio"]
-rodadas = 100000
+rodadas = 10000
 
 # ===========================================================================================================
 # GERADOR DE RELATÓRIOS
