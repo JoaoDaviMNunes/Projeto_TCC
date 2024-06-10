@@ -18,13 +18,11 @@ setor = 111
 # [2] = terceiro campo indica que o tipo de ataque buscado é DDoS
 tpataque = 111
 
-# [0] = primeiro campo indica que o local da empresa é América do Sul
-# [1] = segundo campo indica que o local da empresa é América do Norte
-# [2] = terceiro campo indica que o local da empresa é Europa
-# [3] = quarto campo indica que o local da empresa é Ásia
-# [4] = quinto campo indica que o local da empresa é Oceania
-# [5] = sexto campo indica que o local da empresa é África
-local = 111111
+# [0] = primeiro campo indica que o local da empresa é APAC
+# [1] = segundo campo indica que o local da empresa é LATAM
+# [2] = terceiro campo indica que o local da empresa é EMEA
+# [3] = quarto campo indica que o local da empresa é NA
+local = 1111
 
 # Apenas um campo pode ser acionado
 # [0] = primeiro campo indica que busca qualquer tipo de dado no Banco de Dados

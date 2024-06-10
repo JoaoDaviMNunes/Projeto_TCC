@@ -16,7 +16,7 @@ paisesNA = ["Estados Unidos", "Canadá"]
 setor = ["setor financeiro","setor de saúde","setor de comércio"]
 ataques = ["malware", "ransomware", "phishing", "DDoS"]
 local = ["LATAM","NA","APAC","EMEA","América do Sul","América do Norte","Europa","Ásia","Oceania","África","Oriente Médio"]
-rodadas = 10000
+rodadas = 100000
 
 # ===========================================================================================================
 # GERADOR DE RELATÓRIOS
@@ -204,7 +204,7 @@ def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos, impactos, i
 
 	contadorAtaque = 0
 	contadorImpacto = [0,0,0,0,0]
-	custos = 0
+	custos, valor_max, valor_min, valor = 0,0,0,0
 
 	#print("PROB ATAQUE - " + str(prob_ataque) + ' - ' + str(len(prob_ataque)))
 	#print("PROB IMPACTOS - " + str(prob_impactos) + ' - ' + str(len(prob_impactos)))
@@ -243,7 +243,15 @@ def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos, impactos, i
 				contadorImpacto[4] += 1
 				if impactos[4] == 1:
 					impactos_rodada[4] = 1
-			custos += calculo_custo_impacto(impactos_rodada, infoT)
+			valor = calculo_custo_impacto(impactos_rodada, infoT)
+			custos += valor
+			if valor_min == 0 and valor_max == 0:
+				valor_min = valor
+				valor_max = valor
+			elif valor < valor_min:
+				valor_min = valor
+			elif valor > valor_max:
+				valor_max = valor
 	
 	probFinalAtaque = round(contadorAtaque/rodadas*100,2)
 	probFinalVaz = round(contadorImpacto[0]/contadorAtaque*100,2)
@@ -252,18 +260,19 @@ def montecarlo_simulacao_ataque(rodadas, prob_ataque, prob_impactos, impactos, i
 	probFinalInd = round(contadorImpacto[3]/contadorAtaque*100,2)
 	probFinalCred = round(contadorImpacto[4]/contadorAtaque*100,2)
 	custoFinal = round(custos/contadorAtaque,2)
-	return probFinalAtaque, [probFinalVaz, probFinalVaz, probFinalCrip, probFinalDes, probFinalInd, probFinalCred], custoFinal
+	return probFinalAtaque, [probFinalVaz, probFinalCrip, probFinalDes, probFinalInd, probFinalCred], custoFinal, valor_min, valor_max
 
 def simulador_riscos(infoT, infoNT, tudo):
 
 	final = []
-	riscoM, riscoP, riscoD = [],[],[]										# contator total das porcentagens de cada ataque
-	impVaz, impCrip, impDes, impInd, impCred = 0,0,0,0,0 					# contador total das porcentagens de sucesso de cada impacto
-	cm, cp, cd = 0,0,0														# contador de itens de cada ataque
-	contVaz, contCrip, contDes, contInd, contCred = 0,0,0,0,0 				# contador de itens de cada impacto
-	probM_impactos, probP_impactos, probD_impactos = 0,0,0 					# probabilidade de ocorrer cada impacto, dependendo do tipo de ataque
-	prob_ataque_malware, prob_ataque_phishing, prob_ataque_ddos = 0,0,0 	# probabilidade de ocorrer cada tipo de ataque
-	custoM, custoP, custoD = 0,0,0 											# custo de cada ataque
+	riscoM, riscoP, riscoD = [],[],[]														# contator total das porcentagens de cada ataque
+	impVaz, impCrip, impDes, impInd, impCred = 0,0,0,0,0 									# contador total das porcentagens de sucesso de cada impacto
+	cm, cp, cd = 0,0,0																		# contador de itens de cada ataque
+	contVaz, contCrip, contDes, contInd, contCred = 0,0,0,0,0 								# contador de itens de cada impacto
+	probM_impactos, probP_impactos, probD_impactos = [],[],[]								# probabilidade de ocorrer cada impacto, dependendo do tipo de ataque
+	prob_ataque_malware, prob_ataque_phishing, prob_ataque_ddos = 0,0,0					 	# probabilidade de ocorrer cada tipo de ataque
+	custoM, custoP, custoD = 0,0,0 															# custo de cada ataque
+	custoM_max, custoM_min, custoP_max, custoP_min, custoD_max, custoD_min = 0,0,0,0,0,0	# custo máximo e mínimo de cada ataque
 
 	# VERIFICAR OS RISCOS E OS IMPACTOS DA EMPRESA SOFRER O RISCO DO ATAQUE
 	for info in infoNT:		
@@ -308,49 +317,70 @@ def simulador_riscos(infoT, infoNT, tudo):
 	#print("Nº_DADOS M - " + str(len(riscoM)))
 	#print("Nº_DADOS P - " + str(len(riscoP)))
 	#print("Nº_DADOS D - " + str(len(riscoD)))
-<<<<<<< Updated upstream
 
 	# VERIFICAR O RISCO FINANCEIRO (infoT)
 	impactosM, impactosP, impactosD = [1,1,1,1,0],[1,0,1,0,1],[0,0,1,1,0]
-=======
->>>>>>> Stashed changes
 
-	# verifica via simulação quais são os riscos e impactos de cada tipo de ataque
+	# verifica via simulação quais são os riscos e impactos de cada tipo de ataque, assim como os custos estimados
 	if cm > 0:
-		prob_ataque_malware, probM_impactos, custoM = montecarlo_simulacao_ataque(rodadas, riscoM, prob_impactos, impactosM, infoT)
+		prob_ataque_malware, probM_impactos, custoM, custoM_min, custoM_max = montecarlo_simulacao_ataque(rodadas, riscoM, prob_impactos, impactosM, infoT)
 	if cp > 0:
-		prob_ataque_phishing, probP_impactos, custoP = montecarlo_simulacao_ataque(rodadas, riscoP, prob_impactos, impactosP, infoT)
+		prob_ataque_phishing, probP_impactos, custoP, custoP_min, custoP_max = montecarlo_simulacao_ataque(rodadas, riscoP, prob_impactos, impactosP, infoT)
 	if cd > 0:
-		prob_ataque_ddos, probD_impactos, custoD = montecarlo_simulacao_ataque(rodadas, riscoD, prob_impactos, impactosD, infoT)
-	final.append([prob_ataque_malware, probM_impactos])
-	final.append([prob_ataque_phishing, probP_impactos])
-	final.append([prob_ataque_ddos, probD_impactos])
+		prob_ataque_ddos, probD_impactos, custoD, custoD_min, custoD_max = montecarlo_simulacao_ataque(rodadas, riscoD, prob_impactos, impactosD, infoT)
+
+	final.append(tudo[:15])
+	final.append([prob_ataque_malware,probM_impactos])
+	final.append([prob_ataque_phishing,probP_impactos])
+	final.append([prob_ataque_ddos,probD_impactos])
 
 	# PRINTANDO PARA SABER O STATUS ----> tais informações irão para o relatório e não serão printadas na tela
 	cont_att = 0
+	custos_min, custos_max = [],[]
 	if prob_ataque_malware > 0:
 		cont_att += 1
-		print("A probabilidade de ocorrer um ataque de Malware é de " + str(final[0][0]) + "%")
-		print("Dado que é malware, a probabilidade de ocorrer vazamento de dados é de " + str(final[0][1][0]) + "%")
-		print("Dado que é malware, a probabilidade de ocorrer dados criptografados é de " + str(final[0][1][1]) + "%")
-		print("Dado que é malware, a probabilidade de ocorrer perda de desempenho é de " + str(final[0][1][2]) + "%")
-		print("Dado que é malware, a probabilidade de ocorrer indisponibilidade do sistema é de " + str(final[0][1][3]) + "%")
+		custos_min.append(custoM_min)
+		custos_max.append(custoM_max)
+		#print("\nA probabilidade de ocorrer um ataque de Malware é de " + str(prob_ataque_malware) + "%")
+		#print("Dado que é malware, a probabilidade de ocorrer vazamento de dados é de " + str(probM_impactos[0]) + "%")
+		#print("Dado que é malware, a probabilidade de ocorrer dados criptografados é de " + str(probM_impactos[1]) + "%")
+		#print("Dado que é malware, a probabilidade de ocorrer perda de desempenho é de " + str(probM_impactos[2]) + "%")
+		#print("Dado que é malware, a probabilidade de ocorrer indisponibilidade do sistema é de " + str(probM_impactos[3]) + "%")
 	if prob_ataque_phishing > 0:
 		cont_att += 1
-		print("A probabilidade de ocorrer um ataque de Phishing é de " + str(final[1][0]) + "%")
-		print("Dado que é phishing, a probabilidade de ocorrer vazamento de dados é de " + str(final[1][1][0]) + "%")
-		print("Dado que é phishing, a probabilidade de ocorrer perda de desempenho é de " + str(final[1][1][2]) + "%")
-		print("Dado que é phishing, a probabilidade de ocorrer roubo de credenciais é de " + str(final[1][1][4]) + "%")
+		custos_min.append(custoP_min)
+		custos_max.append(custoP_max)
+		#print("\nA probabilidade de ocorrer um ataque de Phishing é de " + str(prob_ataque_phishing) + "%")
+		#print("Dado que é phishing, a probabilidade de ocorrer vazamento de dados é de " + str(probP_impactos[0]) + "%")
+		#print("Dado que é phishing, a probabilidade de ocorrer perda de desempenho é de " + str(probP_impactos[1]) + "%")
+		#print("Dado que é phishing, a probabilidade de ocorrer roubo de credenciais é de " + str(probP_impactos[2]) + "%")
 	if prob_ataque_ddos > 0:
 		cont_att += 1
-		print("A probabilidade de ocorrer um ataque de DDoS é de " + str(final[2][0]) + "%" + "%")
-		print("Dado que é DDoS, a probabilidade de ocorrer perda de desempenho é de " + str(final[2][1][2]) + "%")
-		print("Dado que é DDoS, a probabilidade de ocorrer indisponibilidade do sistema é de " + str(final[2][1][3]) + "%")
+		custos_min.append(custoD_min)
+		custos_max.append(custoD_max)
+		#print("\nA probabilidade de ocorrer um ataque de DDoS é de " + str(prob_ataque_ddos) + "%" + "%")
+		#print("Dado que é DDoS, a probabilidade de ocorrer perda de desempenho é de " + str(probD_impactos[0]) + "%")
+		#print("Dado que é DDoS, a probabilidade de ocorrer indisponibilidade do sistema é de " + str(probD_impactos[1]) + "%")
 	custoFinal = round((custoM+custoP+custoD)/cont_att if cont_att else None,2)
-	print("Custo do ataque: " + str(custoFinal))
-	final.append(custoFinal)
+	custoFinal_min = min(custos_min)
+	custoFinal_max = max(custos_max)
+	#print("\nCusto do médio do ataque (em dólares): " + str(custoFinal))
+	#print("Custo mínimo do ataque (em dólares): " + str(custoFinal_min))
+	#print("Custo máximo do ataque (em dólares): " + str(custoFinal_max))
+	final.append([custoFinal, custoFinal_min, custoFinal_max])
+	print(final)
+
+	'''
+	explicação lista "final":
+	final[0] = valores da requisição
+	final[1] = prob. ataque malware e seus impactos
+	final[2] = prob. ataque phishing e seus impactos
+	final[3] = prob. ataque ddos e seus impactos
+	final[4] = custoFinal médio, custo mínimo e custo máximo referente ao ataque
+	'''
 
 	agrupador_informacoes(final)
+	return final
 
 # ===========================================================================================================
 # ANALISADOR DE NEGÓCIOS
@@ -458,15 +488,18 @@ def analisador_negocios(requisicao):
 	#print(analise)
 	infoT, infoNT = moduloDados.gerenciadorDados(3,analise,None)
 	#print("FECHANDO - ANALISADOR DE NEGÓCIOS")
-	simulador_riscos(infoT, infoNT, tudo)
-	pass
+	final = simulador_riscos(infoT, infoNT, tudo)
+	return final
 
 # ===========================================================================================================
 
 def main():
 	requisicao = sys.argv[1]
 	if os.path.exists(requisicao):
-		analisador_negocios(requisicao)
+		final = analisador_negocios(requisicao)
+		with open("resultados.txt", "a") as arquivo_saida:					# Salva o resultado em um arquivo de saída
+			arquivo_saida.write(str(final))
+			arquivo_saida.write("\n")
 	else:
 		print("O arquivo "+requisicao+" não existe no diretório")
 
