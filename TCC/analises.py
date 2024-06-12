@@ -32,16 +32,22 @@ def main():
         numReq = 0
         empresas, valores = [],[]
 
+        # -------------------------------------------------------------
+        # COLETA DE DADOS
         for info in dado_lst:
             numReq += 1
             somaTotais += info[4][0]
-            numEmp = info[0][0] + info[0][1] + info[0][2] + info[0][3] + info[0][4] + info[0][5] + info[0][6] + info[0][7] + info[0][8] + info[0][9] + info[0][10] + info[0][11] + info[0][12]
+            numEmp = str(info[0][0]) + str(info[0][1]) + str(info[0][2]) + str(info[0][3]) + str(info[0][4]) + str(info[0][5]) + str(info[0][6]) + str(info[0][7]) + str(info[0][8]) + str(info[0][9]) + str(info[0][10]) + str(info[0][11]) + str(info[0][12])
             empresas.append(numEmp)
             valores.append(info[4][0])
+        
+        # -------------------------------------------------------------
+        # COMPARAÇÕES E COMPARAÇÃO DE VARIÁVEIS
 
         mediaTotais = round(somaTotais/numReq,2)
         print(mediaTotais)
 
+    # PLOTAGEM DE GRÁFICOS, A PARTIR DOS DADOS FILTRADOS
     # Gráfico de Barras de Erros dos custos, por cada setor
     matriz_bar = np.array([[financeiro_min,financeiro_medio,financeiro_max],[comercio_min,comercio_medio,comercio_max],[saude_min,saude_medio,saude_max]])
     minimos = np.min(matriz_bar, axis=1)
