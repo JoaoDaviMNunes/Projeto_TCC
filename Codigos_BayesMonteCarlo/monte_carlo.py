@@ -56,3 +56,27 @@ plt.ylabel('Porcentagem (%)')
 plt.ylim(0, 100)
 plt.legend()
 plt.show()
+
+# TESTE
+setores = ['Financeiro', 'Comércio', 'Saúde']
+empresas = ['Malware', 'Phishing', 'DDoS']
+malware_media = [30, 50, 70]
+phishing_media = [20, 40, 60]
+ddos_media = [10, 30, 50]
+bar_width = 0.25
+x = np.arange(len(setores))
+plt.figure(figsize=(10, 6))
+plt.bar(x - bar_width, malware_media, width=bar_width, label='Malware', color='b')
+plt.bar(x, phishing_media, width=bar_width, label='Phishing', color='g')
+plt.bar(x + bar_width, ddos_media, width=bar_width, label='DDoS', color='r')
+plt.title('Distribuição de Porcentagens de Incidentes')
+plt.xlabel('Setores')
+plt.ylabel('Porcentagem (%)')
+plt.xticks(x, empresas)  # Usando 'empresas' como rótulos
+plt.ylim(0, 100)
+plt.legend()
+plt.show()
+
+matriz_bar = np.array([[10,25,50],[5,15,80],[2,4,8]])
+minimos = np.min(matriz_bar, axis=1)
+print(minimos)
