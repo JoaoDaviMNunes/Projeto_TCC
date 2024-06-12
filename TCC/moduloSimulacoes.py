@@ -16,7 +16,7 @@ paisesNA = ["Estados Unidos", "Canadá"]
 setor = ["setor financeiro","setor de saúde","setor de comércio"]
 ataques = ["malware", "ransomware", "phishing", "DDoS"]
 local = ["LATAM","NA","APAC","EMEA","América do Sul","América do Norte","Europa","Ásia","Oceania","África","Oriente Médio"]
-rodadas = 10000
+rodadas = 100000
 
 # ===========================================================================================================
 # GERADOR DE RELATÓRIOS
@@ -498,7 +498,7 @@ def main():
 	if os.path.exists(requisicao):
 		for i in range(100):
 			final = analisador_negocios(requisicao)
-			nome_arquivo = "./Resultados/rodada" + str(i) + ".txt"
+			nome_arquivo = "./ResultadosCompletos/rodada" + str(i) + ".txt"
 			with open(nome_arquivo, "a") as arquivo_saida:					# Salva o resultado em um arquivo de saída
 				arquivo_saida.write(str(final))
 				arquivo_saida.write("\n")
