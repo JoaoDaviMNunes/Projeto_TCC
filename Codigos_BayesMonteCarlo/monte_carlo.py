@@ -1,82 +1,89 @@
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Dados de exemplo
-empresas = ['Empresa A', 'Empresa B', 'Empresa C', 'Empresa D', 'Empresa E']
-malware = [30, 45, 25, 50, 40]
-phishing = [20, 35, 30, 45, 35]
-ddos = [25, 20, 40, 30, 20]
+# Dados fictícios
+setores = ['Setor 1', 'Setor 2', 'Setor 3']
+subcategorias = ['A', 'B', 'C']
 
-# Gráfico de Barras Agrupadas
-bar_width = 0.25
-x = np.arange(len(empresas))
-plt.figure(figsize=(10, 6))
-plt.bar(x - bar_width, malware, width=bar_width, label='Malware', color='b')
-plt.bar(x, phishing, width=bar_width, label='Phishing', color='g')
-plt.bar(x + bar_width, ddos, width=bar_width, label='DDoS', color='r')
-plt.title('Distribuição de Porcentagens de Incidentes')
-plt.xlabel('Empresas')
-plt.ylabel('Porcentagem (%)')
-plt.xticks(x, empresas)
-plt.ylim(0, 100)
-plt.legend()
+# Valores médios, mínimos e máximos para cada subcategoria dentro de cada setor
+valores_medios = [
+    [4, 7, 1],  # Valores médios para Setor 1
+    [2, 6, 3],  # Valores médios para Setor 2
+    [5, 8, 2]   # Valores médios para Setor 3
+]
+
+valores_minimos = [
+    [3, 6, 0.5],  # Valores mínimos para Setor 1
+    [1.5, 5, 2.5],  # Valores mínimos para Setor 2
+    [4, 7, 1.5]   # Valores mínimos para Setor 3
+]
+
+valores_maximos = [
+    [5, 8, 1.5],  # Valores máximos para Setor 1
+    [2.5, 7, 3.5],  # Valores máximos para Setor 2
+    [6, 9, 2.5]   # Valores máximos para Setor 3
+]
+
+# Calculando os erros
+erros = [[
+    [media - minimo, maximo - media] 
+    for media, minimo, maximo in zip(val_medios, val_minimos, val_maximos)] 
+    for val_medios, val_minimos, val_maximos in zip(valores_medios, valores_minimos, valores_maximos)
+]
+
+# Configurando a posição das barras
+x = np.arange(len(subcategorias))  # a posição de cada subcategoria
+
+# Largura das barras
+width = 0.25  # largura das barras
+
+# Criando a figura e os eixos
+fig, ax = plt.subplots()
+
+# Plotando as barras para cada setor
+for i, (val, err) in enumerate(zip(valores_medios, erros)):
+    err_low = [e[0] for e in err]
+    err_high = [e[1] for e in err]
+    ax.bar(x + i*width, val, yerr=[err_low, err_high], width=width, capsize=5, label=setores[i])
+
+# Adicionando os rótulos dos eixos
+ax.set_ylabel('Valores')
+ax.set_xlabel('Subcategorias')
+ax.set_title('Gráfico de Barras com Erros por Setor')
+ax.set_xticks(x + width)  # ajustando a posição dos rótulos
+ax.set_xticklabels(subcategorias)
+
+# Adicionando a legenda
+ax.legend()
+
+# Mostrando o gráfico
 plt.show()
 
-# Gráfico de Boxplot
-dados = [malware, phishing, ddos]
-labels = ['Malware', 'Phishing', 'DDoS']
-plt.figure(figsize=(8, 6))
-plt.boxplot(dados, labels=labels)
-plt.title('Distribuição de Porcentagens de Incidentes')
-plt.xlabel('Tipo de Incidente')
-plt.ylabel('Porcentagem (%)')
-plt.ylim(0, 100)
-plt.show()
+# -------------------------------------------------------
 
-# Gráfico de Dispersão
-plt.figure(figsize=(10, 6))
-plt.scatter(empresas, malware, color='b', label='Malware', marker='o')
-plt.scatter(empresas, phishing, color='g', label='Phishing', marker='s')
-plt.scatter(empresas, ddos, color='r', label='DDoS', marker='^')
-plt.title('Distribuição de Porcentagens de Incidentes')
-plt.xlabel('Empresas')
-plt.ylabel('Porcentagem (%)')
-plt.ylim(0, 100)
-plt.legend()
-plt.show()
+# Configurando a posição das barras
+x = np.arange(len(subcategorias))  # a posição de cada subcategoria
 
-# Gráfico de Linhas
-plt.figure(figsize=(10, 6))
-plt.plot(empresas, malware, marker='o', linestyle='-', color='b', label='Malware')
-plt.plot(empresas, phishing, marker='s', linestyle='--', color='g', label='Phishing')
-plt.plot(empresas, ddos, marker='^', linestyle='-.', color='r', label='DDoS')
-plt.title('Distribuição de Porcentagens de Incidentes')
-plt.xlabel('Empresas')
-plt.ylabel('Porcentagem (%)')
-plt.ylim(0, 100)
-plt.legend()
-plt.show()
+# Largura das barras
+width = 0.35  # largura das barras
 
-# TESTE
-setores = ['Financeiro', 'Comércio', 'Saúde']
-empresas = ['Malware', 'Phishing', 'DDoS']
-malware_media = [30, 50, 70]
-phishing_media = [20, 40, 60]
-ddos_media = [10, 30, 50]
-bar_width = 0.25
-x = np.arange(len(setores))
-plt.figure(figsize=(10, 6))
-plt.bar(x - bar_width, malware_media, width=bar_width, label='Malware', color='b')
-plt.bar(x, phishing_media, width=bar_width, label='Phishing', color='g')
-plt.bar(x + bar_width, ddos_media, width=bar_width, label='DDoS', color='r')
-plt.title('Distribuição de Porcentagens de Incidentes')
-plt.xlabel('Setores')
-plt.ylabel('Porcentagem (%)')
-plt.xticks(x, empresas)  # Usando 'empresas' como rótulos
-plt.ylim(0, 100)
-plt.legend()
-plt.show()
+# Criando figuras e eixos para cada setor
+fig, axs = plt.subplots(1, 3, figsize=(15, 5), sharey=True)
 
-matriz_bar = np.array([[10,25,50],[5,15,80],[2,4,8]])
-minimos = np.min(matriz_bar, axis=1)
-print(minimos)
+for i, (ax, setor, val, err) in enumerate(zip(axs, setores, valores_medios, erros)):
+    err_low = [e[0] for e in err]
+    err_high = [e[1] for e in err]
+    ax.bar(x, val, yerr=[err_low, err_high], width=width, capsize=5, color='skyblue', edgecolor='black')
+    ax.set_title(setor)
+    ax.set_xticks(x)
+    ax.set_xticklabels(subcategorias)
+    ax.set_xlabel('Subcategorias')
+    if i == 0:
+        ax.set_ylabel('Valores')
+
+# Adicionando um título geral ao conjunto de gráficos
+plt.suptitle('Gráficos de Barras com Erros por Setor')
+
+# Mostrando os gráficos
+plt.tight_layout(rect=[0, 0, 1, 0.95])
+plt.show()

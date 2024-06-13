@@ -6,6 +6,7 @@ import numpy as np
 
 setores = ['Financeiro','Comércio','Saúde']
 ataques = ['Malware','Phishing','DDoS']
+divisor = 1       # para a plotagem de forma mais simplificada
 
 def main():
     dado_lst = []
@@ -263,9 +264,91 @@ def main():
     saude_baixo_media = round(saude_baixo_custos/numS,2)
     saude_meio_media = round(saude_meio_custos/numS,2)
     saude_alto_media = round(saude_alto_custos/numS,2)
-    
-    print("Custo médio: " + str(mediaCustos))
 
+    # -------------------------------------------------------------------------------------
+    # DIVISÃO POR ALGUMA GRANDEZA (RAZÃO: NÚMEROS MUITO ALTOS E FEIOS PARA DEMONSTRAÇÃO)
+
+    # **************** FAZER: *****************
+    # ARREDONDAR
+    mediaCustos = round(mediaCustos / divisor,2)
+
+    malware_baixo_custos = round(malware_baixo_custos / divisor,2)
+    phishing_baixo_custos = round(phishing_baixo_custos / divisor,2)
+    ddos_baixo_custos = round(ddos_baixo_custos / divisor,2)
+    malware_meio_custos = round(malware_meio_custos / divisor,2)
+    phishing_meio_custos = round(phishing_meio_custos / divisor,2)
+    ddos_meio_custos = round(ddos_meio_custos / divisor,2)
+    malware_alto_custos = round(malware_alto_custos / divisor,2)
+    phishing_alto_custos = round(phishing_alto_custos / divisor,2)
+    ddos_alto_custos = round(ddos_alto_custos / divisor,2)
+    malware_baixo_min = round(malware_baixo_min / divisor,2)
+    malware_baixo_media = round(malware_baixo_media / divisor,2)
+    malware_baixo_max = round(malware_baixo_max / divisor,2)
+    malware_meio_min = round(malware_meio_min / divisor,2)
+    malware_meio_media = round(malware_meio_media / divisor,2)
+    malware_meio_max = round(malware_meio_max / divisor,2)
+    malware_alto_min = round(malware_alto_min / divisor,2)
+    malware_alto_media = round(malware_alto_media / divisor,2)
+    malware_alto_max = round(malware_alto_max / divisor,2)
+    phishing_baixo_min = round(phishing_baixo_min / divisor,2)
+    phishing_baixo_media = round(phishing_baixo_media / divisor,2)
+    phishing_baixo_max = round(phishing_baixo_max / divisor,2)
+    phishing_meio_min = round(phishing_meio_min / divisor,2)
+    phishing_meio_media = round(phishing_meio_media / divisor,2)
+    phishing_meio_max = round(phishing_meio_max / divisor,2)
+    phishing_alto_min = round(phishing_alto_min / divisor,2)
+    phishing_alto_media = round(phishing_alto_media / divisor,2)
+    phishing_alto_max = round(phishing_alto_max / divisor,2)
+    ddos_baixo_min = round(ddos_baixo_min / divisor,2)
+    ddos_baixo_media = round(ddos_baixo_media / divisor,2)
+    ddos_baixo_max = round(ddos_baixo_max / divisor,2)
+    ddos_meio_min = round(ddos_meio_min / divisor,2)
+    ddos_meio_media = round(ddos_meio_media / divisor,2)
+    ddos_meio_max = round(ddos_meio_max / divisor,2)
+    ddos_alto_min = round(ddos_alto_min / divisor,2)
+    ddos_alto_media = round(ddos_alto_media / divisor,2)
+    ddos_alto_max = round(ddos_alto_max / divisor,2)
+
+    financeiro_baixo_custos = round(financeiro_baixo_custos / divisor,2)
+    comercio_baixo_custos = round(comercio_baixo_custos / divisor,2)
+    saude_baixo_custos = round(saude_baixo_custos / divisor,2)
+    financeiro_meio_custos = round(financeiro_meio_custos / divisor,2)
+    comercio_meio_custos = round(comercio_meio_custos / divisor,2)
+    saude_meio_custos = round(saude_meio_custos / divisor,2)
+    financeiro_alto_custos = round(financeiro_alto_custos / divisor,2)
+    comercio_alto_custos = round(comercio_alto_custos / divisor,2)
+    saude_alto_custos = round(saude_alto_custos / divisor,2)
+    financeiro_baixo_min = round(financeiro_baixo_min / divisor,2)
+    financeiro_baixo_media = round(financeiro_baixo_media / divisor,2)
+    financeiro_baixo_max = round(financeiro_baixo_max / divisor,2)     
+    financeiro_meio_min = round(financeiro_meio_min / divisor,2)
+    financeiro_meio_media = round(financeiro_meio_media / divisor,2)
+    financeiro_meio_max = round(financeiro_meio_max / divisor,2)
+    financeiro_alto_min = round(financeiro_alto_min / divisor,2)
+    financeiro_alto_media = round(financeiro_alto_media / divisor,2)
+    financeiro_alto_max = round(financeiro_alto_max / divisor,2)
+    comercio_baixo_min = round(comercio_baixo_min / divisor,2)
+    comercio_baixo_media = round(comercio_baixo_media / divisor,2)
+    comercio_baixo_max = round(comercio_baixo_max / divisor,2)
+    comercio_meio_min = round(comercio_meio_min / divisor,2)
+    comercio_meio_media = round(comercio_meio_media / divisor,2)
+    comercio_meio_max = round(comercio_meio_max / divisor,2)
+    comercio_alto_min = round(comercio_alto_min / divisor,2)
+    comercio_alto_media = round(comercio_alto_media / divisor,2)
+    comercio_alto_max = round(comercio_alto_max / divisor,2)
+    saude_baixo_min = round(saude_baixo_min / divisor,2)
+    saude_baixo_media = round(saude_baixo_media / divisor,2)
+    saude_baixo_max = round(saude_baixo_max / divisor,2)
+    saude_meio_min = round(saude_meio_min / divisor,2)
+    saude_meio_media = round(saude_meio_media / divisor,2)
+    saude_meio_max = round(saude_meio_max / divisor,2)
+    saude_alto_min = round(saude_alto_min / divisor,2)
+    saude_alto_media = round(saude_alto_media / divisor,2)
+    saude_alto_max = round(saude_alto_max / divisor,2)
+    # -------------------------------------------------------------------------------------
+    print("Fator de divisão: " + str(divisor))
+    print("Custo médio: " + str(mediaCustos))
+    print("---------------------------------------------------------")
     print("\nCusto (baixo) mínimo (setor financeiro): " + str(financeiro_baixo_min))
     print("Custo (baixo) médio (setor financeiro): " + str(financeiro_baixo_media))
     print("Custo (baixo) máximo (setor financeiro): " + str(financeiro_baixo_max))
@@ -275,7 +358,7 @@ def main():
     print("Custo (alto) mínimo (setor financeiro): " + str(financeiro_alto_min))
     print("Custo (alto) médio (setor financeiro): " + str(financeiro_alto_media))
     print("Custo (alto) máximo (setor financeiro): " + str(financeiro_alto_max))
-
+    print("---------------------------------------------------------")
     print("\nCusto (baixo) mínimo (setor de comércio): " + str(comercio_baixo_min))
     print("Custo (baixo) médio (setor de comércio): " + str(comercio_baixo_media))
     print("Custo (baixo) máximo (setor de comércio): " + str(comercio_baixo_max))
@@ -285,7 +368,7 @@ def main():
     print("Custo (alto) mínimo (setor de comércio): " + str(comercio_alto_min))
     print("Custo (alto) médio (setor de comércio): " + str(comercio_alto_media))
     print("Custo (alto) máximo (setor de comércio): " + str(comercio_alto_max))
-
+    print("---------------------------------------------------------")
     print("\nCusto (baixo) mínimo (setor de saúde): " + str(saude_baixo_min))
     print("Custo (baixo) médio (setor de saúde): " + str(saude_baixo_media))
     print("Custo (baixo) máximo (setor de saúde): " + str(saude_baixo_max))
@@ -295,7 +378,7 @@ def main():
     print("Custo (alto) mínimo (setor de saúde): " + str(saude_alto_min))
     print("Custo (alto) médio (setor de saúde): " + str(saude_alto_media))
     print("Custo (alto) máximo (setor de saúde): " + str(saude_alto_max))
-
+    print("---------------------------------------------------------")
     print("\nCusto (baixo) mínimo (malware): " + str(malware_baixo_min))
     print("Custo (baixo) médio (malware): " + str(malware_baixo_media))
     print("Custo (baixo) máximo (malware): " + str(malware_baixo_max))
@@ -305,7 +388,7 @@ def main():
     print("Custo (alto) mínimo (malware): " + str(malware_alto_min))
     print("Custo (alto) médio (malware): " + str(malware_alto_media))
     print("Custo (alto) máximo (malware): " + str(malware_alto_max))
-
+    print("---------------------------------------------------------")
     print("\nCusto (baixo) mínimo (phishing): " + str(phishing_baixo_min))
     print("Custo (baixo) médio (phishing): " + str(phishing_baixo_media))
     print("Custo (baixo) máximo (phishing): " + str(phishing_baixo_max))
@@ -315,8 +398,8 @@ def main():
     print("Custo (alto) mínimo (phishing): " + str(phishing_alto_min))
     print("Custo (alto) médio (phishing): " + str(phishing_alto_media))
     print("Custo (alto) máximo (phishing): " + str(phishing_alto_max))
-
-    print("\nCusto (baixo) mínimo (DDoS): " + str(ddos_baixo_min))
+    print("---------------------------------------------------------")
+    print("Custo (baixo) mínimo (DDoS): " + str(ddos_baixo_min))
     print("Custo (baixo) médio (DDoS): " + str(ddos_baixo_media))
     print("Custo (baixo) máximo (DDoS): " + str(ddos_baixo_max))
     print("Custo (meio) mínimo (DDoS): " + str(ddos_meio_min))
@@ -325,6 +408,46 @@ def main():
     print("Custo (alto) mínimo (DDoS): " + str(ddos_alto_min))
     print("Custo (alto) médio (DDoS): " + str(ddos_alto_media))
     print("Custo (alto) máximo (DDoS): " + str(ddos_alto_max))
+    print("---------------------------------------------------------")
+
+    # Valores médios, mínimos e máximos para cada subcategoria dentro de cada setor
+    valores_medios = [
+        [financeiro_baixo_media, comercio_baixo_media, saude_baixo_media],
+        [financeiro_meio_media, comercio_meio_media, saude_meio_media],
+        [financeiro_alto_media, comercio_alto_media, saude_alto_media]
+    ]
+    valores_minimos = [
+        [financeiro_baixo_min, comercio_baixo_min, saude_baixo_min],
+        [financeiro_meio_min, comercio_meio_min, saude_meio_min],
+        [financeiro_alto_min, comercio_alto_min, saude_alto_min]
+    ]
+
+    valores_maximos = [
+        [financeiro_baixo_max, comercio_baixo_max, saude_baixo_max],
+        [financeiro_meio_max, comercio_meio_max, saude_meio_max],
+        [financeiro_alto_max, comercio_alto_max, saude_alto_max]
+    ]
+
+    erros = [[
+        [media - minimo, maximo - media] 
+        for media, minimo, maximo in zip(val_medios, val_minimos, val_maximos)] 
+        for val_medios, val_minimos, val_maximos in zip(valores_medios, valores_minimos, valores_maximos)
+    ]
+
+    x = np.arange(len(setores))  # a posição de cada subcategoria
+    width = 0.25  # largura das barras
+    fig, ax = plt.subplots()
+    for i, (val, err) in enumerate(zip(valores_medios, erros)):
+        err_low = [e[0] for e in err]
+        err_high = [e[1] for e in err]
+        ax.bar(x + i*width, val, yerr=[err_low, err_high], width=width, capsize=5, label=setores[i])
+    ax.set_ylabel('Valores')
+    ax.set_xlabel('Tipos de ataques')
+    ax.set_title('Gráfico de Barras com Erros')
+    ax.set_xticks(x + width)  # ajustando a posição dos rótulos
+    ax.set_xticklabels(setores)
+    ax.legend()
+    plt.show()
 
     '''
     # PLOTAGEM DE GRÁFICOS, A PARTIR DOS DADOS FILTRADOS
