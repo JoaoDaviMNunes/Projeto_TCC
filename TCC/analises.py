@@ -1,11 +1,12 @@
-import sys
 import os
 import ast
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 setores = ['Financeiro','Comércio','Saúde']
 ataques = ['Malware','Phishing','DDoS']
+metricas = ['Mínimo','Média','Máximo']
 divisor = 1000000       # para a plotagem de forma mais simplificada
 
 def main():
@@ -44,6 +45,12 @@ def main():
     saude_baixo_min,saude_baixo_media,saude_baixo_max = 0,0,0
     saude_meio_min,saude_meio_media,saude_meio_max = 0,0,0
     saude_alto_min,saude_alto_media,saude_alto_max = 0,0,0
+
+    numSM, numSP, numSD = 0,0,0
+    saude_malware_custos, saude_phishing_custos, saude_ddos_custos = 0,0,0
+    saude_malware_min, saude_malware_media, saude_malware_max = 0,0,0
+    saude_phishing_min, saude_phishing_media, saude_phishing_max = 0,0,0
+    saude_ddos_min, saude_ddos_media, saude_ddos_max = 0,0,0
 
     for i in range(100):    
         nome_arquivo = "./ResultadosCompletos/rodada" + str(i) + ".txt"
@@ -240,6 +247,36 @@ def main():
                     saude_alto_min = info[4][2]
                 if info[4][2] > saude_alto_max:
                     saude_alto_max = info[4][2]
+                # malware
+                if info[0][3] == '1' and info[0][4] == '0' and info[0][5] == '0':        # verificando se é malware
+                    numSM += 1
+                    saude_malware_custos += info[4][0]
+                    if saude_malware_min == 0 and saude_malware_max == 0:
+                        saude_malware_min, saude_malware_max = info[4][1], info[4][2]
+                    if info[4][1] < saude_malware_min:
+                        saude_malware_min = info[4][1]
+                    if info[4][2] > saude_malware_max:
+                        saude_malware_max = info[4][2]
+                # phishing
+                if info[0][3] == '0' and info[0][4] == '1' and info[0][5] == '0':        # verificando se é phishing
+                    numSP += 1
+                    saude_phishing_custos += info[4][0]
+                    if saude_phishing_min == 0 and saude_phishing_max == 0:
+                        saude_phishing_min, saude_phishing_max = info[4][1], info[4][2]
+                    if info[4][1] < saude_phishing_min:
+                        saude_phishing_min = info[4][1]
+                    if info[4][2] > saude_phishing_max:
+                        saude_phishing_max = info[4][2]
+                # DDoS
+                if info[0][3] == '0' and info[0][4] == '0' and info[0][5] == '1':        # verificando se é DDoS
+                    numSD += 1
+                    saude_ddos_custos += info[4][0]
+                    if saude_ddos_min == 0 and saude_ddos_max == 0:
+                        saude_ddos_min, saude_ddos_max = info[4][1], info[4][2]
+                    if info[4][1] < saude_ddos_min:
+                        saude_ddos_min = info[4][1]
+                    if info[4][2] > saude_ddos_max:
+                        saude_ddos_max = info[4][2]
         
     # -------------------------------------------------------------
     # CÁLCULO DAS MÉDIAS E COMPARAÇÃO DE VARIÁVEIS
@@ -265,7 +302,16 @@ def main():
     saude_meio_media = round(saude_meio_custos/numS,2)
     saude_alto_media = round(saude_alto_custos/numS,2)
 
+    saude_malware_media = round(saude_malware_custos/numSM,2)
+    saude_phishing_media = round(saude_phishing_custos/numSP,2)
+    saude_ddos_media = round(saude_ddos_custos/numSD,2)
+
     # -------------------------------------------------------------------------------------
+    # -------------------------------------------------------------------------------------
+    # ------------------------------------- GRÁFICOS --------------------------------------
+    # -------------------------------------------------------------------------------------
+    # -------------------------------------------------------------------------------------
+    '''
     valores_medios = [financeiro_baixo_media, comercio_baixo_media, saude_baixo_media]
     valores_minimos = [financeiro_baixo_min, comercio_baixo_min, saude_baixo_min]
     valores_maximos = [financeiro_baixo_max, comercio_baixo_max, saude_baixo_max]
@@ -283,12 +329,6 @@ def main():
     for bar, media, minimo, maximo in zip(bars, valores_medios, valores_minimos, valores_maximos):
         height = bar.get_height()
         ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
-                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
-                    textcoords="offset points", ha='center', va='bottom', color='black')
-        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
-                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
-                    textcoords="offset points", ha='center', va='top', color='black')
-        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
                     xytext=(0, 3),  # 3 pontos de deslocamento para cima
                     textcoords="offset points", ha='center', va='bottom', color='black')
     plt.tight_layout()
@@ -317,18 +357,13 @@ def main():
         ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
                     xytext=(0, 3),  # 3 pontos de deslocamento para cima
                     textcoords="offset points", ha='center', va='bottom', color='black')
-        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
-                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
-                    textcoords="offset points", ha='center', va='top', color='black')
-        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
-                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
-                    textcoords="offset points", ha='center', va='bottom', color='black')
     plt.tight_layout()
     caminho_pasta = "./Imagens"
     nome_imagem = 'custosMinimoAtaques.png'
     os.makedirs(caminho_pasta, exist_ok=True)
     plt.savefig(os.path.join(caminho_pasta, nome_imagem))
     #plt.show()
+    '''
     # -------------------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------------------
@@ -408,8 +443,20 @@ def main():
     saude_alto_min = round(saude_alto_min / divisor,2)
     saude_alto_media = round(saude_alto_media / divisor,2)
     saude_alto_max = round(saude_alto_max / divisor,2)
+
+    saude_malware_min = round(saude_malware_min / divisor,2)
+    saude_phishing_min = round(saude_phishing_min / divisor,2)
+    saude_ddos_min = round(saude_ddos_min / divisor,2)
+    saude_malware_media = round(saude_malware_media / divisor,2)
+    saude_phishing_media = round(saude_phishing_media / divisor,2)
+    saude_ddos_media = round(saude_ddos_media / divisor,2)
+    saude_malware_max = round(saude_malware_max / divisor,2)
+    saude_phishing_max = round(saude_phishing_max / divisor,2)
+    saude_ddos_max = round(saude_ddos_max / divisor,2)
+
     # -------------------------------------------------------------------------------------
     print("Fator de divisão: " + str(divisor))
+    '''
     print("Custo médio: " + str(mediaCustos))
     print("---------------------------------------------------------")
     print("\nCusto (baixo) mínimo (setor financeiro): " + str(financeiro_baixo_min))
@@ -472,7 +519,7 @@ def main():
     print("Custo (alto) médio (DDoS): " + str(ddos_alto_media))
     print("Custo (alto) máximo (DDoS): " + str(ddos_alto_max))
     print("---------------------------------------------------------")
-
+    '''
     # -----------------------------------------------------------------------------------------------------
     valores_medios = [financeiro_meio_media, comercio_meio_media, saude_meio_media]
     valores_minimos = [financeiro_meio_min, comercio_meio_min, saude_meio_min]
@@ -493,19 +540,16 @@ def main():
         ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
                     xytext=(0, 3),  # 3 pontos de deslocamento para cima
                     textcoords="offset points", ha='center', va='bottom', color='black')
-        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
-                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
-                    textcoords="offset points", ha='center', va='top', color='black')
-        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
-                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
-                    textcoords="offset points", ha='center', va='bottom', color='black')
     plt.tight_layout()
     caminho_pasta = "./Imagens"
-    nome_imagem = 'custosMediaSetores.png'
     os.makedirs(caminho_pasta, exist_ok=True)
-    plt.savefig(os.path.join(caminho_pasta, nome_imagem))
-    #plt.show()
+    nome_imagem_png = 'custosMediaSetores.png'
+    nome_imagem_pdf = 'custosMediaSetores.pdf'
+    plt.savefig(os.path.join(caminho_pasta, nome_imagem_png))
+    plt.savefig(os.path.join(caminho_pasta, nome_imagem_pdf))
+    plt.show()
     # -----------------------------------------------------------------------------------------------------
+    '''
     valores_medios = [financeiro_alto_media, comercio_alto_media, saude_alto_media]
     valores_minimos = [financeiro_alto_min, comercio_alto_min, saude_alto_min]
     valores_maximos = [financeiro_alto_max, comercio_alto_max, saude_alto_max]
@@ -525,18 +569,13 @@ def main():
         ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
                     xytext=(0, 3),  # 3 pontos de deslocamento para cima
                     textcoords="offset points", ha='center', va='bottom', color='black')
-        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
-                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
-                    textcoords="offset points", ha='center', va='top', color='black')
-        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
-                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
-                    textcoords="offset points", ha='center', va='bottom', color='black')
     plt.tight_layout()
     caminho_pasta = "./Imagens"
     nome_imagem = 'custosMaximoSetores.png'
     os.makedirs(caminho_pasta, exist_ok=True)
     plt.savefig(os.path.join(caminho_pasta, nome_imagem))
-    #plt.show()
+    plt.show()
+    '''
     # -----------------------------------------------------------------------------------------------------
     valores_medios = [malware_meio_media, phishing_meio_media, ddos_meio_media]
     valores_minimos = [malware_meio_min, phishing_meio_min, ddos_meio_min]
@@ -557,19 +596,16 @@ def main():
         ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
                     xytext=(0, 3),  # 3 pontos de deslocamento para cima
                     textcoords="offset points", ha='center', va='bottom', color='black')
-        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
-                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
-                    textcoords="offset points", ha='center', va='top', color='black')
-        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
-                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
-                    textcoords="offset points", ha='center', va='bottom', color='black')
     plt.tight_layout()
     caminho_pasta = "./Imagens"
-    nome_imagem = 'custosMediaAtaques.png'
     os.makedirs(caminho_pasta, exist_ok=True)
-    plt.savefig(os.path.join(caminho_pasta, nome_imagem))
-    #plt.show()
+    nome_imagem_png = 'custosMediaAtaques.png'
+    nome_imagem_pdf = 'custosMediaAtaques.pdf'
+    plt.savefig(os.path.join(caminho_pasta, nome_imagem_png))
+    plt.savefig(os.path.join(caminho_pasta, nome_imagem_pdf))
+    plt.show()
     # -----------------------------------------------------------------------------------------------------
+    '''
     valores_medios = [malware_alto_media, phishing_alto_media, ddos_alto_media]
     valores_minimos = [malware_alto_min, phishing_alto_min, ddos_alto_min]
     valores_maximos = [malware_alto_max, phishing_alto_max, ddos_alto_max]
@@ -587,20 +623,38 @@ def main():
     for bar, media, minimo, maximo in zip(bars, valores_medios, valores_minimos, valores_maximos):
         height = bar.get_height()
         ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
-                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
-                    textcoords="offset points", ha='center', va='bottom', color='black')
-        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
-                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
-                    textcoords="offset points", ha='center', va='top', color='black')
-        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
-                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
-                    textcoords="offset points", ha='center', va='bottom', color='black')
+                    xytext=(0, 3), textcoords="offset points", ha='center', va='bottom', color='black')
     plt.tight_layout()
     caminho_pasta = "./Imagens"
     nome_imagem = 'custosMaximoAtaques.png'
     os.makedirs(caminho_pasta, exist_ok=True)
     plt.savefig(os.path.join(caminho_pasta, nome_imagem))
-    #plt.show()
+    plt.show()
+    '''
+    # -----------------------------------------------------------------------------------------------------
+    plotdata = pd.DataFrame({
+        "Malware":[saude_malware_media,saude_malware_max],
+        "Phishing":[saude_phishing_media, saude_phishing_max],
+        "DDoS":[saude_ddos_media, saude_ddos_max]},
+        index=["Médias", "Máximos"])
+
+    fig, ax = plt.subplots(figsize=(15, 8))  # Ajuste do tamanho da figura
+    plotdata.plot(kind="bar", ax=ax, width=0.8, color=['#333333', '#666666', '#999999'])  # Ajuste do espaçamento entre as barras
+    plt.title("Setor de Saúde: Ataque vs Custo")
+    plt.xlabel("Tipos de ataques")
+    plt.ylabel("Custos (em milhões de dólares)")
+    for p in ax.patches:
+        ax.annotate(f'{p.get_height()}', 
+                    (p.get_x() + p.get_width() / 2., p.get_height()),
+                    ha='center', va='center', xytext=(0, 10), textcoords='offset points')
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
+    caminho_pasta = "./Imagens"
+    os.makedirs(caminho_pasta, exist_ok=True)
+    nome_imagem_png = 'custosAtaquesSaudeBarras.png'
+    nome_imagem_pdf = 'custosAtaquesSaudeBarras.pdf'
+    plt.savefig(os.path.join(caminho_pasta, nome_imagem_png))
+    plt.savefig(os.path.join(caminho_pasta, nome_imagem_pdf))
+    plt.show()
     
     pass
 
