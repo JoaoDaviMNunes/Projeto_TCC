@@ -6,7 +6,7 @@ import numpy as np
 
 setores = ['Financeiro','Comércio','Saúde']
 ataques = ['Malware','Phishing','DDoS']
-divisor = 1       # para a plotagem de forma mais simplificada
+divisor = 1000000       # para a plotagem de forma mais simplificada
 
 def main():
     dado_lst = []
@@ -266,10 +266,73 @@ def main():
     saude_alto_media = round(saude_alto_custos/numS,2)
 
     # -------------------------------------------------------------------------------------
-    # DIVISÃO POR ALGUMA GRANDEZA (RAZÃO: NÚMEROS MUITO ALTOS E FEIOS PARA DEMONSTRAÇÃO)
+    valores_medios = [financeiro_baixo_media, comercio_baixo_media, saude_baixo_media]
+    valores_minimos = [financeiro_baixo_min, comercio_baixo_min, saude_baixo_min]
+    valores_maximos = [financeiro_baixo_max, comercio_baixo_max, saude_baixo_max]
+    erros_baixo = [media - minimo for media, minimo in zip(valores_medios, valores_minimos)]
+    erros_cima = [maximo - media for media, maximo in zip(valores_medios, valores_maximos)]
+    x = np.arange(len(setores))
+    width = 0.5
+    fig, ax = plt.subplots()
+    bars = ax.bar(x, valores_medios, yerr=[erros_baixo, erros_cima], width=width, capsize=10, color='gray', edgecolor='black')
+    ax.set_ylabel('Custos')
+    ax.set_xlabel('Setores')
+    ax.set_title('Gráfico de Barras com Erros')
+    ax.set_xticks(x)
+    ax.set_xticklabels(setores)
+    for bar, media, minimo, maximo in zip(bars, valores_medios, valores_minimos, valores_maximos):
+        height = bar.get_height()
+        ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
+        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
+                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
+                    textcoords="offset points", ha='center', va='top', color='black')
+        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
+    plt.tight_layout()
+    caminho_pasta = "./Imagens"
+    nome_imagem = 'custosMinimoSetores.png'
+    os.makedirs(caminho_pasta, exist_ok=True)
+    plt.savefig(os.path.join(caminho_pasta, nome_imagem))
+    #plt.show()
+    # -------------------------------------------------------------------------------------
+    valores_medios = [malware_baixo_media, phishing_baixo_media, ddos_baixo_media]
+    valores_minimos = [malware_baixo_min, phishing_baixo_min, ddos_baixo_min]
+    valores_maximos = [malware_baixo_max, phishing_baixo_max, ddos_baixo_max]
+    erros_baixo = [media - minimo for media, minimo in zip(valores_medios, valores_minimos)]
+    erros_cima = [maximo - media for media, maximo in zip(valores_medios, valores_maximos)]
+    x = np.arange(len(ataques))
+    width = 0.5
+    fig, ax = plt.subplots()
+    bars = ax.bar(x, valores_medios, yerr=[erros_baixo, erros_cima], width=width, capsize=10, color='gray', edgecolor='black')
+    ax.set_ylabel('Custos')
+    ax.set_xlabel('Tipos de Ataques')
+    ax.set_title('Gráfico de Barras com Erros')
+    ax.set_xticks(x)
+    ax.set_xticklabels(ataques)
+    for bar, media, minimo, maximo in zip(bars, valores_medios, valores_minimos, valores_maximos):
+        height = bar.get_height()
+        ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
+        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
+                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
+                    textcoords="offset points", ha='center', va='top', color='black')
+        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
+    plt.tight_layout()
+    caminho_pasta = "./Imagens"
+    nome_imagem = 'custosMinimoAtaques.png'
+    os.makedirs(caminho_pasta, exist_ok=True)
+    plt.savefig(os.path.join(caminho_pasta, nome_imagem))
+    #plt.show()
+    # -------------------------------------------------------------------------------------
 
-    # **************** FAZER: *****************
-    # ARREDONDAR
+    # -------------------------------------------------------------------------------------
+    # DIVISÃO POR ALGUMA GRANDEZA (RAZÃO: NÚMEROS MUITO ALTOS E FEIOS PARA DEMONSTRAÇÃO)
     mediaCustos = round(mediaCustos / divisor,2)
 
     malware_baixo_custos = round(malware_baixo_custos / divisor,2)
@@ -410,134 +473,136 @@ def main():
     print("Custo (alto) máximo (DDoS): " + str(ddos_alto_max))
     print("---------------------------------------------------------")
 
-    # Valores médios, mínimos e máximos para cada subcategoria dentro de cada setor
-    valores_medios = [
-        [financeiro_baixo_media, comercio_baixo_media, saude_baixo_media],
-        [financeiro_meio_media, comercio_meio_media, saude_meio_media],
-        [financeiro_alto_media, comercio_alto_media, saude_alto_media]
-    ]
-    valores_minimos = [
-        [financeiro_baixo_min, comercio_baixo_min, saude_baixo_min],
-        [financeiro_meio_min, comercio_meio_min, saude_meio_min],
-        [financeiro_alto_min, comercio_alto_min, saude_alto_min]
-    ]
-
-    valores_maximos = [
-        [financeiro_baixo_max, comercio_baixo_max, saude_baixo_max],
-        [financeiro_meio_max, comercio_meio_max, saude_meio_max],
-        [financeiro_alto_max, comercio_alto_max, saude_alto_max]
-    ]
-
-    erros = [[
-        [media - minimo, maximo - media] 
-        for media, minimo, maximo in zip(val_medios, val_minimos, val_maximos)] 
-        for val_medios, val_minimos, val_maximos in zip(valores_medios, valores_minimos, valores_maximos)
-    ]
-
-    x = np.arange(len(setores))  # a posição de cada subcategoria
-    width = 0.25  # largura das barras
+    # -----------------------------------------------------------------------------------------------------
+    valores_medios = [financeiro_meio_media, comercio_meio_media, saude_meio_media]
+    valores_minimos = [financeiro_meio_min, comercio_meio_min, saude_meio_min]
+    valores_maximos = [financeiro_meio_max, comercio_meio_max, saude_meio_max]
+    erros_baixo = [media - minimo for media, minimo in zip(valores_medios, valores_minimos)]
+    erros_cima = [maximo - media for media, maximo in zip(valores_medios, valores_maximos)]
+    x = np.arange(len(setores))
+    width = 0.5
     fig, ax = plt.subplots()
-    for i, (val, err) in enumerate(zip(valores_medios, erros)):
-        err_low = [e[0] for e in err]
-        err_high = [e[1] for e in err]
-        ax.bar(x + i*width, val, yerr=[err_low, err_high], width=width, capsize=5, label=setores[i])
-    ax.set_ylabel('Valores')
-    ax.set_xlabel('Tipos de ataques')
+    bars = ax.bar(x, valores_medios, yerr=[erros_baixo, erros_cima], width=width, capsize=10, color='gray', edgecolor='black')
+    ax.set_ylabel('Custos (em milhões de dólares)')
+    ax.set_xlabel('Setores')
     ax.set_title('Gráfico de Barras com Erros')
-    ax.set_xticks(x + width)  # ajustando a posição dos rótulos
+    ax.set_xticks(x)
     ax.set_xticklabels(setores)
-    ax.legend()
-    plt.show()
-
-    '''
-    # PLOTAGEM DE GRÁFICOS, A PARTIR DOS DADOS FILTRADOS
-    # Gráfico de Barras de Erros dos custos, por cada setor
-    matriz_bar = np.array([[financeiro_min,financeiro_media,financeiro_max],[comercio_min,comercio_media,comercio_max],[saude_min,saude_media,saude_max]])
-    minimos = np.min(matriz_bar, axis=1)
-    medias = np.mean(matriz_bar, axis=1)
-    maximos = np.max(matriz_bar, axis=1)
-    erros_inferiores = medias - minimos
-    erros_superiores = maximos - medias
-    erros = [erros_inferiores, erros_superiores]
-    labels = ['Financeiro', 'Comércio', 'Saúde']
-    x = np.arange(len(labels))
-    largura_barra = 0.35
+    for bar, media, minimo, maximo in zip(bars, valores_medios, valores_minimos, valores_maximos):
+        height = bar.get_height()
+        ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
+        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
+                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
+                    textcoords="offset points", ha='center', va='top', color='black')
+        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
+    plt.tight_layout()
+    caminho_pasta = "./Imagens"
+    nome_imagem = 'custosMediaSetores.png'
+    os.makedirs(caminho_pasta, exist_ok=True)
+    plt.savefig(os.path.join(caminho_pasta, nome_imagem))
+    #plt.show()
+    # -----------------------------------------------------------------------------------------------------
+    valores_medios = [financeiro_alto_media, comercio_alto_media, saude_alto_media]
+    valores_minimos = [financeiro_alto_min, comercio_alto_min, saude_alto_min]
+    valores_maximos = [financeiro_alto_max, comercio_alto_max, saude_alto_max]
+    erros_baixo = [media - minimo for media, minimo in zip(valores_medios, valores_minimos)]
+    erros_cima = [maximo - media for media, maximo in zip(valores_medios, valores_maximos)]
+    x = np.arange(len(setores))
+    width = 0.5
     fig, ax = plt.subplots()
-    barras = ax.bar(x, medias, largura_barra, yerr=erros, label='Empresas', capsize=5)
-    ax.set_xlabel('Setor')
-    ax.set_ylabel('Custo')
-    ax.set_title('Custos Financeiros por Setor')
+    bars = ax.bar(x, valores_medios, yerr=[erros_baixo, erros_cima], width=width, capsize=10, color='gray', edgecolor='black')
+    ax.set_ylabel('Valores (em milhões de dólares)')
+    ax.set_xlabel('Setores')
+    ax.set_title('Gráfico de Barras com Erros')
     ax.set_xticks(x)
-    ax.set_xticklabels(labels)
-    ax.legend()
-    ax.set_ylim(0, max(maximos) * 1.1)
-    for i in range(len(barras)):
-        yval = barras[i].get_height()
-        yerr_lower = erros_inferiores[i]
-        yerr_upper = erros_superiores[i]
-        ax.text(barras[i].get_x() + barras[i].get_width() / 2., yval,
-                f'{yval:.2f}\n({yerr_lower:.2f}, {yerr_upper:.2f})', ha='center', va='bottom')
+    ax.set_xticklabels(setores)
+    for bar, media, minimo, maximo in zip(bars, valores_medios, valores_minimos, valores_maximos):
+        height = bar.get_height()
+        ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
+        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
+                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
+                    textcoords="offset points", ha='center', va='top', color='black')
+        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
     plt.tight_layout()
     caminho_pasta = "./Imagens"
-    nome_imagem = 'custosSetores.png'
+    nome_imagem = 'custosMaximoSetores.png'
     os.makedirs(caminho_pasta, exist_ok=True)
     plt.savefig(os.path.join(caminho_pasta, nome_imagem))
-    plt.show()
-
-    # Gráfico de Barras de Erros dos custos, por cada tipo de ataque
-    matriz_bar = np.array([[malware_min,malware_media,malware_max],[phishing_min,phishing_media,phishing_max],[ddos_min,ddos_media,ddos_max]])
-    minimos = np.min(matriz_bar, axis=1)
-    medias = np.mean(matriz_bar, axis=1)
-    maximos = np.max(matriz_bar, axis=1)
-    erros_inferiores = medias - minimos
-    erros_superiores = maximos - medias
-    erros = [erros_inferiores, erros_superiores]
-    labels = ['Malware', 'Phishing', 'DDoS']
-    x = np.arange(len(labels))
-    largura_barra = 0.35
+    #plt.show()
+    # -----------------------------------------------------------------------------------------------------
+    valores_medios = [malware_meio_media, phishing_meio_media, ddos_meio_media]
+    valores_minimos = [malware_meio_min, phishing_meio_min, ddos_meio_min]
+    valores_maximos = [malware_meio_max, phishing_meio_max, ddos_meio_max]
+    erros_baixo = [media - minimo for media, minimo in zip(valores_medios, valores_minimos)]
+    erros_cima = [maximo - media for media, maximo in zip(valores_medios, valores_maximos)]
+    x = np.arange(len(ataques))
+    width = 0.5
     fig, ax = plt.subplots()
-    barras = ax.bar(x, medias, largura_barra, yerr=erros, label='Empresas', capsize=5)
-    ax.set_xlabel('Ciberataque')
-    ax.set_ylabel('Custo')
-    ax.set_title('Custos Financeiros por Ciberataque')
+    bars = ax.bar(x, valores_medios, yerr=[erros_baixo, erros_cima], width=width, capsize=10, color='gray', edgecolor='black')
+    ax.set_ylabel('Custos (em milhões de dólares)')
+    ax.set_xlabel('Tipos de Ataques')
+    ax.set_title('Gráfico de Barras com Erros')
     ax.set_xticks(x)
-    ax.set_xticklabels(labels)
-    ax.legend()
-    ax.set_ylim(0, max(maximos) * 1.1)
-    for i in range(len(barras)):
-        yval = barras[i].get_height()
-        yerr_lower = erros_inferiores[i]
-        yerr_upper = erros_superiores[i]
-        ax.text(barras[i].get_x() + barras[i].get_width() / 2., yval,
-                f'{yval:.2f}\n({yerr_lower:.2f}, {yerr_upper:.2f})', ha='center', va='bottom')
+    ax.set_xticklabels(ataques)
+    for bar, media, minimo, maximo in zip(bars, valores_medios, valores_minimos, valores_maximos):
+        height = bar.get_height()
+        ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
+        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
+                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
+                    textcoords="offset points", ha='center', va='top', color='black')
+        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
     plt.tight_layout()
     caminho_pasta = "./Imagens"
-    nome_imagem = 'custosAtaques.png'
+    nome_imagem = 'custosMediaAtaques.png'
     os.makedirs(caminho_pasta, exist_ok=True)
     plt.savefig(os.path.join(caminho_pasta, nome_imagem))
-    plt.show()
-
-    # Gráfico de Barras Agrupadas
-    bar_width = 0.25
-    r1 = np.arange(len(setores))
-    r2 = [x + bar_width for x in r1]
-    r3 = [x + bar_width for x in r2]
-    plt.figure(figsize=(10, 6))
-    plt.bar(r1, malware_media, color='b', width=bar_width, edgecolor='grey', label='Malware')
-    plt.bar(r2, phishing_media, color='g', width=bar_width, edgecolor='grey', label='Phishing')
-    plt.bar(r3, ddos_media, color='r', width=bar_width, edgecolor='grey', label='DDoS')
-    plt.xlabel('Setores', fontweight='bold')
-    plt.ylabel('Custo Médio', fontweight='bold')
-    plt.title('Custos Médios por Ciberataque em Diferentes Setores')
-    plt.xticks([r + bar_width for r in range(len(setores))], setores)
-    plt.legend()
+    #plt.show()
+    # -----------------------------------------------------------------------------------------------------
+    valores_medios = [malware_alto_media, phishing_alto_media, ddos_alto_media]
+    valores_minimos = [malware_alto_min, phishing_alto_min, ddos_alto_min]
+    valores_maximos = [malware_alto_max, phishing_alto_max, ddos_alto_max]
+    erros_baixo = [media - minimo for media, minimo in zip(valores_medios, valores_minimos)]
+    erros_cima = [maximo - media for media, maximo in zip(valores_medios, valores_maximos)]
+    x = np.arange(len(ataques))
+    width = 0.5
+    fig, ax = plt.subplots()
+    bars = ax.bar(x, valores_medios, yerr=[erros_baixo, erros_cima], width=width, capsize=10, color='gray', edgecolor='black')
+    ax.set_ylabel('Valores (em milhões de dólares)')
+    ax.set_xlabel('Tipos de Ataques')
+    ax.set_title('Gráfico de Barras com Erros')
+    ax.set_xticks(x)
+    ax.set_xticklabels(ataques)
+    for bar, media, minimo, maximo in zip(bars, valores_medios, valores_minimos, valores_maximos):
+        height = bar.get_height()
+        ax.annotate(f'{media}', xy=(bar.get_x() + bar.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
+        ax.annotate(f'{minimo}', xy=(bar.get_x() + bar.get_width() / 2, minimo),
+                    xytext=(0, -5),  # -5 pontos de deslocamento para baixo
+                    textcoords="offset points", ha='center', va='top', color='black')
+        ax.annotate(f'{maximo}', xy=(bar.get_x() + bar.get_width() / 2, maximo),
+                    xytext=(0, 3),  # 3 pontos de deslocamento para cima
+                    textcoords="offset points", ha='center', va='bottom', color='black')
     plt.tight_layout()
     caminho_pasta = "./Imagens"
-    nome_imagem = 'custosAgrupados.png'
+    nome_imagem = 'custosMaximoAtaques.png'
     os.makedirs(caminho_pasta, exist_ok=True)
     plt.savefig(os.path.join(caminho_pasta, nome_imagem))
-    plt.show()
-    '''
+    #plt.show()
+    
+    pass
 
 if __name__ == "__main__":
     main()
