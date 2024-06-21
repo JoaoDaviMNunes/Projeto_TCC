@@ -496,12 +496,15 @@ def analisador_negocios(requisicao):
 def main():
 	requisicao = sys.argv[1]
 	if os.path.exists(requisicao):
+		final = analisador_negocios(requisicao)
+		'''
 		for i in range(100):
 			final = analisador_negocios(requisicao)
 			nome_arquivo = "./ResultadosCompletos/rodada" + str(i) + ".txt"
 			with open(nome_arquivo, "a") as arquivo_saida:					# Salva o resultado em um arquivo de saída
 				arquivo_saida.write(str(final))
 				arquivo_saida.write("\n")
+		'''
 	else:
 		print("O arquivo "+requisicao+" não existe no diretório")
 
