@@ -311,7 +311,7 @@ def main():
     # ------------------------------------- GRÁFICOS --------------------------------------
     # -------------------------------------------------------------------------------------
     # -------------------------------------------------------------------------------------
-    '''
+    
     valores_medios = [financeiro_baixo_media, comercio_baixo_media, saude_baixo_media]
     valores_minimos = [financeiro_baixo_min, comercio_baixo_min, saude_baixo_min]
     valores_maximos = [financeiro_baixo_max, comercio_baixo_max, saude_baixo_max]
@@ -363,7 +363,7 @@ def main():
     os.makedirs(caminho_pasta, exist_ok=True)
     plt.savefig(os.path.join(caminho_pasta, nome_imagem))
     #plt.show()
-    '''
+    
     # -------------------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------------------
@@ -549,7 +549,7 @@ def main():
     plt.savefig(os.path.join(caminho_pasta, nome_imagem_pdf))
     plt.show()
     # -----------------------------------------------------------------------------------------------------
-    '''
+    
     valores_medios = [financeiro_alto_media, comercio_alto_media, saude_alto_media]
     valores_minimos = [financeiro_alto_min, comercio_alto_min, saude_alto_min]
     valores_maximos = [financeiro_alto_max, comercio_alto_max, saude_alto_max]
@@ -575,7 +575,7 @@ def main():
     os.makedirs(caminho_pasta, exist_ok=True)
     plt.savefig(os.path.join(caminho_pasta, nome_imagem))
     plt.show()
-    '''
+    
     # -----------------------------------------------------------------------------------------------------
     valores_medios = [malware_meio_media, phishing_meio_media, ddos_meio_media]
     valores_minimos = [malware_meio_min, phishing_meio_min, ddos_meio_min]
@@ -605,7 +605,7 @@ def main():
     plt.savefig(os.path.join(caminho_pasta, nome_imagem_pdf))
     plt.show()
     # -----------------------------------------------------------------------------------------------------
-    '''
+    
     valores_medios = [malware_alto_media, phishing_alto_media, ddos_alto_media]
     valores_minimos = [malware_alto_min, phishing_alto_min, ddos_alto_min]
     valores_maximos = [malware_alto_max, phishing_alto_max, ddos_alto_max]
@@ -630,7 +630,7 @@ def main():
     os.makedirs(caminho_pasta, exist_ok=True)
     plt.savefig(os.path.join(caminho_pasta, nome_imagem))
     plt.show()
-    '''
+    
     # -----------------------------------------------------------------------------------------------------
     plotdata = pd.DataFrame({
         "Malware":[saude_malware_media,saude_malware_max],
