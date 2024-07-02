@@ -52,6 +52,17 @@ def main():
     saude_phishing_min, saude_phishing_media, saude_phishing_max = 0,0,0
     saude_ddos_min, saude_ddos_media, saude_ddos_max = 0,0,0
 
+    # probabilidades
+    financeiro_prob_malware, financeiro_prob_phishing, financeiro_prob_ddos = 0,0,0
+    comercio_prob_malware, comercio_prob_phishing, comercio_prob_ddos = 0,0,0
+    saude_prob_malware, saude_prob_phishing, saude_prob_ddos = 0,0,0
+    npFM, npFP, npFD = 0,0,0
+    npCM, npCP, npCD = 0,0,0
+    npSM, npSP, npSD = 0,0,0
+    financeiro_prob_media_malware, financeiro_prob_media_phishing, financeiro_prob_media_ddos = 0,0,0
+    comercio_prob_media_malware, comercio_prob_media_phishing, comercio_prob_media_ddos = 0,0,0
+    saude_prob_media_malware, saude_prob_media_phishing, saude_prob_media_ddos = 0,0,0
+
     for i in range(100):    
         nome_arquivo = "./ResultadosCompletos/rodada" + str(i) + ".txt"
         with open(nome_arquivo, "r") as arquivo:
@@ -191,6 +202,7 @@ def main():
                     financeiro_alto_min = info[4][2]
                 if info[4][2] > financeiro_alto_max:
                     financeiro_alto_max = info[4][2]
+                
             # pegando informações do setor de comércio --------------------------------
             elif info[0][1] == '1':
                 #print('Setor de comércio')
@@ -219,6 +231,7 @@ def main():
                     comercio_alto_min = info[4][2]
                 if info[4][2] > comercio_alto_max:
                     comercio_alto_max = info[4][2]
+
             # pegando informações do setor de saúde --------------------------------
             elif info[0][2] == '1':
                 #print('Setor de saúde')
@@ -277,6 +290,49 @@ def main():
                         saude_ddos_min = info[4][1]
                     if info[4][2] > saude_ddos_max:
                         saude_ddos_max = info[4][2]
+
+            if info[0][0] == '1' and info[0][1] == '0' and info[0][2] == '0':
+                # verificar se o ataque foi malware
+                if info[0][3] == '1':
+                    npFM += 1
+                    financeiro_prob_malware += info[1][0]
+                    #print('Financeiro - Malware - ' + str(info[1][0]))
+                # verificar se o ataque foi phishing
+                if info[0][4] == '1':
+                    npFP += 1
+                    financeiro_prob_phishing += info[2][0]
+                    #print('Financeiro - Phishing - ' + str(info[2][0]))
+                # verificar se o ataque foi DDoS
+                if info[0][5] == '1':
+                    npFD += 1
+                    financeiro_prob_ddos += info[3][0]
+                    #print('Financeiro - DDoS - ' + str(info[3][0]))
+            if info[0][0] == '0' and info[0][1] == '1' and info[0][2] == '0':
+                # verificar se o ataque foi malware
+                if info[0][3] == '1':
+                    npCM += 1
+                    comercio_prob_malware += info[1][0]
+                # verificar se o ataque foi phishing
+                if info[0][4] == '1':
+                    npCP += 1
+                    comercio_prob_phishing += info[2][0]
+                # verificar se o ataque foi DDoS
+                if info[0][5] == '1':
+                    npCD += 1
+                    comercio_prob_ddos += info[3][0]
+            if info[0][0] == '0' and info[0][1] == '0' and info[0][2] == '1':
+                # verificar se o ataque foi malware
+                if info[0][3] == '1':
+                    npSM += 1
+                    saude_prob_malware += info[1][0]
+                # verificar se o ataque foi phishing
+                if info[0][4] == '1':
+                    npSP += 1
+                    saude_prob_phishing += info[2][0]
+                # verificar se o ataque foi DDoS
+                if info[0][5] == '1':
+                    npSD += 1
+                    saude_prob_ddos += info[3][0]
         
     # -------------------------------------------------------------
     # CÁLCULO DAS MÉDIAS E COMPARAÇÃO DE VARIÁVEIS
@@ -305,6 +361,22 @@ def main():
     saude_malware_media = round(saude_malware_custos/numSM,2)
     saude_phishing_media = round(saude_phishing_custos/numSP,2)
     saude_ddos_media = round(saude_ddos_custos/numSD,2)
+
+    financeiro_prob_media_malware = round(financeiro_prob_malware/npFM,2)
+    financeiro_prob_media_phishing = round(financeiro_prob_phishing/npFP,2)
+    financeiro_prob_media_ddos = round(financeiro_prob_ddos/npFD,2)
+
+    comercio_prob_media_malware = round(comercio_prob_malware/npCM,2)
+    comercio_prob_media_phishing = round(comercio_prob_phishing/npCP,2)
+    comercio_prob_media_ddos = round(comercio_prob_ddos/npCD,2)
+
+    saude_prob_media_malware = round(saude_prob_malware/npSM,2)
+    saude_prob_media_phishing = round(saude_prob_phishing/npSP,2)
+    saude_prob_media_ddos = round(saude_prob_ddos/npSD,2)
+
+    print(financeiro_prob_media_malware, financeiro_prob_media_phishing, financeiro_prob_media_ddos)
+    print(comercio_prob_media_malware, comercio_prob_media_phishing, comercio_prob_media_ddos)
+    print(saude_prob_media_malware, saude_prob_media_phishing, saude_prob_media_ddos)
 
     # -------------------------------------------------------------------------------------
     # -------------------------------------------------------------------------------------
@@ -365,9 +437,16 @@ def main():
     #plt.show()
     
     # -------------------------------------------------------------------------------------
-
+    # -------------------------------------------------------------------------------------
+    # -------------------------------------------------------------------------------------
+    # -------------------------------------------------------------------------------------
     # -------------------------------------------------------------------------------------
     # DIVISÃO POR ALGUMA GRANDEZA (RAZÃO: NÚMEROS MUITO ALTOS E FEIOS PARA DEMONSTRAÇÃO)
+    # -------------------------------------------------------------------------------------
+    # -------------------------------------------------------------------------------------
+    # -------------------------------------------------------------------------------------
+    # -------------------------------------------------------------------------------------
+    # -------------------------------------------------------------------------------------
     mediaCustos = round(mediaCustos / divisor,2)
 
     malware_baixo_custos = round(malware_baixo_custos / divisor,2)
